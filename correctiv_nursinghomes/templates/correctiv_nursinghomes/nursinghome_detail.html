@@ -1,0 +1,78 @@
+{% extends "correctiv_nursinghomes/base.html" %}
+
+{% load i18n %}
+{% load number_utils %}
+{% load humanize %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block additional_meta %}
+  <meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block content %}
+  <header>
+    <h2>
+      {{ object.name }}
+    </h2>
+    <p>{{ object.provider_type }}</p>
+  </header>
+
+  <div class="row">
+    <div class="col-lg-8">
+    </div>
+    <div class="col-lg-4">
+      {{ object.address }}
+      {{ object.data.Telefon }}
+      {{ object.web }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      {% if object.red_flag_food %}
+        FOOD BAD
+      {% endif %}
+      {% if object.red_flag_decubitus %}
+        DEKUBITUS
+      {% endif %}
+      {% if object.red_flag_pain %}
+        SCHMERZ!!
+      {% endif %}
+      {% if object.red_flag_medicine %}
+        WHERE BE THE MEDS?
+      {% endif %}
+      {% if object.red_flag_incontinence %}
+        PEE EVERYWHERE
+      {% endif %}
+    </div>
+    <div class="col-lg-4">
+      <h3>{% trans "Next 10 nursing homes" %}</h3>
+      <ul>
+        {% for home in next_nursinghomes %}
+        <li>
+          {{ home.name }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <h3>{% trans "How you can inform yourself" %}</h3>
+
+      <h3>{% trans "More Info" %}</h3>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+
+
+  {% include "correctiv_nursinghomes/_disclaimer.html" %}
+{% endblock %}

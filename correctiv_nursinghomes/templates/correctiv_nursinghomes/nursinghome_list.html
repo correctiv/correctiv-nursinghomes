@@ -1,0 +1,40 @@
+{% extends "correctiv_nursinghomes/base.html" %}
+
+{% load i18n %}
+
+
+{% block title %}{% blocktrans with query=query %}Search for „{{ query }}” in our nursing home database{% endblocktrans %}{% endblock %}
+
+{% block additional_meta %}
+<meta name="description" content="{% blocktrans %}The database about nursinghomes.{% endblocktrans %}">
+{% endblock %}
+
+{% block content %}
+{% if object_list %}
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans "Name" %}</th>
+        </tr>
+      </thead>
+    {% for object in object_list %}
+      <tr>
+        <td>
+          <a href="{{ object.get_absolute_url }}">
+            {{ object.name }}
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+{% else %}
+  <p>
+    {% trans "Your search did not give any results" %}
+  </p>
+{% endif %}
+{% if page_obj.has_other_pages %}
+  {% include "pagination.html" with page_obj=page_obj getvars="&"|add:getvars %}
+{% endif %}
+{% endblock %}
