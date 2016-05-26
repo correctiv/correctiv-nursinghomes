@@ -3,6 +3,8 @@
 {% load i18n %}
 {% load number_utils %}
 {% load humanize %}
+{% load sekizai_tags %}
+{% load leaflet_tags %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -10,13 +12,43 @@
   <meta name="description" content="{{ description }}">
 {% endblock %}
 
-{% block content %}
-  <header>
+{% block top_search %}
+
+  {% addtoblock "css" %}
+    {% leaflet_css %}
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+    {% leaflet_js %}
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+    <script type="text/javascript">
+      function map_init_basic (map, options) {
+        var home = JSON.parse('{{ object.geo.geojson|safe }}');
+        var latLng = home.coordinates.reverse();
+        L.marker(latLng).addTo(map);
+        map.setView(latLng, 13);
+      }
+    </script>
+
+  {% endaddtoblock %}
+
+  <div class="custom-leaflet-map">
+    {% leaflet_map "yourmap" callback="window.map_init_basic" %}
+  </div>
+
+  <header class="page__container">
     <h2>
       {{ object.name }}
     </h2>
     <p>{{ object.provider_type }}</p>
+
   </header>
+
+{% endblock %}
+
+{% block content %}
 
   <div class="row">
     <div class="col-lg-8">
@@ -72,7 +104,6 @@
     <div class="col-lg-4">
     </div>
   </div>
-
 
   {% include "correctiv_nursinghomes/_disclaimer.html" %}
 {% endblock %}

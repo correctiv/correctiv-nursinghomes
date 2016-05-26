@@ -3,7 +3,6 @@
 {% load i18n static %}
 {% load sekizai_tags %}
 
-
 {% block title %}{% blocktrans %}Database „Watch out for care!”{% endblocktrans %}{% endblock %}
 
 {% block additional_meta %}
@@ -46,6 +45,10 @@
 {% block content %}
 {% endblock %}
 </div>
+
+{% addtoblock "css" %}
+  <link rel="stylesheet" href="{% static "correctiv_nursinghomes/css/nursinghomes.css" %}" media="screen" charset="utf-8">
+{% endaddtoblock %}
 
 {% addtoblock "css" %}
   <link rel="stylesheet" href="{% static "correctiv_nursinghomes/jquery.auto-complete/jquery.auto-complete.css" %}" media="screen" charset="utf-8">
