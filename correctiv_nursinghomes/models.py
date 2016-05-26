@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.gis.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -6,6 +8,8 @@ from django.contrib.postgres.fields import JSONField
 
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField, FullTextLookup, startswith
+
+from geogermany.models import State, District, Borough
 
 
 class FullTextLookupCustom(FullTextLookup):
@@ -36,7 +40,23 @@ VectorField.register_lookup(FullTextLookupCustomStartsWith)
 @python_2_unicode_compatible
 class SupervisionAuthority(models.Model):
     name = models.CharField(max_length=512)
-    fds_url = models.CharField(max_length=255, blank=True)
+
+    url = models.URLField(blank=True, max_length=512)
+    report_url = models.URLField(blank=True, max_length=512)
+
+    email = models.EmailField(blank=True)
+    contact = models.TextField(blank=True)
+    address = models.TextField(blank=True)
+
+    state = models.ForeignKey(State, null=True, blank=True)
+    district = models.ForeignKey(District, null=True, blank=True)
+    borough = models.ForeignKey(Borough, null=True, blank=True)
+
+    fds_url = models.CharField(max_length=512, blank=True)
+
+    class Meta:
+        verbose_name = _('Supervision Authority')
+        verbose_name_plural = _('Supervision Authorities')
 
     def __str__(self):
         return self.name
@@ -94,6 +114,9 @@ class NursingHome(models.Model):
 
     data = JSONField(blank=True)
 
+    state = models.ForeignKey(State, null=True, blank=True)
+    district = models.ForeignKey(District, null=True, blank=True)
+
     geo = models.PointField(_('Geographic location'), geography=True)
 
     supervision_authority = models.ForeignKey(SupervisionAuthority,
@@ -130,14 +153,26 @@ class NursingHome(models.Model):
         })
 
 
+def report_file_path(instance=None, filename=None):
+    path = str(instance.pk).zfill(4)
+    path_1 = path[:2]
+    path_2 = path[2:4]
+    temp_path = ['investigations', 'nursinghomes', path_1, path_2, '%s.pdf' % instance.pk]
+    return os.path.join(*temp_path)
+
+
 @python_2_unicode_compatible
 class SupervisionReport(models.Model):
     report_by = models.ForeignKey(SupervisionAuthority)
     nursing_home = models.ForeignKey(NursingHome)
-    date = models.DateField()
+    date = models.DateField(null=True)
 
     fds_url = models.CharField(max_length=255, blank=True)
-    report = models.FileField(blank=True)
+    report = models.FileField(blank=True, upload_to=report_file_path)
+
+    class Meta:
+        verbose_name = _('Supervision Report')
+        verbose_name_plural = _('Supervision Reports')
 
     def __str__(self):
         return self.report_by
