@@ -28,23 +28,30 @@
         var home = JSON.parse('{{ object.geo.geojson|safe }}');
         var latLng = home.coordinates.reverse();
         L.marker(latLng).addTo(map);
-        map.setView(latLng, 13);
+        map.zoomControl.setPosition('topright');
+        map.setView(latLng, 12);
       }
     </script>
 
   {% endaddtoblock %}
 
-  <div class="custom-leaflet-map">
-    {% leaflet_map "yourmap" callback="window.map_init_basic" %}
-  </div>
+  <header class="custom-leaflet-map">
 
-  <header class="page__container">
-    <h2>
-      {{ object.name }}
-    </h2>
-    <p>{{ object.provider_type }}</p>
+    <div class="custom-leaflet-map__container">
+      <header class="custom-leaflet-map__header">
+        <h2 class="custom-leaflet-map__title">
+          {{ object.name }}
+        </h2>
+        <p class="custom-leaflet-map__subtitle">
+          {{ object.provider_type }}
+        </p>
+      </header>
+    </div>
+
+    {% leaflet_map "yourmap" callback="window.map_init_basic" %}
 
   </header>
+
 
 {% endblock %}
 
@@ -62,21 +69,43 @@
 
   <div class="row">
     <div class="col-lg-8">
-      {% if object.red_flag_food %}
-        FOOD BAD
-      {% endif %}
-      {% if object.red_flag_decubitus %}
-        DEKUBITUS
-      {% endif %}
-      {% if object.red_flag_pain %}
-        SCHMERZ!!
-      {% endif %}
-      {% if object.red_flag_medicine %}
-        WHERE BE THE MEDS?
-      {% endif %}
-      {% if object.red_flag_incontinence %}
-        PEE EVERYWHERE
-      {% endif %}
+      <ul class="entry-list">
+        {% if object.red_flag_food %}
+          <li>
+            <article class="nursinghomes__red-flag -food">
+            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+            </article>
+          </li>
+        {% endif %}
+        {% if object.red_flag_decubitus %}
+          <li>
+            <article class="nursinghomes__red-flag -decubitus">
+            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+            </article>
+          </li>
+        {% endif %}
+        {% if object.red_flag_pain %}
+          <li>
+            <article class="nursinghomes__red-flag -pain">
+            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+            </article>
+          </li>
+        {% endif %}
+        {% if object.red_flag_medicine %}
+          <li>
+            <article class="nursinghomes__red-flag -medicine">
+            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+            </article>
+          </li>
+        {% endif %}
+        {% if object.red_flag_incontinence %}
+          <li>
+            <article class="nursinghomes__red-flag -incontinence">
+            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+            </article>
+          </li>
+        {% endif %}
+      </ul>
     </div>
     <div class="col-lg-4">
       <h3>{% trans "Next 10 nursing homes" %}</h3>

@@ -1,3 +1,26 @@
-.nursinghomes {
-  border: 10px solid red !important;
+.nursinghomes__red-flag {
+  background-size: 80px;
+  background-repeat: no-repeat;
+  padding-left: 100px;
+  min-height: 80px;
+}
+
+.nursinghomes__red-flag.-food {
+  background-image: url('../img/red-flag--food.svg');
+}
+
+.nursinghomes__red-flag.-decubitus {
+  background-image: url('../img/red-flag--decubitus.svg');
+}
+
+.nursinghomes__red-flag.-pain {
+  background-image: url('../img/red-flag--pain.svg');
+}
+
+.nursinghomes__red-flag.-medicine {
+  background-image: url('../img/red-flag--medicine.svg');
+}
+
+.nursinghomes__red-flag.-incontinence {
+  background-image: url('../img/red-flag--incontinence.svg');
 }
