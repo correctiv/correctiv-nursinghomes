@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 import json
 
 from django.views.generic import TemplateView, ListView
@@ -67,7 +68,15 @@ class NursingHomeDetailView(SearchMixin, DetailView):
         context['title'] = _('Nursing home %(name)s') % {'name': self.object.name}
         context['description'] = _('Detail for the nursing home %(name)s.') % {'name': self.object.name}
 
-        next_nursinghomes = NursingHome.objects.get_by_distance(self.object)
-        context['next_nursinghomes'] = next_nursinghomes
+        closest_nursinghomes = NursingHome.objects.get_by_distance(self.object)
+
+        for nursinghome in closest_nursinghomes:
+            nursinghome.prices = {
+                'carelevel_1': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 1 Eigenanteil'],
+                'carelevel_2': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 2 Eigenanteil'],
+                'carelevel_3': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 3 Eigenanteil'],
+            }
+
+        context['closest_nursinghomes'] = closest_nursinghomes
 
         return context
