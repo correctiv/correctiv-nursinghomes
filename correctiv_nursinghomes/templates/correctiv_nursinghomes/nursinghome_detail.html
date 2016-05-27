@@ -80,10 +80,11 @@
     </div>
     <div class="col-lg-4">
       <h3>{% trans "Next 10 nursing homes" %}</h3>
-      <ul>
-        {% for home in next_nursinghomes %}
+      <ul class="bar-chart">
+        {% for home in closest_nursinghomes %}
         <li>
-          {{ home.name }}
+          {{ home.name }} /
+          {{ home.prices.carelevel_1 }}
         </li>
         {% endfor %}
       </ul>
