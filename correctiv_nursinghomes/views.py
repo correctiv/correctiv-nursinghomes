@@ -68,15 +68,22 @@ class NursingHomeDetailView(SearchMixin, DetailView):
         context['title'] = _('Nursing home %(name)s') % {'name': self.object.name}
         context['description'] = _('Detail for the nursing home %(name)s.') % {'name': self.object.name}
 
-        closest_nursinghomes = NursingHome.objects.get_by_distance(self.object)
+        closest_nursinghomes_source = NursingHome.objects.get_by_distance(self.object)
+        closest_nursinghomes = []
 
-        for nursinghome in closest_nursinghomes:
-            nursinghome.prices = {
-                'carelevel_1': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 1 Eigenanteil'],
-                'carelevel_2': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 2 Eigenanteil'],
-                'carelevel_3': nursinghome.data[u'Vollstationär Allgemein Pflegestufe 3 Eigenanteil'],
-            }
+        for nursinghome in closest_nursinghomes_source:
+            closest_nursinghomes.append({
+                'name': nursinghome.name,
+                'prices': {
+                    'carelevel_1':
+                        nursinghome.data[u'Vollstationär Allgemein Pflegestufe 1 Eigenanteil'],
+                    'carelevel_2':
+                        nursinghome.data[u'Vollstationär Allgemein Pflegestufe 2 Eigenanteil'],
+                    'carelevel_3':
+                        nursinghome.data[u'Vollstationär Allgemein Pflegestufe 3 Eigenanteil'],
+                }
+            })
 
-        context['closest_nursinghomes'] = closest_nursinghomes
+        context['closest_nursinghomes'] = json.dumps(closest_nursinghomes)
 
         return context
