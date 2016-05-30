@@ -31,8 +31,19 @@
 
 .bar-chart__bar {
   display: block;
-  height: 21px;
+  height: 20px;
   background: #dbdbdb;
   position: absolute;
   top: 0;
+  left: 0;
+}
+
+.bar-chart__value {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 22px;
+  color: black;
 }
