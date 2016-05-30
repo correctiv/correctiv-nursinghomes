@@ -47,3 +47,11 @@
   line-height: 22px;
   color: black;
 }
+
+.bar-chart__item.-hilight .bar-chart__bar {
+  background: #ff6166;
+}
+
+.bar-chart__item.-hilight .bar-chart__value {
+  color: #fff;
+}
