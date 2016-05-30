@@ -129,6 +129,35 @@
     <div class="col-lg-8">
       <h3>{% trans "How you can inform yourself" %}</h3>
 
+      {% with reports=}
+
+      {% if object.supervision_authority %}
+        {% if object.supervision_authority.report_url %}
+          <a href="{{ object.supervision_authority.report_url }}">
+            {% trans "You can find reports here" %}
+          </a>
+          <p>{% trans "If you can't find it, ask below." %}</p>
+        {% endif %}
+
+      {% with fds_url=object.get_request_url %}
+        {% if fds_url %}
+          <a href="{{ fds_url }}" class="btn btn-primary btn-lg">
+            {% trans "Request the report for this nursinghome from the supervision authority" %}
+          </a>
+        {% endif %}
+      {% endwith %}
+
+        <h3>{% trans "Supervision Authority" %}</h3>
+        {% with auth=object.supervision_authority %}
+          {{ auth.name }}
+          {% if auth.email %}
+            {{ auth.email }}
+          {% endif %}
+          {{ auth.address }}
+          {{ auth.contacts }}
+        {% endwith %}
+      {% endif %}
+
       <h3>{% trans "More Info" %}</h3>
     </div>
     <div class="col-lg-4">
