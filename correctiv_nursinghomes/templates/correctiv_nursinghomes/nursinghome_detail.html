@@ -109,14 +109,7 @@
     </div>
     <div class="col-lg-4">
       <h3>{% trans "Next 10 nursing homes" %}</h3>
-      <ul class="bar-chart">
-        {% for home in closest_nursinghomes %}
-        <li>
-          {{ home.name }} /
-          {{ home.prices.carelevel_1 }}
-        </li>
-        {% endfor %}
-      </ul>
+      {% include "correctiv_nursinghomes/_price_comparison.html" %}
     </div>
   </div>
 
