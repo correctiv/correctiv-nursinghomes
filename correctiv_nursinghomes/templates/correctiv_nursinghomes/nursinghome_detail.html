@@ -25,6 +25,7 @@
   {% addtoblock "js" %}
     <script type="text/javascript">
       function map_init_basic (map, options) {
+        map.scrollWheelZoom.disable();
         var home = JSON.parse('{{ object.geo.geojson|safe }}');
         var latLng = home.coordinates.reverse();
         L.marker(latLng).addTo(map);
