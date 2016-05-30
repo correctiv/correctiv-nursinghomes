@@ -1,0 +1,3 @@
+the nursing home report for the nursing home “{{ name}}” at this address:
+{{ address }}
+{{ postcode }} {{ location }}

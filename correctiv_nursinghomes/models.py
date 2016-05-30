@@ -1,10 +1,16 @@
+# -*- encoding: utf-8 -*-
 import os
+try:
+    from urllib.parse import urlencode
+except ImportError:
+    from urllib import urlencode
 
 from django.contrib.gis.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.postgres.fields import JSONField
+from django.template import Template, Context
 
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField, FullTextLookup, startswith
@@ -151,6 +157,32 @@ class NursingHome(models.Model):
         return ('nursinghomes:nursinghomes-detail', (), {
             'slug': self.slug
         })
+
+    def get_request_url(self):
+        if not self.supervision_authority:
+            return ''
+        if not self.supervision_authority.fds_url:
+            return ''
+
+        slugs = self.supervision_authority.fds_url.rsplit('/', 2)
+        pb_slug = slugs[-2]
+
+        subject = _(u'Nursing home report of “%s”') % self.name
+        if len(subject) > 250:
+            subject = subject[:250] + '...'
+
+        query = urlencode({
+            'subject': subject.encode('utf-8'),
+            'body': Template('correctiv_nursinghomes/request_email.txt').render(
+                Context({
+                    'name': self.name,
+                    'postcode': self.postcode,
+                    'location': self.location,
+                    'address': self.address,
+                })).encode('utf-8'),
+            'ref': ('correctiv:nursinghomes@%s' % self.pk).encode('utf-8')
+        })
+        return 'https://fragdenstaat.de/anfrage-stellen/an/%s/?%s' % (pb_slug, query)
 
 
 def report_file_path(instance=None, filename=None):
