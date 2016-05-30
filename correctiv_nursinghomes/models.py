@@ -86,7 +86,18 @@ class NursingHomeManager(SearchManager):
         return qs
 
     def get_by_distance(self, home, limit=10):
-        return self.get_queryset().exclude(pk=home.pk).annotate(distance=Distance('geo', home.geo)).order_by('distance')[:limit]
+        return self.get_queryset().annotate(distance=Distance('geo', home.geo)).order_by('distance')[:limit]
+
+    def get_json_for_page(self, obj):
+        homes = self.get_by_distance(obj)
+        return [
+            {
+                'name': home.name,
+                'prices': home.prices,
+                'current': home == obj
+            }
+            for home in homes
+        ]
 
 
 @python_2_unicode_compatible
@@ -169,6 +180,17 @@ class NursingHome(models.Model):
                 'red_flag_pain'
             ]
         ])
+
+    @property
+    def prices(self):
+        return {
+            'carelevel_1':
+                self.data[u'Vollstationär Allgemein Pflegestufe 1 Eigenanteil'],
+            'carelevel_2':
+                self.data[u'Vollstationär Allgemein Pflegestufe 2 Eigenanteil'],
+            'carelevel_3':
+                self.data[u'Vollstationär Allgemein Pflegestufe 3 Eigenanteil'],
+        }
 
     def get_request_url(self):
         if not self.supervision_authority:
