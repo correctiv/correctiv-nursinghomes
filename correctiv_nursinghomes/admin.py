@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from .models import NursingHome, SupervisionAuthority, SupervisionReport
 
 
-class SupervisionReportInline(admin.TabularInline):
+class SupervisionReportInline(admin.StackedInline):
     model = SupervisionReport
     raw_id_fields = ('nursing_home', 'report_by')
 
