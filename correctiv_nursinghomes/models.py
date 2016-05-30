@@ -158,6 +158,18 @@ class NursingHome(models.Model):
             'slug': self.slug
         })
 
+    @property
+    def any_red_flag(self):
+        return any([
+            getattr(self, n) for n in [
+                'red_flag_food',
+                'red_flag_decubitus',
+                'red_flag_medicine',
+                'red_flag_incontinence',
+                'red_flag_pain'
+            ]
+        ])
+
     def get_request_url(self):
         if not self.supervision_authority:
             return ''

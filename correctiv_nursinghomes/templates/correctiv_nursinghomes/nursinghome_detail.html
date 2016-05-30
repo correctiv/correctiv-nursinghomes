@@ -62,52 +62,64 @@
     <div class="col-lg-8">
     </div>
     <div class="col-lg-4">
-      {{ object.address }}
-      {{ object.postcode }} {{ object.location }}
-      {{ object.data.Telefon }}
-      {{ object.web }}
+      <p>
+        {{ object.address }}<br/>
+        {{ object.postcode }} {{ object.location }}
+      </p>
+      <p>
+        {% trans "Phone no.:" %} {{ object.data.Telefon }}
+      </p>
+      {% if object.web %}
+        <p>
+          <a href="{{ object.web }}">
+            {% trans "Website" %}
+          </a>
+        </p>
+      {% endif %}
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-8">
-      <ul class="entry-list">
-        {% if object.red_flag_food %}
-          <li>
-            <article class="nursinghomes__red-flag -food">
-            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-            </article>
-          </li>
-        {% endif %}
-        {% if object.red_flag_decubitus %}
-          <li>
-            <article class="nursinghomes__red-flag -decubitus">
-            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-            </article>
-          </li>
-        {% endif %}
-        {% if object.red_flag_pain %}
-          <li>
-            <article class="nursinghomes__red-flag -pain">
-            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-            </article>
-          </li>
-        {% endif %}
-        {% if object.red_flag_medicine %}
-          <li>
-            <article class="nursinghomes__red-flag -medicine">
-            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-            </article>
-          </li>
-        {% endif %}
-        {% if object.red_flag_incontinence %}
-          <li>
-            <article class="nursinghomes__red-flag -incontinence">
-            Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-            </article>
-          </li>
-        {% endif %}
-      </ul>
+      {% if object.any_red_flag %}
+        <ul class="entry-list">
+          {% if object.red_flag_food %}
+            <li>
+              <article class="nursinghomes__red-flag -food">
+              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+              </article>
+            </li>
+          {% endif %}
+          {% if object.red_flag_decubitus %}
+            <li>
+              <article class="nursinghomes__red-flag -decubitus">
+              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+              </article>
+            </li>
+          {% endif %}
+          {% if object.red_flag_pain %}
+            <li>
+              <article class="nursinghomes__red-flag -pain">
+              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+              </article>
+            </li>
+          {% endif %}
+          {% if object.red_flag_medicine %}
+            <li>
+              <article class="nursinghomes__red-flag -medicine">
+              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+              </article>
+            </li>
+          {% endif %}
+          {% if object.red_flag_incontinence %}
+            <li>
+              <article class="nursinghomes__red-flag -incontinence">
+              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
+              </article>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
     </div>
     <div class="col-lg-4">
       <h3>{% trans "Next 10 nursing homes" %}</h3>
