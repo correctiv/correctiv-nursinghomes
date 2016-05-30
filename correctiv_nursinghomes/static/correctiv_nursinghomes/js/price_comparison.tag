@@ -9,7 +9,12 @@
     </option>
   </select>
 
-  <bar-chart items={ items } max={ maxValue } />
+  <bar-chart
+    currency={ opts.currency }
+    locale={ opts.locale }
+    na={ opts.na }
+    items={ items }
+    max={ maxValue } />
 
   <script>
     this.selectedSet = opts.initialOption;
@@ -47,13 +52,22 @@
     <a href="#" title={ name } class="bar-chart__label">{ name }</a>
     <div class="bar-chart__data">
       <span class="bar-chart__bar" style="width: { percentage(value) }%"></span>
-      <span class="bar-chart__value">{ value || '–' }</span>
+      <span class="bar-chart__value">{ currency(value) }</span>
     </div>
   </bar-chart-item>
 
   <script>
     percentage(value) {
       return 100 / opts.max * value
+    }
+
+    currency(value) {
+      var formattedValue = Intl.NumberFormat(opts.locale, {
+        style: 'currency',
+        currency: opts.currency
+      }).format(value)
+
+      return value ? formattedValue : opts.na
     }
   </script>
 
