@@ -62,6 +62,7 @@
     </div>
     <div class="col-lg-4">
       {{ object.address }}
+      {{ object.postcode }} {{ object.location }}
       {{ object.data.Telefon }}
       {{ object.web }}
     </div>
@@ -122,12 +123,28 @@
     <div class="col-lg-8">
       <h3>{% trans "How you can inform yourself" %}</h3>
 
-      {% with reports=}
+      {% with reports=object.supervisionreport_set.all %}
+        {% if reports %}
+          <h3>{% trans "Supervision reports" %}</h3>
+          <ul>
+          {% for report in reports %}
+            <li>
+              <a href="{{ report.report.url }}" target="_blank">
+                {{ report.date }}
+                {% if report.report_type %}
+                  ({{ report.report_type }})
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
 
       {% if object.supervision_authority %}
         {% if object.supervision_authority.report_url %}
           <a href="{{ object.supervision_authority.report_url }}">
-            {% trans "You can find reports here" %}
+            {% trans "The supervision authority makes their reports available here" %}
           </a>
           <p>{% trans "If you can't find it, ask below." %}</p>
         {% endif %}

@@ -10,7 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.postgres.fields import JSONField
-from django.template import Template, Context
+from django.template.loader import render_to_string
 
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField, FullTextLookup, startswith
@@ -173,13 +173,12 @@ class NursingHome(models.Model):
 
         query = urlencode({
             'subject': subject.encode('utf-8'),
-            'body': Template('correctiv_nursinghomes/request_email.txt').render(
-                Context({
+            'body': render_to_string('correctiv_nursinghomes/request_email.txt', {
                     'name': self.name,
                     'postcode': self.postcode,
                     'location': self.location,
                     'address': self.address,
-                })).encode('utf-8'),
+                }).encode('utf-8'),
             'ref': ('correctiv:nursinghomes@%s' % self.pk).encode('utf-8')
         })
         return 'https://fragdenstaat.de/anfrage-stellen/an/%s/?%s' % (pb_slug, query)
@@ -204,6 +203,7 @@ class SupervisionReport(models.Model):
     report = models.FileField(blank=True, upload_to=report_file_path)
 
     class Meta:
+        ordering = ('-date',)
         verbose_name = _('Supervision Report')
         verbose_name_plural = _('Supervision Reports')
 
