@@ -1,11 +1,28 @@
 <price-comparison>
 
+  <select onchange={ onSelectChange }>
+    <option value="carelevel_1">
+      Pflegestufe 1
+    </option>
+    <option value="carelevel_2">
+      Pflegestufe 2
+    </option>
+    <option value="carelevel_3">
+      Pflegestufe 3
+    </option>
+  </select>
+
   <bar-chart items={ items } max={ maxValue } />
 
   <script>
-    this.on('update', function() {
-      var selectedSet = 'carelevel_1'
+    var selectedSet = 'carelevel_1'
 
+    onSelectChange(event) {
+      selectedSet = event.target.value
+      this.update()
+    }
+
+    this.on('update', function() {
       this.items = opts.items.map(function(item) {
         return {
           name: item.name,
@@ -36,9 +53,6 @@
   </bar-chart-item>
 
   <script>
-    this.on('update', function() {
-    })
-
     percentage(value) {
       return 100 / opts.max * value
     }
