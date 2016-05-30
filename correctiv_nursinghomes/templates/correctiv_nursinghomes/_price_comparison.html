@@ -1,4 +1,4 @@
-{% load static sekizai_tags %}
+{% load i18n static sekizai_tags %}
 
 <price-comparison></price-comparison>
 
@@ -15,5 +15,15 @@
 {% endaddtoblock %}
 
 {% addtoblock "js" %}
-  <script>riot.mount('price-comparison', {items: {{ closest_nursinghomes|safe }} })</script>
+  <script>
+    riot.mount("price-comparison", {
+      items: {{ closest_nursinghomes|safe }},
+      options: {
+        carelevel_1: "{% trans 'Care level 1' %}",
+        carelevel_2: "{% trans 'Care level 2' %}",
+        carelevel_3: "{% trans 'Care level 3' %}"
+      },
+      initialOption: "carelevel_1"
+    })
+  </script>
 {% endaddtoblock %}
