@@ -1,0 +1,38 @@
+.bar-chart {
+
+}
+
+.bar-chart__item {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.bar-chart__label {
+  color: black;
+  display: block;
+  width: 60%;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  float: left;
+}
+
+.bar-chart__data {
+  width: 40%;
+  display: block;
+  float: right;
+  position: relative;
+}
+
+.bar-chart__bar {
+  display: block;
+  height: 21px;
+  background: #dbdbdb;
+  position: absolute;
+  top: 0;
+}

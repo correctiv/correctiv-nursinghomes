@@ -2,6 +2,10 @@
 
 <price-comparison></price-comparison>
 
+{% addtoblock "css" %}
+  <link rel="stylesheet" href="{% static "correctiv_nursinghomes/css/bar-chart.css" %}" media="screen" charset="utf-8">
+{% endaddtoblock %}
+
 {% addtoblock "js" %}
   <script type="riot/tag" src="{% static 'correctiv_nursinghomes/js/price_comparison.tag' %}"></script>
 {% endaddtoblock %}
