@@ -166,6 +166,7 @@ class SupervisionReport(models.Model):
     report_by = models.ForeignKey(SupervisionAuthority)
     nursing_home = models.ForeignKey(NursingHome)
     date = models.DateField(null=True)
+    report_type = models.CharField(max_length=255, blank=True)
 
     fds_url = models.CharField(max_length=255, blank=True)
     report = models.FileField(blank=True, upload_to=report_file_path)
@@ -175,4 +176,4 @@ class SupervisionReport(models.Model):
         verbose_name_plural = _('Supervision Reports')
 
     def __str__(self):
-        return self.report_by
+        return _(u'Report on %s by %s') % (self.date, self.report_by)
