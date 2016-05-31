@@ -242,4 +242,7 @@ class SupervisionReport(models.Model):
         verbose_name_plural = _('Supervision Reports')
 
     def __str__(self):
-        return _(u'Report on %s by %s') % (self.date, self.report_by)
+        return _(u'Report on %(date)s by %(auth)s') % {
+            'date': self.date,
+            'auth': self.report_by
+        }
