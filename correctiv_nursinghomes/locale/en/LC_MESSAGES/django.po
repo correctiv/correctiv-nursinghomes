@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-31 10:05+0200\n"
+"POT-Creation-Date: 2016-05-31 18:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,51 +25,285 @@ msgstr ""
 msgid "Search Tile"
 msgstr ""
 
-#: forms.py:10 templates/correctiv_nursinghomes/base.html:34
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:20
+#: forms.py:10 templates/correctiv_nursinghomes/_search.html:20
 msgid "Search"
 msgstr ""
 
 #: forms.py:15
-msgid "Enter a name or postcode"
-msgstr ""
-
-#: models.py:64 templates/correctiv_nursinghomes/nursinghome_detail.html:173
-msgid "Supervision Authority"
+msgid "Enter a location or postcode"
 msgstr ""
 
 #: models.py:65
+msgid "Supervision Authority"
+msgstr ""
+
+#: models.py:66
 msgid "Supervision Authorities"
 msgstr ""
 
-#: models.py:137
+#: models.py:126
+msgid "charitable"
+msgstr ""
+
+#: models.py:127
+msgid "private"
+msgstr ""
+
+#: models.py:128
+msgid "public"
+msgstr ""
+
+#: models.py:129
+msgid "unknown"
+msgstr ""
+
+#: models.py:287
 msgid "Geographic location"
 msgstr ""
 
-#: models.py:156
+#: models.py:315
 msgid "nursing home"
 msgstr ""
 
-#: models.py:157
+#: models.py:316
 msgid "nursing homes"
 msgstr ""
 
-#: models.py:204
+#: models.py:372
+msgid "very small"
+msgstr ""
+
+#: models.py:373
+msgid "small"
+msgstr ""
+
+#: models.py:374
+msgid "normal-sized"
+msgstr ""
+
+#: models.py:375
+msgid "big"
+msgstr ""
+
+#: models.py:376
+msgid "very big"
+msgstr ""
+
+#: models.py:388
+msgid "very young"
+msgstr ""
+
+#: models.py:389
+msgid "young"
+msgstr ""
+
+#: models.py:390
+msgid "a normal age"
+msgstr ""
+
+#: models.py:391
+msgid "old"
+msgstr ""
+
+#: models.py:392
+msgid "very old"
+msgstr ""
+
+#: models.py:401
+msgid "very cheap"
+msgstr ""
+
+#: models.py:402
+msgid "cheap"
+msgstr ""
+
+#: models.py:403
+msgid "moderately priced"
+msgstr ""
+
+#: models.py:404
+msgid "expensive"
+msgstr ""
+
+#: models.py:405
+msgid "very expensive"
+msgstr ""
+
+#: models.py:415
+#, python-format
+msgid "%d%% less"
+msgstr ""
+
+#: models.py:416
+#, python-format
+msgid "%d%% more"
+msgstr ""
+
+#: models.py:451
 #, python-format
 msgid "Nursing home report of “%s”"
 msgstr ""
 
-#: models.py:241
+#: models.py:488
 msgid "Supervision Report"
 msgstr ""
 
-#: models.py:242
+#: models.py:489
 msgid "Supervision Reports"
 msgstr ""
 
-#: models.py:245
+#: models.py:492
 #, python-format
 msgid "Report on %(date)s by %(auth)s"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_disclaimer.html:5
+msgid ""
+"This information was published in the annual transparency report of the "
+"Medizinischer Dienst der Krankenkassen, which is a part of the public "
+"insurance companies in Germany. If a home has negative results in any "
+"category, you should ask why these issues exist and don’t assume that the "
+"whole nursing home is bad. On the other hand, you should also do some checks "
+"even if a home doesn’t have any indications of issues. The most important "
+"thing to visit the nursing home in person and see firsthand if you see signs "
+"of issues."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_disclaimer.html:9
+msgid "What does this data really reveal?"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_disclaimer.html:12
+msgid "Download the transparency report here"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:5
+#, python-format
+msgid ""
+"\n"
+"      This home is supervised by the Heimaufsicht (nursing home authority) "
+"<a href=\"%(url)s\">%(name)s</a>.\n"
+"    "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:14
+msgid ""
+"The nursing home authority reports on homes periodically. Here is an example "
+"of this report."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:30
+msgid ""
+"Unfortunately, we don’t have any examples of reports from this home. Please "
+"ask the local Heimaufsicht about getting access to these reports."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:38
+msgid "The supervision authority makes their reports available here"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:40
+msgid "If you can't find it, ask below."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:47
+msgid "Request transparency reports from your local Heimaufsicht"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:5
+msgid ""
+"For the past few months, Correctiv has looked through the inspection reports "
+"of every nursing home in Germany."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:10
+#, python-format
+msgid ""
+"\n"
+"    Our analysis shows that %(name)s doesn’t get all points in one important "
+"category.\n"
+"  "
+msgid_plural ""
+"\n"
+"    Our analysis shows that %(name)s doesn’t get all points in %(redflag)s "
+"important categories.\n"
+"  "
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:16
+msgid ""
+"We’ve analyzed five criteria and this nursing home’s report shows it doesn’t "
+"have problems in any of these areas. However, this doesn’t necessarily "
+"indicate that it is a good nursing home."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:21
+msgid "better,worse,equal"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:21
+#, python-format
+msgid ""
+"\n"
+"    The nursing home %(name)s in %(location)s has a %(medical_grade)s for "
+"their medical care, which is %(grade_comp)s compared to other nursing homes "
+"in %(state)s.\n"
+"  "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:24
+msgid ""
+"Keep in mind that almost all nursing homes get very good grades, so this "
+"shouldn’t be a key indicator for you."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:28
+#, python-format
+msgid ""
+"\n"
+"  The home is %(price_range)s and you have to pay %(price_increase)s "
+"compared to other nursing homes in %(state)s.\n"
+"  "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:32
+#, python-format
+msgid ""
+"\n"
+"    Nationally, the average is %(national_average)s €.\n"
+"  "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:36
+#, python-format
+msgid ""
+"\n"
+"  %(name)s is a %(size_comp)s home with %(size)s beds and is %(age_years)s "
+"years old, which is %(age_comp)s compared to all other nursing homes in "
+"Germany.\n"
+"  "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:40
+#, python-format
+msgid ""
+"\n"
+"    The home belongs to a %(provider_type)s company.\n"
+"  "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:45
+msgid "Therefore it could be that the staff doesn’t get paid unionized wages."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:50
+#, python-format
+msgid ""
+"\n"
+"    If you want to inquire about this home you can talk to the insurance "
+"company %(insurance)s or reach out to the %(authority)s or the %(mdk)s.\n"
+"  "
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_price_comparison.html:22
@@ -82,6 +316,52 @@ msgstr ""
 
 #: templates/correctiv_nursinghomes/_price_comparison.html:24
 msgid "Care level 3"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_price_comparison.html:29
+msgid "n/a"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:3
+msgid ""
+"The Medizinische Dienst der Krankenkassen inspects a sample of patients in "
+"each nursing home."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:10
+msgid "This home didn’t get all points in the category malnutrition."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:18
+msgid ""
+"This home didn’t get all points in the category caring for patients with "
+"bedsores."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:26
+msgid "This home didn’t get all points in the category pain-therapy."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:34
+msgid "This home didn’t get all points in the category medical treatment."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:42
+msgid ""
+"This home didn’t get all points in the category caring for patients with "
+"incontinence."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_red_flags.html:50
+msgid "This home got all points in all the categories we analyzed."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_search.html:8
+msgid "back to the index"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_search.html:15
+msgid "Search for a nursing home or PLZ"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/admin/replace_objects.html:17
@@ -108,52 +388,34 @@ msgstr ""
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/base.html:16
-msgid "Database Search"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:45
+msgid "Nursing Home Guide"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/base.html:22
-msgid "back to the index"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/base.html:29
-msgid "Search for a nursing home or PLZ"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:70
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
 msgid "Phone no.:"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:75
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:84
 msgid "Website"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:125
-msgid "Next 10 nursing homes"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:96
+msgid "From the transparency report"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:137
-msgid "How you can inform yourself"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:109
+msgid "Preisvergleich"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:141
-msgid "Supervision reports"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:116
+msgid ""
+"We’ve compared ten nursing homes in your area. Important tip: If you’re "
+"looking for a good home, do not only compare prices."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:160
-msgid "The supervision authority makes their reports available here"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:162
-msgid "If you can't find it, ask below."
-msgstr ""
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:168
-msgid "Request the report for this nursinghome from the supervision authority"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:184
-msgid "More Info"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:127
+msgid "How you can get more information"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_list.html:6
@@ -165,32 +427,20 @@ msgstr ""
 msgid "The database about nursinghomes."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:18
+#: templates/correctiv_nursinghomes/nursinghome_list.html:19
 msgid "Name"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:34
+#: templates/correctiv_nursinghomes/nursinghome_list.html:20
+msgid "Address"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:21
+msgid "Distance"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:43
 msgid "Your search did not give any results"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:8
-msgid "Euros for Doctors"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:14
-msgid "Is your medicine pushed by big pharma?"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:18
-msgid "Drug name"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:25
-msgid "Example:"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/plugins/search_tile.html:27
-msgid "Avastin"
 msgstr ""
 
 #: urls.py:16
@@ -205,12 +455,12 @@ msgstr ""
 msgid "^nursinghome/(?P<slug>[\\w-]+)/$"
 msgstr ""
 
-#: views.py:68
+#: views.py:63
 #, python-format
 msgid "Nursing home %(name)s"
 msgstr ""
 
-#: views.py:69
+#: views.py:64
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr ""
