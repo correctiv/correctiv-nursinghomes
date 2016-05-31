@@ -1,3 +1,5 @@
-the nursing home report for the nursing home “{{ name}}” at this address:
+{% load i18n %}{% autoescape off %}{% language 'de' %}{% blocktrans with name=name %}the nursing home report for the nursing home “{{ name}}” at this address:{% endblocktrans %}
+
 {{ address }}
 {{ postcode }} {{ location }}
+{% endlanguage %}{% endautoescape %}
