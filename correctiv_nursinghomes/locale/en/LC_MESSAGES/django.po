@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-31 18:16+0200\n"
+"POT-Creation-Date: 2016-05-31 18:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:7 cms_app.py:7 cms_plugins.py:11
+#: apps.py:7 cms_app.py:7
 msgid "Nursing Homes"
-msgstr ""
-
-#: cms_plugins.py:12
-msgid "Search Tile"
 msgstr ""
 
 #: forms.py:10 templates/correctiv_nursinghomes/_search.html:20
@@ -332,6 +328,14 @@ msgstr ""
 msgid "This home didn’t get all points in the category malnutrition."
 msgstr ""
 
+#: templates/correctiv_nursinghomes/_red_flags.html:11
+#: templates/correctiv_nursinghomes/_red_flags.html:19
+#: templates/correctiv_nursinghomes/_red_flags.html:27
+#: templates/correctiv_nursinghomes/_red_flags.html:35
+#: templates/correctiv_nursinghomes/_red_flags.html:43
+msgid "This can be a clue that there have been problems in the past."
+msgstr ""
+
 #: templates/correctiv_nursinghomes/_red_flags.html:18
 msgid ""
 "This home didn’t get all points in the category caring for patients with "
@@ -441,6 +445,12 @@ msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_list.html:43
 msgid "Your search did not give any results"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/request_email.txt:1
+#, python-format
+msgid ""
+"the nursing home report for the nursing home “%(name)s” at this address:"
 msgstr ""
 
 #: urls.py:16
