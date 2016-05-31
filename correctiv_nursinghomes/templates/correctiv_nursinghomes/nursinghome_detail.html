@@ -84,105 +84,45 @@
 
   <div class="page__row">
     <div class="page__section">
-      {% if object.any_red_flag %}
-        <ul class="entry-list">
-          {% if object.red_flag_food %}
-            <li>
-              <article class="nursinghomes__red-flag -food">
-              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-              </article>
-            </li>
-          {% endif %}
-          {% if object.red_flag_decubitus %}
-            <li>
-              <article class="nursinghomes__red-flag -decubitus">
-              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-              </article>
-            </li>
-          {% endif %}
-          {% if object.red_flag_pain %}
-            <li>
-              <article class="nursinghomes__red-flag -pain">
-              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-              </article>
-            </li>
-          {% endif %}
-          {% if object.red_flag_medicine %}
-            <li>
-              <article class="nursinghomes__red-flag -medicine">
-              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-              </article>
-            </li>
-          {% endif %}
-          {% if object.red_flag_incontinence %}
-            <li>
-              <article class="nursinghomes__red-flag -incontinence">
-              Es könnte sein, dass dieses Heim bei der Medikamentenversorgung einiger Bewohner die ärztlichen Anordnungen nicht befolgt hat.
-              </article>
-            </li>
-          {% endif %}
-        </ul>
-      {% endif %}
+
+      <header class="page__section-header ">
+        <h3 class="page__section-headline">
+          {% trans "From the transparency report" %}
+        </h3>
+      </header>
+
+      {% include "correctiv_nursinghomes/_red_flags.html" %}
+      {% include "correctiv_nursinghomes/_disclaimer.html" %}
+
     </div>
+
     <div class="page__sidebar">
-      <h3>{% trans "Next 10 nursing homes" %}</h3>
+
+      <header class="page__section-header ">
+        <h3 class="page__section-headline">
+          {% trans "Preisvergleich" %}
+        </h3>
+      </header>
+
       {% include "correctiv_nursinghomes/_price_comparison.html" %}
+
+      <div class="well">
+        <p>{% trans "We’ve compared ten nursing homes in your area. Important tip: If you’re looking for a good home, do not only compare prices." %}</p>
+      </div>
+
     </div>
   </div>
 
-
   <div class="page__row">
     <div class="page__section">
-      <h3>{% trans "How you can inform yourself" %}</h3>
 
-      {% with reports=object.supervisionreport_set.all %}
-        {% if reports %}
-          <h3>{% trans "Supervision reports" %}</h3>
-          <ul>
-          {% for report in reports %}
-            <li>
-              <a href="{{ report.report.url }}" target="_blank">
-                {{ report.date }}
-                {% if report.report_type %}
-                  ({{ report.report_type }})
-                {% endif %}
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
+      <header class="page__section-header ">
+        <h3 class="page__section-headline">
+          {% trans "How you can get more information" %}
+        </h3>
+      </header>
 
-      {% if object.supervision_authority %}
-        {% if object.supervision_authority.report_url %}
-          <a href="{{ object.supervision_authority.report_url }}">
-            {% trans "The supervision authority makes their reports available here" %}
-          </a>
-          <p>{% trans "If you can't find it, ask below." %}</p>
-        {% endif %}
-
-      {% with fds_url=object.get_request_url %}
-        {% if fds_url %}
-          <a href="{{ fds_url }}" class="btn btn-primary btn-lg">
-            {% trans "Request the report for this nursinghome from the supervision authority" %}
-          </a>
-        {% endif %}
-      {% endwith %}
-
-        <h3>{% trans "Supervision Authority" %}</h3>
-        {% with auth=object.supervision_authority %}
-          {{ auth.name }}
-          {% if auth.email %}
-            {{ auth.email }}
-          {% endif %}
-          {{ auth.address }}
-          {{ auth.contacts }}
-        {% endwith %}
-      {% endif %}
-
-      <h3>{% trans "More Info" %}</h3>
-
-      {% include "correctiv_nursinghomes/_disclaimer.html" %}
+      {% include "correctiv_nursinghomes/_more_info.html" %}
 
     </div>
     <div class="page__sidebar">

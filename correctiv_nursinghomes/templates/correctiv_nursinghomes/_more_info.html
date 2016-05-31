@@ -1,0 +1,51 @@
+{% load i18n %}
+
+<p>
+  {% trans "This home is supervised by the Heimaufsicht (nursing home authority)" %}
+  {% with auth=object.supervision_authority %}
+    <a href="{{ auth.url }}">{{ auth.name }}</a>.
+  {% endwith %}
+</p>
+
+{% with reports=object.supervisionreport_set.all %}
+  {% if reports %}
+    <p>
+      {% trans "The nursing home authority reports on homes periodically. Here is an example of this report." %}
+    </p>
+
+    <ul>
+    {% for report in reports %}
+      <li>
+        <a href="{{ report.report.url }}" target="_blank">
+          {{ report.date }}
+          {% if report.report_type %}
+            ({{ report.report_type }})
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>{% trans "Unfortunately, we don’t have any examples of reports from this home. Please ask the local Heimaufsicht about getting access to these reports." %}</p>
+  {% endif %}
+{% endwith %}
+
+{% if object.supervision_authority %}
+
+  {% if object.supervision_authority.report_url %}
+    <a href="{{ object.supervision_authority.report_url }}">
+      {% trans "The supervision authority makes their reports available here" %}
+    </a>
+    <p>{% trans "If you can't find it, ask below." %}</p>
+  {% endif %}
+
+  {% with fds_url=object.get_request_url %}
+    {% if fds_url %}
+      <a href="{{ fds_url }}" class="btn btn-primary btn-lg">
+        <h4>FragDenStaat.de</h4>
+        <p>{% trans "Request transparency reports from your local Heimaufsicht" %}</p>
+      </a>
+    {% endif %}
+  {% endwith %}
+
+{% endif %}

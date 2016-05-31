@@ -1,0 +1,47 @@
+{% load i18n %}
+
+<p>{% trans "The Medizinische Dienst der Krankenkassen inspects a sample of patients in each nursing home." %}</p>
+
+{% if object.any_red_flag %}
+  <ul class="entry-list">
+    {% if object.red_flag_food %}
+      <li>
+        <article class="nursinghomes__red-flag -food">
+          {% trans "This home didn’t get all points in the category malnutrition." %}
+        </article>
+      </li>
+    {% endif %}
+    {% if object.red_flag_decubitus %}
+      <li>
+        <article class="nursinghomes__red-flag -decubitus">
+          {% trans "This home didn’t get all points in the category caring for patients with bedsores." %}
+        </article>
+      </li>
+    {% endif %}
+    {% if object.red_flag_pain %}
+      <li>
+        <article class="nursinghomes__red-flag -pain">
+          {% trans "This home didn’t get all points in the category pain-therapy." %}
+        </article>
+      </li>
+    {% endif %}
+    {% if object.red_flag_medicine %}
+      <li>
+        <article class="nursinghomes__red-flag -medicine">
+          {% trans "This home didn’t get all points in the category medical treatment." %}
+        </article>
+      </li>
+    {% endif %}
+    {% if object.red_flag_incontinence %}
+      <li>
+        <article class="nursinghomes__red-flag -incontinence">
+          {% trans "This home didn’t get all points in the category caring for patients with incontinence." %}
+        </article>
+      </li>
+    {% endif %}
+  </ul>
+{% else %}
+  <p>
+    {% trans "This home got all points in all the categories we analyzed." %}
+  </p>
+{% endif %}
