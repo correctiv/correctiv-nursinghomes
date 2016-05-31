@@ -58,10 +58,11 @@
 
 {% block content %}
 
-  <div class="row">
-    <div class="col-lg-8">
+  <div class="page__row">
+    <div class="page__section">
     </div>
-    <div class="col-lg-4">
+
+    <div class="page__sidebar">
       <p>
         {{ object.address }}<br/>
         {{ object.postcode }} {{ object.location }}
@@ -79,8 +80,8 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-8">
+  <div class="page__row">
+    <div class="page__section">
       {% if object.any_red_flag %}
         <ul class="entry-list">
           {% if object.red_flag_food %}
@@ -121,19 +122,15 @@
         </ul>
       {% endif %}
     </div>
-    <div class="col-lg-4">
+    <div class="page__sidebar">
       <h3>{% trans "Next 10 nursing homes" %}</h3>
       {% include "correctiv_nursinghomes/_price_comparison.html" %}
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-12">
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-lg-8">
+  <div class="page__row">
+    <div class="page__section">
       <h3>{% trans "How you can inform yourself" %}</h3>
 
       {% with reports=object.supervisionreport_set.all %}
@@ -182,10 +179,12 @@
       {% endif %}
 
       <h3>{% trans "More Info" %}</h3>
+
+      {% include "correctiv_nursinghomes/_disclaimer.html" %}
+
     </div>
-    <div class="col-lg-4">
+    <div class="page__sidebar">
     </div>
   </div>
 
-  {% include "correctiv_nursinghomes/_disclaimer.html" %}
 {% endblock %}
