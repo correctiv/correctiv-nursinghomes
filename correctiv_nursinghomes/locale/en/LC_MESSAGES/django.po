@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-31 10:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps.py:7 cms_app.py:7 cms_plugins.py:11
+msgid "Nursing Homes"
+msgstr ""
+
+#: cms_plugins.py:12
+msgid "Search Tile"
+msgstr ""
+
+#: forms.py:10 templates/correctiv_nursinghomes/base.html:34
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:20
+msgid "Search"
+msgstr ""
+
+#: forms.py:15
+msgid "Enter a name or postcode"
+msgstr ""
+
+#: models.py:64 templates/correctiv_nursinghomes/nursinghome_detail.html:173
+msgid "Supervision Authority"
+msgstr ""
+
+#: models.py:65
+msgid "Supervision Authorities"
+msgstr ""
+
+#: models.py:137
+msgid "Geographic location"
+msgstr ""
+
+#: models.py:156
+msgid "nursing home"
+msgstr ""
+
+#: models.py:157
+msgid "nursing homes"
+msgstr ""
+
+#: models.py:204
+#, python-format
+msgid "Nursing home report of “%s”"
+msgstr ""
+
+#: models.py:241
+msgid "Supervision Report"
+msgstr ""
+
+#: models.py:242
+msgid "Supervision Reports"
+msgstr ""
+
+#: models.py:245
+#, python-format
+msgid "Report on %(date)s by %(auth)s"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_price_comparison.html:22
+msgid "Care level 1"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_price_comparison.html:23
+msgid "Care level 2"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_price_comparison.html:24
+msgid "Care level 3"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:17
+msgid "Home"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:20
+msgid "Replace all selected objects with this object"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:28
+msgid "Replace all selected objects with this object:"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:43
+msgid "Replace selected objects with this object"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/base.html:6
+msgid "Database „Watch out for care!”"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/base.html:9
+msgid "The database about which drugs where pushed by pharma companies."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/base.html:16
+msgid "Database Search"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/base.html:22
+msgid "back to the index"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/base.html:29
+msgid "Search for a nursing home or PLZ"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:70
+msgid "Phone no.:"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:75
+msgid "Website"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:125
+msgid "Next 10 nursing homes"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:137
+msgid "How you can inform yourself"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:141
+msgid "Supervision reports"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:160
+msgid "The supervision authority makes their reports available here"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:162
+msgid "If you can't find it, ask below."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:168
+msgid "Request the report for this nursinghome from the supervision authority"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:184
+msgid "More Info"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:6
+#, python-format
+msgid "Search for „%(query)s” in our nursing home database"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:9
+msgid "The database about nursinghomes."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:18
+msgid "Name"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:34
+msgid "Your search did not give any results"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:8
+msgid "Euros for Doctors"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:14
+msgid "Is your medicine pushed by big pharma?"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:18
+msgid "Drug name"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:25
+msgid "Example:"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:27
+msgid "Avastin"
+msgstr ""
+
+#: urls.py:16
+msgid "^search/$"
+msgstr ""
+
+#: urls.py:17
+msgid "^search/json/$"
+msgstr ""
+
+#: urls.py:19
+msgid "^nursinghome/(?P<slug>[\\w-]+)/$"
+msgstr ""
+
+#: views.py:68
+#, python-format
+msgid "Nursing home %(name)s"
+msgstr ""
+
+#: views.py:69
+#, python-format
+msgid "Detail for the nursing home %(name)s."
+msgstr ""
