@@ -30,6 +30,7 @@
       this.items = opts.items.map(function(item) {
         return {
           name: item.name,
+          url: item.url,
           value: item.prices[selected],
           current: item.current
         }
@@ -50,7 +51,7 @@
 <bar-chart>
 
   <bar-chart-item class="bar-chart__item {-hilight: current}" each={ opts.items }>
-    <a href="#" title={ name } class="bar-chart__label">{ name }</a>
+    <a href="{ url }" title={ name } class="bar-chart__label">{ name }</a>
     <div class="bar-chart__data">
       <span class="bar-chart__bar" style="width: { percentage(value) }%"></span>
       <span class="bar-chart__value">{ currency(value) }</span>
