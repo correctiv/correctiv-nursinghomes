@@ -1,9 +1,10 @@
 {% load i18n %}
 
 <p>
-  {% trans "This home is supervised by the Heimaufsicht (nursing home authority)" %}
   {% with auth=object.supervision_authority %}
-    <a href="{{ auth.url }}">{{ auth.name }}</a>.
+    {% blocktrans with name=auth.name url=auth.url %}
+      This home is supervised by the Heimaufsicht (nursing home authority) <a href="{{ url }}">{{ name }}</a>.
+    {% endblocktrans %}
   {% endwith %}
 </p>
 
