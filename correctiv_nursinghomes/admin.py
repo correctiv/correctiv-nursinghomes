@@ -13,7 +13,7 @@ class SupervisionReportInline(admin.StackedInline):
 class NursingHomeAdmin(LeafletGeoAdmin):
     search_fields = ('name', 'postcode', 'location')
     list_display = ('name', 'location', 'postcode', 'web', 'provider_type')
-    list_filter = ('provider_type', 'state')
+    list_filter = ('provider_type', 'state', 'care_full',)
     raw_id_fields = ('supervision_authority', 'state', 'district')
 
     inlines = [SupervisionReportInline]
