@@ -93,6 +93,9 @@ class NursingHomeManager(SearchManager):
         return [
             {
                 'name': home.name,
+                'location': home.location,
+                'url': home.get_absolute_url(),
+                'latlng': home.geo.geojson,
                 'prices': home.prices,
                 'current': home == obj
             }
