@@ -1,7 +1,8 @@
 {% load i18n %}
 
-<div class="row">
-  <div class="col-md-8">
+<div class="nursinghomes__hero">
+  <div class="page__container">
+
     {% if not is_index %}
       <div class="pull-right">
         <a href="{% url 'nursinghomes:nursinghomes-index' %}">
@@ -9,18 +10,24 @@
         </a>
       </div>
     {% endif %}
-    <form action="{% url 'nursinghomes:nursinghomes-search' %}" method="get">
-      <div class="form-group">
-        <label for="id_q">
-          {% trans "Search for a nursing home or PLZ" %}
-        </label>
-        <div class="input-group">
-          {{ form.q }}
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">{% trans "Search" %}</button>
-          </span>
-        </div>
+
+    <form class="nursinghomes__hero__form" action="{% url 'nursinghomes:nursinghomes-search' %}" method="get">
+
+      <h1 class="nursinghomes__hero__title">
+        {% trans "Nursing Home Guide" %}
+      </h1>
+
+      <p class="nursinghomes__hero__lead">
+        {% trans "What is the quality and costs of Germany’s nursing homes? We analyzed data for every single nursing home in Germany. And we explain how you can find the best possible care for yourself and for your relatives." %}
+      </p>
+
+      <div class="input-group">
+        {{ form.q }}
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">{% trans "Search" %}</button>
+        </span>
       </div>
     </form>
+
   </div>
 </div>

@@ -1,3 +1,64 @@
+.nursinghomes__hero {
+  background-image: url('../img/index-background.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.nursinghomes__hero__title {
+  color: #ff6166;
+  font-size: 48px;
+  text-shadow: 0  0 50px #ffffff;
+}
+
+.nursinghomes__hero__lead {
+  color: #000000;
+  font-size: 19px;
+  text-shadow: 0  0 30px #ffffff;
+  margin-bottom: 15px;
+}
+
+.nursinghomes__hero__input-group {
+  border-collapse: separate;
+  box-sizing: border-box;
+  color: #4d4d4d;
+  display: table;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  position: relative;
+}
+
+.nursinghomes__hero__form button,
+.nursinghomes__hero__form input {
+  font-size: 24px;
+  line-height: 36px;
+  height: 75px;
+  padding: 0 30px;
+  border-radius: 0;
+  border: 0;
+}
+
+.nursinghomes__hero__form button {
+  color: #ffffff;
+  background: #ff6166;
+  padding: 0 60px;
+}
+
+.nursinghomes__hero__form button:hover,
+.nursinghomes__hero__form button:focus,
+.nursinghomes__hero__form button:active {
+  background: #c81455;
+}
+
+@media (min-width: 992px) {
+  .nursinghomes__hero {
+    min-height: 630px;
+  }
+
+  .nursinghomes__hero__form {
+    width: 62%;
+    padding: 150px 0;
+  }
+}
+
 .nursinghomes__red-flag {
   background-size: 80px;
   background-repeat: no-repeat;
