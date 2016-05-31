@@ -67,9 +67,11 @@
         {{ object.address }}<br/>
         {{ object.postcode }} {{ object.location }}
       </p>
-      <p>
-        {% trans "Phone no.:" %} {{ object.data.Telefon }}
-      </p>
+      {% if object.data.Telefon %}
+        <p>
+          {% trans "Phone no.:" %} {{ object.data.Telefon }}
+        </p>
+      {% endif %}
       {% if object.web %}
         <p>
           <a href="{{ object.web }}">
