@@ -33,14 +33,13 @@
         map.setView(latLng, 12);
       }
     </script>
-
   {% endaddtoblock %}
 
   <header class="custom-leaflet-map">
 
     <div class="custom-leaflet-map__container">
       <header class="custom-leaflet-map__header">
-        <a href="#">
+        <a href="{% url 'nursinghomes:nursinghomes-index' %}">
           <h1 class="custom-leaflet-map__app-title">
             {% trans "Nursing Home Guide" %}
           </h1>
