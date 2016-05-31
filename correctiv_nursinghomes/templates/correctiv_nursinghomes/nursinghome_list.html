@@ -10,12 +10,15 @@
 {% endblock %}
 
 {% block content %}
+{% include "correctiv_nursinghomes/_search.html" %}
 {% if object_list %}
   <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
           <th>{% trans "Name" %}</th>
+          <th>{% trans "Address" %}</th>
+          <th>{% trans "Distance" %}</th>
         </tr>
       </thead>
     {% for object in object_list %}
@@ -24,6 +27,12 @@
           <a href="{{ object.get_absolute_url }}">
             {{ object.name }}
           </a>
+        </td>
+        <td>
+          {{ object.address }}, {{ object.postcode }} {{ object.location }}
+        </td>
+        <td>
+          {{ object.distance }}
         </td>
       </tr>
     {% endfor %}

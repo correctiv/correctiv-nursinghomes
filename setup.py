@@ -35,7 +35,8 @@ setup(
     install_requires=[
         'Django',
         'djorm-ext-pgfulltext>=0.9.3',
-        'django-leaflet'
+        'django-leaflet',
+        'requests'
     ],
     include_package_data=True,
     classifiers=[

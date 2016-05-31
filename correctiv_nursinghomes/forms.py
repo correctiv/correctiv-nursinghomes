@@ -12,18 +12,17 @@ class SearchForm(forms.Form):
             attrs={
                 'type': 'search',
                 'class': 'form-control',
-                'placeholder': _('Enter a name or postcode')
+                'placeholder': _('Enter a location or postcode')
             }))
 
-    def search(self, queryset, autocomplete=False):
-        if not self.is_valid():
-            return queryset
-
-        query = self.cleaned_data['q'].strip().split()
-        query = [q.encode('utf-8') for q in query]
-        if autocomplete:
-            return NursingHome.objects.autocomplete(queryset, query)
-        return NursingHome.objects.search(queryset, query)
-
-    def autocomplete(self, queryset):
-        return self.search(queryset, autocomplete=True)
+    # def search(self, queryset, autocomplete=False):
+    #     if not self.is_valid():
+    #         return queryset
+    #
+    #     query = self.cleaned_data['q'].strip()
+    #     if autocomplete:
+    #         return NursingHome.objects.autocomplete(queryset, query)
+    #     return NursingHome.objects.search(queryset, query)
+    #
+    # def autocomplete(self, queryset):
+    #     return self.search(queryset, autocomplete=True)

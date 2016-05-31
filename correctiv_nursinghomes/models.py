@@ -68,11 +68,16 @@ class SupervisionAuthority(models.Model):
         return self.name
 
 
+def _prepare_query(query):
+    return [q.encode('utf-8') for q in query.split()]
+
+
 class NursingHomeManager(SearchManager):
     def get_by_natural_key(self, slug):
         return self.get(slug=slug)
 
     def search(self, qs, query):
+        query = _prepare_query(query)
         if query:
             qs = qs.filter(
                 search_index__ft_search=(self.config, query)
@@ -80,13 +85,20 @@ class NursingHomeManager(SearchManager):
         return qs
 
     def autocomplete(self, qs, query):
+        query = _prepare_query(query)
         if query:
             query = startswith(query)
             qs = qs.search(' & '.join(query), raw=True)
         return qs
 
     def get_by_distance(self, home, limit=10):
-        return self.get_queryset().annotate(distance=Distance('geo', home.geo)).order_by('distance')[:limit]
+        return self.get_by_distance_to_point(home.geo, limit=limit)
+
+    def get_by_distance_to_point(self, point, limit=10):
+        qs = self.get_queryset().annotate(distance=Distance('geo', point)).order_by('distance')
+        if limit:
+            qs = qs[:limit]
+        return qs
 
     def get_json_for_page(self, obj):
         homes = self.get_by_distance(obj)
