@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load humanize %}
+
+<p>
+  {% trans "For the past few months, Correctiv has looked through the inspection reports of every nursing home in Germany." %}
+</p>
+
+<p>
+{% if object.any_red_flag %}
+  {% blocktrans with name=object.name redflag=object.red_flag_count|apnumber count count=object.red_flag_count %}
+    Our analysis shows that {{ name }} doesn’t get all points in one important category.
+  {% plural %}
+    Our analysis shows that {{ name }} doesn’t get all points in {{ redflag }} important categories.
+  {% endblocktrans %}
+{% else %}
+  {% trans "We’ve analyzed five criteria and this nursing home’s report shows it doesn’t have problems in any of these areas. However, this doesn’t necessarily indicate that it is a good nursing home." %}
+{% endif %}
+</p>
+
+<p>
+  {% blocktrans with name=object.name location=object.location medical_grade=object.grade_care grade_comp=object.compare_care_grade_state|yesno:_("better,worse,equal") state=object.state.name %}
+    The nursing home {{ name }} in {{ location }} has a {{ medical_grade }} for their medical care, which is {{ grade_comp }} compared to other nursing homes in {{ state }}.
+  {% endblocktrans %}
+  {% trans "Keep in mind that almost all nursing homes get very good grades, so this shouldn’t be a key indicator for you." %}
+</p>
+
+<p>
+  {% blocktrans with price_range=object.price_range price_increase=object.price_increase state=object.state.name %}
+  The home is {{ price_range }} and you have to pay {{ price_increase }} compared to other nursing homes in {{ state }}.
+  {% endblocktrans %}
+
+  {% blocktrans with national_average=object.national_average_price %}
+    Nationally, the average is {{ national_average }} €.
+  {% endblocktrans %}
+
+  {% blocktrans with name=object.name size_comp=object.bedsize_comp size=object.bedsize age_years=object.age_years age_comp=object.age_comp %}
+  {{ name }} is a {{ size_comp }} home with {{ size }} beds and is {{ age_years }} years old, which is {{ age_comp }} compared to all other nursing homes in Germany.
+  {% endblocktrans %}
+
+  {% blocktrans with provider_type=object.get_provider_type_display %}
+    The home belongs to a {{ provider_type }} company.
+  {% endblocktrans %}
+
+{% if object.provider_type == "privat" %}
+  {% trans "Therefore it could be that the staff doesn’t get paid unionized wages." %}
+{% endif %}
+</p>
+
+<p>
+  {% blocktrans with insurance=object.data.insurance authority=object.get_supervision_authority_link mdk=object.get_mdk_region %}
+    If you want to inquire about this home you can talk to the insurance company {{ insurance }} or reach out to the {{ authority }} or the {{ mdk }}.
+  {% endblocktrans %}
+</p>
