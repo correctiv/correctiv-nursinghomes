@@ -36,8 +36,13 @@
         var map = event.detail.map;
         var home = JSON.parse('{{ object.geo.geojson|safe }}');
         var latLng = home.coordinates.reverse();
+        var defaultIcon = L.icon({
+          iconUrl: '/static/correctiv_nursinghomes/img/map-marker--hilight.svg',
+          iconSize: [18, 30],
+          iconAnchor: [9, 26]
+        });
 
-        L.marker(latLng).addTo(map);
+        L.marker(latLng, {icon: defaultIcon}).addTo(map);
         map.setView(latLng, 12);
         map.zoomControl.setPosition('topright');
         map.scrollWheelZoom.disable();
