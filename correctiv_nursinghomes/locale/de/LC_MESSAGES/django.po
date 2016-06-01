@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-01 15:56+0200\n"
-"PO-Revision-Date: 2016-06-01 15:58+0100\n"
+"POT-Creation-Date: 2016-06-01 19:00+0200\n"
+"PO-Revision-Date: 2016-06-01 19:01+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -66,90 +66,90 @@ msgstr "Pflegeheim"
 msgid "nursing homes"
 msgstr "Pflegeheime"
 
-#: models.py:372
+#: models.py:381
 msgid "very small"
 msgstr "sehr klein"
 
-#: models.py:373
+#: models.py:382
 msgid "small"
 msgstr "klein"
 
-#: models.py:374
+#: models.py:383
 msgid "normal-sized"
 msgstr "normal groß"
 
-#: models.py:375
+#: models.py:384
 msgid "big"
 msgstr "groß"
 
-#: models.py:376
+#: models.py:385
 msgid "very big"
 msgstr "sehr groß"
 
-#: models.py:388
+#: models.py:397
 msgid "very young"
 msgstr "sehr jung"
 
-#: models.py:389
+#: models.py:398
 msgid "young"
 msgstr "jung"
 
-#: models.py:390
+#: models.py:399
 msgid "a normal age"
 msgstr "normal alt"
 
-#: models.py:391
+#: models.py:400
 msgid "old"
 msgstr "alt"
 
-#: models.py:392
+#: models.py:401
 msgid "very old"
 msgstr "sehr alt"
 
-#: models.py:401
+#: models.py:410
 msgid "very cheap"
 msgstr "sehr günstig"
 
-#: models.py:402
+#: models.py:411
 msgid "cheap"
 msgstr "günstig"
 
-#: models.py:403
+#: models.py:412
 msgid "moderately priced"
 msgstr "normal bepreist"
 
-#: models.py:404
+#: models.py:413
 msgid "expensive"
 msgstr "teuer"
 
-#: models.py:405
+#: models.py:414
 msgid "very expensive"
 msgstr "sehr teuer"
 
-#: models.py:415
+#: models.py:424
 #, python-format
 msgid "%d%% less"
 msgstr "%d%% weniger"
 
-#: models.py:416
+#: models.py:425
 #, python-format
 msgid "%d%% more"
 msgstr "%d%% mehr"
 
-#: models.py:451
+#: models.py:460
 #, python-format
 msgid "Nursing home report of “%s”"
 msgstr "Transparenzbericht von “%s“"
 
-#: models.py:488
+#: models.py:497
 msgid "Supervision Report"
 msgstr "Transparenzbericht"
 
-#: models.py:489
+#: models.py:498
 msgid "Supervision Reports"
 msgstr "Transparenzberichte"
 
-#: models.py:492
+#: models.py:501
 #, python-format
 msgid "Report on %(date)s by %(auth)s"
 msgstr "Transparenzbericht über %(date)s von %(auth)s"
@@ -179,6 +179,11 @@ msgstr "Wie viel oder wenig sagen diese Daten aus?"
 #: templates/correctiv_nursinghomes/_disclaimer.html:12
 msgid "Download the transparency report here"
 msgstr "Transparenzbericht herunterladen"
+
+#: templates/correctiv_nursinghomes/_map.html:11
+#: templates/correctiv_nursinghomes/_search.html:17
+msgid "Nursing Home Guide"
+msgstr "Wegweiser Pflege"
 
 #: templates/correctiv_nursinghomes/_more_info.html:5
 #, python-format
@@ -217,12 +222,8 @@ msgstr ""
 "          "
 
 #: templates/correctiv_nursinghomes/_more_info.html:38
-msgid ""
-"Unfortunately, we don’t have any examples of reports from this home. Please "
-"ask the local Heimaufsicht about getting access to these reports."
-msgstr ""
-"Leider können wir Euch keine Prüfberichte dieses Heimes zur Verfügung "
-"stellen. Fragt Eure Heimaufsicht nach dem Prüfbericht. "
+msgid "Unfortunately, we don’t have any examples of reports from this home."
+msgstr "Leider liegen uns keine Prüfberichte dieses Heimes vor."
 
 #: templates/correctiv_nursinghomes/_more_info.html:49
 msgid "The supervision authority makes their reports available here"
@@ -453,11 +454,6 @@ msgstr ""
 msgid "back to the index"
 msgstr "Zurück zur Übersicht"
 
-#: templates/correctiv_nursinghomes/_search.html:17
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:44
-msgid "Nursing Home Guide"
-msgstr "Wegweiser Pflege"
-
 #: templates/correctiv_nursinghomes/_search.html:21
 msgid ""
 "What is the quality and costs of Germany’s nursing homes? We analyzed data "
@@ -496,23 +492,23 @@ msgstr "Datenbank: Correctiv Pflegewegweiser"
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr "Der Correctiv-Pflegewegweiser"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:77
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:33
 msgid "Phone no.:"
 msgstr "Telefonnummer"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:83
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:39
 msgid "Website"
 msgstr "Webseite"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:95
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:51
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:108
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:64
 msgid "Compare prices"
 msgstr "Preisvergleich"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:115
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:71
 msgid ""
 "We’ve compared ten nursing homes in your area. Important tip: If you’re "
 "looking for a good home, do not only compare prices."
@@ -520,32 +516,28 @@ msgstr ""
 "Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Wichtig: Wer "
 "ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:126
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:86
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:6
+#: templates/correctiv_nursinghomes/nursinghome_list.html:8
 #, python-format
 msgid "Search for „%(query)s” in our nursing home database"
 msgstr "Suche nach „%(query)s“ im Correctiv-Pflegewegweiser"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:9
+#: templates/correctiv_nursinghomes/nursinghome_list.html:11
 msgid "The database about nursinghomes."
 msgstr "Der Correctiv-Pflegewegweiser."
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:22
+#: templates/correctiv_nursinghomes/nursinghome_list.html:30
 msgid "Name"
 msgstr "Name"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:23
+#: templates/correctiv_nursinghomes/nursinghome_list.html:31
 msgid "Address"
 msgstr "Adresse"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:24
-msgid "Distance"
-msgstr "Distanz"
-
-#: templates/correctiv_nursinghomes/nursinghome_list.html:46
+#: templates/correctiv_nursinghomes/nursinghome_list.html:50
 msgid "Your search did not give any results"
 msgstr "Sorry, für Deine Suche haben wir leider keine Ergebnisse gefunden."
 
@@ -555,6 +547,16 @@ msgid ""
 "the nursing home report for the nursing home “%(name)s” at this address:"
 msgstr ""
 "den Heimaufsichtsbericht für das Pflegeheim „%(name)s“ unter dieser Adresse:"
+
+#: templates/correctiv_nursinghomes/request_email.txt:6
+msgid ""
+"I'm (possibly) affected myself, so please send me the complete report. If "
+"you need to apply redactions, please do."
+msgstr ""
+"Ich bin (potentiell) betroffen von den Verhältnissen in diesem Heim und "
+"bitte Sie deshalb, mir den kompletten aktuellen Prüfbericht zukommen "
+"zulassen. Persönliche Daten können Sie gerne ohne Rücksprache mit mir "
+"schwärzen."
 
 #: urls.py:16
 msgid "^search/$"
@@ -577,6 +579,9 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
+
+#~ msgid "Distance"
+#~ msgstr "Distanz"
 
 #~ msgid "Preisvergleich"
 #~ msgstr "Compare prices"
