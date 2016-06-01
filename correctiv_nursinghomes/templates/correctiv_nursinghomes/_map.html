@@ -43,9 +43,16 @@
         });
 
         L.marker(latLng, {icon: defaultIcon}).addTo(map);
-        map.setView(latLng, 12);
         map.zoomControl.setPosition('topright');
         map.scrollWheelZoom.disable();
+        map.setView(latLng, 12);
+
+        // Offset the map to make space for the title:
+        if (document.documentElement.clientWidth < 768) {
+          map.panBy(new L.Point(0, 60), {animate: false});
+        } else {
+          map.panBy(new L.Point(-250, 0), {animate: false});
+        }
       })
     </script>
   {% endaddtoblock %}
