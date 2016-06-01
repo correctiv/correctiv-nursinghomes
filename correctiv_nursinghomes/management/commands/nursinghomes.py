@@ -23,7 +23,6 @@ import unicodecsv
 from geogermany.models import State, District, Municipality, Borough
 
 from ...models import NursingHome, SupervisionAuthority, SupervisionReport
-from ...reports import index_pdfs, search_reports
 
 
 def convert_timestamp(ts):
@@ -404,10 +403,14 @@ class Command(BaseCommand):
                     NursingHome.objects.filter(state=rp_state, district=district, supervision_authority__isnull=True, geo__coveredby=muni.geom).update(supervision_authority=auth)
 
     def index_reports(self, *args, **options):
+        from ...reports import index_pdfs
+
         base_path = options['filename']
         index_pdfs(get_pdfs_in_dir(base_path))
 
     def search_reports(self, *args, **options):
+        from ...reports import search_reports
+
         states = ['mecklenburg-vorpommern', 'bayern', 'nordrhein-westfalen']
         for state in states:
             state_matches = defaultdict(list)

@@ -36,7 +36,8 @@ setup(
         'Django',
         'djorm-ext-pgfulltext>=0.9.3',
         'django-leaflet',
-        'requests'
+        'requests',
+        'pandas'
     ],
     include_package_data=True,
     classifiers=[
