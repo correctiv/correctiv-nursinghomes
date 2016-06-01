@@ -4,7 +4,6 @@
 {% load number_utils %}
 {% load humanize %}
 {% load sekizai_tags %}
-{% load leaflet_tags %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -13,51 +12,7 @@
 {% endblock %}
 
 {% block top_search %}
-
-  {% addtoblock "css" %}
-    {% leaflet_css %}
-  {% endaddtoblock %}
-
-  {% addtoblock "js" %}
-    {% leaflet_js %}
-  {% endaddtoblock %}
-
-  {% addtoblock "js" %}
-    <script type="text/javascript">
-      function map_init_basic (map, options) {
-        map.scrollWheelZoom.disable();
-        var home = JSON.parse('{{ object.geo.geojson|safe }}');
-        var latLng = home.coordinates.reverse();
-        L.marker(latLng).addTo(map);
-        map.zoomControl.setPosition('topright');
-        map.setView(latLng, 12);
-      }
-    </script>
-  {% endaddtoblock %}
-
-  <header class="custom-leaflet-map">
-
-    <div class="custom-leaflet-map__container">
-      <header class="custom-leaflet-map__header">
-        <a href="{% url 'nursinghomes:nursinghomes-index' %}">
-          <h1 class="custom-leaflet-map__app-title">
-            {% trans "Nursing Home Guide" %}
-          </h1>
-        </a>
-        <h2 class="custom-leaflet-map__title">
-          {{ object.name }}
-        </h2>
-        <p class="custom-leaflet-map__subtitle">
-          {{ object.provider_type }}
-        </p>
-      </header>
-    </div>
-
-    {% leaflet_map "yourmap" callback="window.map_init_basic" %}
-
-  </header>
-
-
+  {% include "correctiv_nursinghomes/_map.html" %}
 {% endblock %}
 
 {% block content %}

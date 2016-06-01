@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load sekizai_tags %}
+{% load leaflet_tags %}
+
+<header class="custom-leaflet-map">
+
+  <div class="custom-leaflet-map__container">
+    <header class="custom-leaflet-map__header">
+      <a href="{% url 'nursinghomes:nursinghomes-index' %}">
+        <h1 class="custom-leaflet-map__app-title">
+          {% trans "Nursing Home Guide" %}
+        </h1>
+      </a>
+      <h2 class="custom-leaflet-map__title">
+        {{ object.name }}
+      </h2>
+      <p class="custom-leaflet-map__subtitle">
+        {{ object.provider_type }}
+      </p>
+    </header>
+  </div>
+
+  {% leaflet_map "nursinghomes" %}
+
+  {% addtoblock "css" %}
+    {% leaflet_css %}
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+    {% leaflet_js %}
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+    <script>
+      window.addEventListener("map:init", function (event) {
+        var map = event.detail.map;
+        var home = JSON.parse('{{ object.geo.geojson|safe }}');
+        var latLng = home.coordinates.reverse();
+
+        L.marker(latLng).addTo(map);
+        map.setView(latLng, 12);
+        map.zoomControl.setPosition('topright');
+        map.scrollWheelZoom.disable();
+      })
+    </script>
+  {% endaddtoblock %}
+
+</header>
