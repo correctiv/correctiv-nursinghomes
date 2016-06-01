@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-01 11:19+0200\n"
+"POT-Creation-Date: 2016-06-01 15:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,22 +188,36 @@ msgid ""
 "of this report."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_more_info.html:30
+#: templates/correctiv_nursinghomes/_more_info.html:33
+#, python-format
+msgid ""
+"\n"
+"            We don't have report for this nursing home, but <a href=\"%(url)s"
+"\" target=\"_blank\">here is an example of how it looks like in your state</"
+"a>.\n"
+"          "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:38
 msgid ""
 "Unfortunately, we don’t have any examples of reports from this home. Please "
 "ask the local Heimaufsicht about getting access to these reports."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_more_info.html:38
+#: templates/correctiv_nursinghomes/_more_info.html:49
 msgid "The supervision authority makes their reports available here"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_more_info.html:40
+#: templates/correctiv_nursinghomes/_more_info.html:51
 msgid "If you can't find it, ask below."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_more_info.html:47
-msgid "Request transparency reports from your local Heimaufsicht"
+#: templates/correctiv_nursinghomes/_more_info.html:58
+msgid "Request your report with FragDenStaat.de"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_more_info.html:60
+msgid "Click here to request reports from your local Heimaufsicht"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:5
@@ -417,7 +431,7 @@ msgid "From the transparency report"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:108
-msgid "Preisvergleich"
+msgid "Compare prices"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:115
@@ -439,19 +453,19 @@ msgstr ""
 msgid "The database about nursinghomes."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:19
+#: templates/correctiv_nursinghomes/nursinghome_list.html:22
 msgid "Name"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:20
+#: templates/correctiv_nursinghomes/nursinghome_list.html:23
 msgid "Address"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:21
+#: templates/correctiv_nursinghomes/nursinghome_list.html:24
 msgid "Distance"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:43
+#: templates/correctiv_nursinghomes/nursinghome_list.html:46
 msgid "Your search did not give any results"
 msgstr ""
 

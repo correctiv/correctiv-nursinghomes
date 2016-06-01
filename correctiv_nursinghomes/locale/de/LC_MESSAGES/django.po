@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-01 11:19+0200\n"
-"PO-Revision-Date: 2016-06-01 11:20+0100\n"
+"POT-Creation-Date: 2016-06-01 15:56+0200\n"
+"PO-Revision-Date: 2016-06-01 15:58+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -201,7 +201,22 @@ msgstr ""
 "Diese Aufsicht erstellt regelmäßig Prüfberichte. Einen Prüfbericht des Heims "
 "stellen wir Euch hier zur Verfügung."
 
-#: templates/correctiv_nursinghomes/_more_info.html:30
+#: templates/correctiv_nursinghomes/_more_info.html:33
+#, python-format
+msgid ""
+"\n"
+"            We don't have report for this nursing home, but <a href=\"%(url)s"
+"\" target=\"_blank\">here is an example of how it looks like in your state</"
+"a>.\n"
+"          "
+msgstr ""
+"\n"
+"            Wir haben keine Prüfberichte für dieses Pflegeheim, aber <a href="
+"\"%(url)s\" target=\"_blank\">hier ist ein Beispiel, wie ein Prüfbericht in "
+"deinem Bundesland aussieht</a>.\n"
+"          "
+
+#: templates/correctiv_nursinghomes/_more_info.html:38
 msgid ""
 "Unfortunately, we don’t have any examples of reports from this home. Please "
 "ask the local Heimaufsicht about getting access to these reports."
@@ -209,19 +224,24 @@ msgstr ""
 "Leider können wir Euch keine Prüfberichte dieses Heimes zur Verfügung "
 "stellen. Fragt Eure Heimaufsicht nach dem Prüfbericht. "
 
-#: templates/correctiv_nursinghomes/_more_info.html:38
+#: templates/correctiv_nursinghomes/_more_info.html:49
 msgid "The supervision authority makes their reports available here"
 msgstr "Die Heimaufsicht macht ihre Berichte hier verfügbar."
 
-#: templates/correctiv_nursinghomes/_more_info.html:40
+#: templates/correctiv_nursinghomes/_more_info.html:51
 msgid "If you can't find it, ask below."
 msgstr ""
 "Falls kein Prüfbericht verfügbar ist, könnt Ihr unten nach einem Prüfbericht "
 "fragen."
 
-#: templates/correctiv_nursinghomes/_more_info.html:47
-msgid "Request transparency reports from your local Heimaufsicht"
-msgstr "Prüfberichte bei der zuständigen Heimaufsicht anfragen"
+#: templates/correctiv_nursinghomes/_more_info.html:58
+msgid "Request your report with FragDenStaat.de"
+msgstr "Frag nach den Prüfberichten mit FragDenStaat.de"
+
+#: templates/correctiv_nursinghomes/_more_info.html:60
+msgid "Click here to request reports from your local Heimaufsicht"
+msgstr ""
+"Klick hier, um Prüfberichte bei der zuständigen Heimaufsicht anzufragen"
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:5
 msgid ""
@@ -489,8 +509,8 @@ msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:108
-msgid "Preisvergleich"
-msgstr "Compare prices"
+msgid "Compare prices"
+msgstr "Preisvergleich"
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:115
 msgid ""
@@ -513,19 +533,19 @@ msgstr "Suche nach „%(query)s“ im Correctiv-Pflegewegweiser"
 msgid "The database about nursinghomes."
 msgstr "Der Correctiv-Pflegewegweiser."
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:19
+#: templates/correctiv_nursinghomes/nursinghome_list.html:22
 msgid "Name"
 msgstr "Name"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:20
+#: templates/correctiv_nursinghomes/nursinghome_list.html:23
 msgid "Address"
 msgstr "Adresse"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:21
+#: templates/correctiv_nursinghomes/nursinghome_list.html:24
 msgid "Distance"
 msgstr "Distanz"
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:43
+#: templates/correctiv_nursinghomes/nursinghome_list.html:46
 msgid "Your search did not give any results"
 msgstr "Sorry, für Deine Suche haben wir leider keine Ergebnisse gefunden."
 
@@ -557,6 +577,9 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
+
+#~ msgid "Preisvergleich"
+#~ msgstr "Compare prices"
 
 #~ msgid "Search for a nursing home or PLZ"
 #~ msgstr "Suche ein Pflegeheim oder eine Postleitzahl"
