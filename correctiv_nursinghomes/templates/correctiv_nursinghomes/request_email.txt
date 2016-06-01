@@ -2,4 +2,6 @@
 
 {{ address }}
 {{ postcode }} {{ location }}
+
+{% trans "I'm (possibly) affected myself, so please send me the complete report. If you need to apply redactions, please do." %}
 {% endlanguage %}{% endautoescape %}
