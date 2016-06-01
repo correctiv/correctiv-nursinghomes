@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-31 18:40+0200\n"
-"PO-Revision-Date: 2016-05-31 18:40+0100\n"
+"POT-Creation-Date: 2016-06-01 11:19+0200\n"
+"PO-Revision-Date: 2016-06-01 11:20+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Nursing Homes"
 msgstr "Pflegeheime"
 
-#: forms.py:10 templates/correctiv_nursinghomes/_search.html:20
+#: forms.py:10 templates/correctiv_nursinghomes/_search.html:27
 msgid "Search"
 msgstr "Suche"
 
@@ -429,13 +429,28 @@ msgstr ""
 "Dieses Heim hat in allen von uns analysierten Bereichen die volle Punktzahl "
 "erreicht."
 
-#: templates/correctiv_nursinghomes/_search.html:8
+#: templates/correctiv_nursinghomes/_search.html:9
 msgid "back to the index"
 msgstr "Zurück zur Übersicht"
 
-#: templates/correctiv_nursinghomes/_search.html:15
-msgid "Search for a nursing home or PLZ"
-msgstr "Suche ein Pflegeheim oder eine Postleitzahl"
+#: templates/correctiv_nursinghomes/_search.html:17
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:44
+msgid "Nursing Home Guide"
+msgstr "Wegweiser Pflege"
+
+#: templates/correctiv_nursinghomes/_search.html:21
+msgid ""
+"What is the quality and costs of Germany’s nursing homes? We analyzed data "
+"for every single nursing home in Germany. And we explain how you can find "
+"the best possible care for yourself and for your relatives."
+msgstr ""
+"Wie gut und wie teuer sind Deutschlands Pflegeheime? Wir haben Daten zu "
+"jedem einzelnen Heim in Deutschland ausgewertet. Und erklären, wie Ihr für "
+"Euch oder Eure Angehörigen die bestmögliche Pflege findet."
+
+#: templates/correctiv_nursinghomes/_search.html:32
+msgid "Examples:"
+msgstr "Beispiele:"
 
 #: templates/correctiv_nursinghomes/admin/replace_objects.html:17
 msgid "Home"
@@ -461,27 +476,23 @@ msgstr "Datenbank: Correctiv Pflegewegweiser"
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr "Der Correctiv-Pflegewegweiser"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:45
-msgid "Nursing Home Guide"
-msgstr "Wegweiser Pflege"
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:77
 msgid "Phone no.:"
 msgstr "Telefonnummer"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:84
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:83
 msgid "Website"
 msgstr "Webseite"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:96
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:95
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:109
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:108
 msgid "Preisvergleich"
 msgstr "Compare prices"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:116
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:115
 msgid ""
 "We’ve compared ten nursing homes in your area. Important tip: If you’re "
 "looking for a good home, do not only compare prices."
@@ -489,7 +500,7 @@ msgstr ""
 "Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Wichtig: Wer "
 "ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:127
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:126
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
@@ -547,14 +558,14 @@ msgstr "Pflegeheim %(name)s"
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
 
+#~ msgid "Search for a nursing home or PLZ"
+#~ msgstr "Suche ein Pflegeheim oder eine Postleitzahl"
+
 #~ msgid "Search Tile"
 #~ msgstr "Suchfenster"
 
 #~ msgid "Euros for Doctors"
 #~ msgstr "#NeuePflege"
-
-#~ msgid "Example:"
-#~ msgstr "Beispiel:"
 
 #~ msgid "Database Search"
 #~ msgstr "Datenbank-Suche"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-31 18:40+0200\n"
+"POT-Creation-Date: 2016-06-01 11:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Nursing Homes"
 msgstr ""
 
-#: forms.py:10 templates/correctiv_nursinghomes/_search.html:20
+#: forms.py:10 templates/correctiv_nursinghomes/_search.html:27
 msgid "Search"
 msgstr ""
 
@@ -360,12 +360,24 @@ msgstr ""
 msgid "This home got all points in all the categories we analyzed."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_search.html:8
+#: templates/correctiv_nursinghomes/_search.html:9
 msgid "back to the index"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_search.html:15
-msgid "Search for a nursing home or PLZ"
+#: templates/correctiv_nursinghomes/_search.html:17
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:44
+msgid "Nursing Home Guide"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_search.html:21
+msgid ""
+"What is the quality and costs of Germany’s nursing homes? We analyzed data "
+"for every single nursing home in Germany. And we explain how you can find "
+"the best possible care for yourself and for your relatives."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/_search.html:32
+msgid "Examples:"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/admin/replace_objects.html:17
@@ -392,33 +404,29 @@ msgstr ""
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:45
-msgid "Nursing Home Guide"
-msgstr ""
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:77
 msgid "Phone no.:"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:84
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:83
 msgid "Website"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:96
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:95
 msgid "From the transparency report"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:109
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:108
 msgid "Preisvergleich"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:116
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:115
 msgid ""
 "We’ve compared ten nursing homes in your area. Important tip: If you’re "
 "looking for a good home, do not only compare prices."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:127
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:126
 msgid "How you can get more information"
 msgstr ""
 
