@@ -291,6 +291,7 @@ class NursingHome(models.Model):
 
     search_index = VectorField()
 
+    default_manager = models.Manager()
     objects = NursingHomeManager(
         fields=[
             ('name', 'A'),
