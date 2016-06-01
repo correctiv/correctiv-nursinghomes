@@ -4,6 +4,7 @@
 {% load number_utils %}
 {% load humanize %}
 {% load sekizai_tags %}
+{% load cms_tags %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -74,6 +75,10 @@
   </div>
 
   <div class="page__row">
+    {% static_placeholder "nursinghomes-detailbreak" %}
+  </div>
+
+  <div class="page__row">
     <div class="page__section">
 
       <header class="page__section-header ">
@@ -86,6 +91,7 @@
 
     </div>
     <div class="page__sidebar">
+      {% static_placeholder "nursinghomes-detailsidebar" %}
     </div>
   </div>
 
