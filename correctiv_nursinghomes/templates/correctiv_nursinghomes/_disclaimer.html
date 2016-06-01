@@ -8,10 +8,13 @@
     <li>
       <a href="#">{% trans "What does this data really reveal?" %}</a>
     </li>
+    {% if object.data.aok_report_id %}
     <li>
-      <a href="#">{% trans "Download the transparency report here" %}</a>
+      <a href="http://www.aok-pflegeheimnavigator.de/index.php?id={{ object.data.aok_report_id|floatformat:0 }}&amp;action=popup&amp;popuptitle=showDetailPflegekarte&amp;layout=detailpflegekarte" target="_blank">
+        {% trans "Download the transparency report here" %}
+      </a>
     </li>
+    {% endif %}
   </ul>
 
 </div>
-
