@@ -328,6 +328,15 @@ class NursingHome(models.Model):
             'slug': self.slug
         })
 
+    def get_example_report(self):
+        reports = SupervisionReport.objects.filter(report_by=self.supervision_authority)[:1]
+        if not reports:
+            reports = SupervisionReport.objects.filter(report_by__state=self.state)[:1]
+
+        if reports:
+            return reports[0]
+        return None
+
     @property
     def any_red_flag(self):
         return any([getattr(self, n) for n in self.RED_FLAGS])

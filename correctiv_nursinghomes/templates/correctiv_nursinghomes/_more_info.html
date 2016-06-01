@@ -27,24 +27,38 @@
     {% endfor %}
     </ul>
   {% else %}
-    <p>{% trans "Unfortunately, we don’t have any examples of reports from this home. Please ask the local Heimaufsicht about getting access to these reports." %}</p>
+    {% with example_report=object.get_example_report %}
+      {% if example_report %}
+        <p>
+          {% blocktrans with url=example_report.report.url %}
+            We don't have report for this nursing home, but <a href="{{ url }}" target="_blank">here is an example of how it looks like in your state</a>.
+          {% endblocktrans %}
+        </p>
+      {% else %}
+        <p>{% trans "Unfortunately, we don’t have any examples of reports from this home. Please ask the local Heimaufsicht about getting access to these reports." %}</p>
+      {% endif %}
+    {% endwith %}
   {% endif %}
 {% endwith %}
 
 {% if object.supervision_authority %}
 
   {% if object.supervision_authority.report_url %}
-    <a href="{{ object.supervision_authority.report_url }}">
-      {% trans "The supervision authority makes their reports available here" %}
-    </a>
-    <p>{% trans "If you can't find it, ask below." %}</p>
+    <p>
+      <a href="{{ object.supervision_authority.report_url }}">
+        {% trans "The supervision authority makes their reports available here" %}
+      </a>
+      {% trans "If you can't find it, ask below." %}
+    </p>
   {% endif %}
 
   {% with fds_url=object.get_request_url %}
     {% if fds_url %}
-      <a href="{{ fds_url }}" class="btn btn-primary btn-lg">
-        <h4>FragDenStaat.de</h4>
-        <p>{% trans "Request transparency reports from your local Heimaufsicht" %}</p>
+      <a href="{{ fds_url }}" class="btn btn-primary btn-block">
+        <h4>{% trans "Request your report with FragDenStaat.de" %}</h4>
+        <p>
+          {% trans "Click here to request reports from your local Heimaufsicht" %}
+        </p>
       </a>
     {% endif %}
   {% endwith %}

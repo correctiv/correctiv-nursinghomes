@@ -9,8 +9,11 @@
 <meta name="description" content="{% blocktrans %}The database about nursinghomes.{% endblocktrans %}">
 {% endblock %}
 
+{% block top_search %}
+  {% include "correctiv_nursinghomes/_search.html" %}
+{% endblock %}
+
 {% block content %}
-{% include "correctiv_nursinghomes/_search.html" %}
 {% if object_list %}
   <div class="table-responsive">
     <table class="table">
