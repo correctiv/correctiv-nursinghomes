@@ -45,7 +45,18 @@
 .nursinghomes__hero__form button:hover,
 .nursinghomes__hero__form button:focus,
 .nursinghomes__hero__form button:active {
+  color: #ffffff;
   background: #c81455;
+}
+
+.nursinghomes__hero__examples {
+  color: #000000;
+  text-shadow: 0  0 30px #ffffff;
+  margin-top: 15px;
+}
+
+.nursinghomes__hero__examples > a {
+  text-decoration: underline;
 }
 
 @media (min-width: 992px) {

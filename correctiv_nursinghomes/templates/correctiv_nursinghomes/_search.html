@@ -27,6 +27,16 @@
           <button class="btn btn-default" type="submit">{% trans "Search" %}</button>
         </span>
       </div>
+
+      <div class="nursinghomes__hero__examples">
+        {% trans "Examples:" %}
+        <a href="{% url 'nursinghomes:nursinghomes-search' %}?q=Berlin+Kreuzberg">
+          Berlin Kreuzberg
+        </a>,
+        <a href="{% url 'nursinghomes:nursinghomes-search' %}?q=Dortmund">
+          Dortmund
+        </a>
+      </div>
     </form>
 
   </div>
