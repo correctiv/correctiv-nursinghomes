@@ -225,23 +225,23 @@ class NursingHome(models.Model):
     }
 
     MDK_REGIONS = {
-        u'Hamburg': ('MDK Nord', 'http://www.mdk-nord.de'),
-        u'Schleswig-Holstein': ('MDK Nord', 'http://www.mdk-nord.de'),
-        u'Niedersachsen': ('MDK Niedersachsen', 'http://www.mdk-niedersachsen.de'),
-        u'Mecklenburg-Vorpommern': ('MDK Mecklenburg-Vorpommern', 'http://www.mdk-mv.de'),
-        u'Berlin': ('MDK Berlin-Brandenburg', 'http://www.mdk-bb.de'),
-        u'Brandenburg': ('MDK Berlin-Brandenburg', 'http://www.mdk-bb.de'),
-        u'Sachsen-Anhalt': ('MDK Sachsen-Anhalt', 'http://www.mdk-san.de'),
-        u'Sachsen': ('MDK Sachsen', 'http://www.mdk-sachsen.de'),
-        u'Thüringen': ('MDK Thüringen', 'http://www.mdk-th.de'),
-        u'Bayern': ('MDK Bayern', 'http://www.mdk-bayern.de'),
-        u'Hessen': ('MDK Hessen', 'http://www.mdk-hessen.de'),
-        u'Baden-Württemberg': ('MDK Baden-Württemberg', 'http://www.mdkbw.de'),
-        u'Saarland': ('MDK Saarland', 'http://www.mdk-saarland.de'),
-        u'Rheinland-Pfalz': ('MDK Rheinland-Pfalz', 'http://www.mdk-rlp.de'),
-        u'Bremen': ('MDK Bremen', 'http://www.mdk-bremen.de'),
-        u'Nordrhein': ('MDK Nordrhein', 'http://www.mdk-nordrhein.de'),
-        u'Westfalen-Lippe': ('MDK Westfalen-Lippe', 'http://www.mdk-wl.de')
+        u'Hamburg': (u'MDK Nord', 'http://www.mdk-nord.de'),
+        u'Schleswig-Holstein': (u'MDK Nord', 'http://www.mdk-nord.de'),
+        u'Niedersachsen': (u'MDK Niedersachsen', 'http://www.mdk-niedersachsen.de'),
+        u'Mecklenburg-Vorpommern': (u'MDK Mecklenburg-Vorpommern', 'http://www.mdk-mv.de'),
+        u'Berlin': (u'MDK Berlin-Brandenburg', 'http://www.mdk-bb.de'),
+        u'Brandenburg': (u'MDK Berlin-Brandenburg', 'http://www.mdk-bb.de'),
+        u'Sachsen-Anhalt': (u'MDK Sachsen-Anhalt', 'http://www.mdk-san.de'),
+        u'Sachsen': (u'MDK Sachsen', 'http://www.mdk-sachsen.de'),
+        u'Thüringen': (u'MDK Thüringen', 'http://www.mdk-th.de'),
+        u'Bayern': (u'MDK Bayern', 'http://www.mdk-bayern.de'),
+        u'Hessen': (u'MDK Hessen', 'http://www.mdk-hessen.de'),
+        u'Baden-Württemberg': (u'MDK Baden-Württemberg', 'http://www.mdkbw.de'),
+        u'Saarland': (u'MDK Saarland', 'http://www.mdk-saarland.de'),
+        u'Rheinland-Pfalz': (u'MDK Rheinland-Pfalz', 'http://www.mdk-rlp.de'),
+        u'Bremen': (u'MDK Bremen', 'http://www.mdk-bremen.de'),
+        u'Nordrhein': (u'MDK Nordrhein', 'http://www.mdk-nordrhein.de'),
+        u'Westfalen-Lippe': (u'MDK Westfalen-Lippe', 'http://www.mdk-wl.de')
     }
 
     WESTFALEN_LIPPE_AGS = set(['05554', '05558', '05954', '05754', '05758',
