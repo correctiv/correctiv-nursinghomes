@@ -1,6 +1,8 @@
 {% extends "correctiv_nursinghomes/base.html" %}
 
 {% load i18n %}
+{% load sekizai_tags %}
+{% load leaflet_tags %}
 
 
 {% block title %}{% blocktrans with query=query %}Search for „{{ query }}” in our nursing home database{% endblocktrans %}{% endblock %}
@@ -11,9 +13,15 @@
 
 {% block top_search %}
   {% include "correctiv_nursinghomes/_search.html" %}
+
+  {% if object_list %}
+    {# Show map here #}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
+
 {% if object_list %}
   <div class="table-responsive">
     <table class="table">
@@ -21,7 +29,6 @@
         <tr>
           <th>{% trans "Name" %}</th>
           <th>{% trans "Address" %}</th>
-          <th>{% trans "Distance" %}</th>
         </tr>
       </thead>
     {% for object in object_list %}
@@ -33,9 +40,6 @@
         </td>
         <td>
           {{ object.address }}, {{ object.postcode }} {{ object.location }}
-        </td>
-        <td>
-          {{ object.distance }}
         </td>
       </tr>
     {% endfor %}
