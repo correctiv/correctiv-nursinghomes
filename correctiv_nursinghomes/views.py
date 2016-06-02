@@ -31,13 +31,17 @@ class SearchView(ListView):
     model = NursingHome
     paginate_by = 20
 
+    center = None
+    center_label = None
+
     def get_queryset(self):
         self.form = SearchForm(self.request.GET)
         self.center = None
         if self.form.is_valid():
-            center = geocode(self.form.cleaned_data['q'])
+            center, label = geocode(self.form.cleaned_data['q'])
             if center is not None:
                 self.center = center
+                self.center_label = label
                 return NursingHome.objects.get_by_distance_to_point(
                         self.center, limit=None, distance=30000)
         return NursingHome.objects.all()
@@ -47,6 +51,7 @@ class SearchView(ListView):
         context['form'] = self.form
         context['center'] = self.center
         context['query'] = self.request.GET.get('q', '')
+        context['center_label'] = self.center_label
         no_page_query = QueryDict(self.request.GET.urlencode().encode('utf-8'),
                                   mutable=True)
         no_page_query.pop('page', None)

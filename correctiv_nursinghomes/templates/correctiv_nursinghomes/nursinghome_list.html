@@ -23,6 +23,13 @@
 {% block content %}
 
 {% if object_list %}
+  {% if center_label %}
+  <p>
+    {% blocktrans with label=center_label count=page_obj.paginator.count %}
+      We found {{ count }} search results near {{ label }}.
+    {% endblocktrans %}
+  </p>
+  {% endif %}
   <div class="table-responsive">
     <table class="table">
       <thead>

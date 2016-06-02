@@ -32,9 +32,9 @@
         {% trans "Examples:" %}
         <a href="{% url 'nursinghomes:nursinghomes-search' %}?q=Berlin+Kreuzberg">
           Berlin Kreuzberg
-        </a>,
-        <a href="{% url 'nursinghomes:nursinghomes-search' %}?q=Dortmund">
-          Dortmund
+        </a>{% trans "or postcode" %}
+        <a href="{% url 'nursinghomes:nursinghomes-search' %}?q=48317">
+          48317
         </a>
       </div>
     </form>

@@ -4,6 +4,7 @@ import functools
 from django.conf import settings
 from django.db.models import Q
 from django.contrib.gis.geos import GEOSGeometry
+from django.utils.translation import ugettext_lazy as _
 
 import requests
 
@@ -18,7 +19,7 @@ ZIPCODE_RE = re.compile('\b(\d{5})\b')
 
 def geocode(q):
     zipresult = zipsearch(q)
-    if zipresult:
+    if zipresult[0] is not None:
         return zipresult
 
     if not settings.MAPZEN_SEARCH_APIKEY:
@@ -34,17 +35,20 @@ def geocode(q):
         return fallback_geocode(q)
 
     first_feature = results['features'][0]
-    return GEOSGeometry('POINT(%f %f)' % tuple(first_feature['geometry']['coordinates']), srid=4326)
+    point = GEOSGeometry('POINT(%f %f)' % tuple(first_feature['geometry']['coordinates']), srid=4326)
+    return point, first_feature['properties']['label']
 
 
 def zipsearch(q):
     match = ZIPCODE_RE.search(q)
     if match is not None:
+        zipcode = match.group(1)
         try:
-            return ZipCode.objects.get(name=match.group(1)).geom.centroid
+            point = ZipCode.objects.get(name=zipcode).geom.centroid
+            return (point, _('Postcode %d') % zipcode)
         except ZipCode.DoesNotExist:
             pass
-    return None
+    return (None, None)
 
 
 def fallback_geocode(q):
@@ -54,8 +58,8 @@ def fallback_geocode(q):
 
     areas = GermanGeoArea.objects.filter(functools.reduce(lambda a, b: a | b, [Q(name__contains=part) for part in q.split()]))
     if areas:
-        return areas[0].geom.centroid
+        return (areas[0].geom.centroid, areas[0].name)
 
     homes = NursingHome.objects.search(NursingHome.objects.all(), q)
     if homes:
-        return homes[0].geo
+        return (homes[0].geo, _('Near nursing home %s') % homes[0].name)
