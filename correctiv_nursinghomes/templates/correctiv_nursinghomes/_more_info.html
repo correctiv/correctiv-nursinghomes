@@ -52,10 +52,12 @@
 
   {% with fds_url=object.get_request_url %}
     {% if fds_url %}
-      <a href="{{ fds_url }}" class="btn btn-primary btn-block">
-        <h4>{% trans "Request your report with FragDenStaat.de" %}</h4>
-        <p>
-          {% trans "Click here to request reports from your local Heimaufsicht" %}
+      <a href="{{ fds_url }}" class="nursinghomes__fds-banner">
+        <h3 class="nursinghomes__fds-banner__title">
+          {% trans "Request your report with FragDenStaat.de" %}
+        </h3>
+        <p class="nursinghomes__fds-banner__subtitle">
+          {% trans "Click here to request reports from the local Heimaufsicht" %}
         </p>
       </a>
     {% endif %}

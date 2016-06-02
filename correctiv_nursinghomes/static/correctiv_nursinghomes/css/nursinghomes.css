@@ -118,3 +118,33 @@
 .nursinghomes__search-results__address {
   color: #777777;
 }
+
+.nursinghomes__fds-banner {
+  display: block;
+  color: #ffffff;
+  padding: 25px 20px 20px 110px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: #5f6b82 url('../img/fds-logo.svg') no-repeat;
+  background-size: 110px;
+  transition: background 300ms;
+}
+
+.nursinghomes__fds-banner:hover,
+.nursinghomes__fds-banner:focus,
+.nursinghomes__fds-banner:active {
+  background-color: #4d576a;
+  text-decoration: none;
+}
+
+.nursinghomes__fds-banner__title {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.nursinghomes__fds-banner__subtitle {
+  padding: 0;
+  margin: 0;
+  color: #dadada;
+}
