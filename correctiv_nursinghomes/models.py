@@ -370,7 +370,8 @@ class NursingHome(models.Model):
         return None
 
     def _quantile(self, val, quantiles, mapping):
-        return mapping[([0] + [x[0] for x in enumerate(quantiles) if val > x[1]])[-1]]
+        return mapping[([0] + [x[0] + 1 for x in enumerate(quantiles)
+                        if val > x[1]])[-1]]
 
     def bedsize(self):
         return int(self.data[u'belegt_vollstationär'])
