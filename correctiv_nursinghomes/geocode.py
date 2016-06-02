@@ -12,7 +12,7 @@ from geogermany.models import ZipCode, GermanGeoArea
 from .models import NursingHome
 
 
-SEARCH_URL = 'https://search.mapzen.com/v1/search?api_key={apikey}&text={q}&boundary.country=DEU'
+SEARCH_URL = u'https://search.mapzen.com/v1/search?api_key={apikey}&text={q}&boundary.country=DEU'
 ZIPCODE_RE = re.compile('\b(\d{5})\b')
 
 
