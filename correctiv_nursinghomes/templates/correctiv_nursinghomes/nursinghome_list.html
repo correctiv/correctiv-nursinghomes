@@ -45,12 +45,17 @@
     {% endfor %}
     </table>
   </div>
+  <p>
+    {% blocktrans with query=query %}
+      These are homes 30 km around your query "{{ query}}".
+    {% endblocktrans %}
+  </p>
+  {% if page_obj.has_other_pages %}
+    {% include "pagination.html" with page_obj=page_obj getvars="&"|add:getvars %}
+  {% endif %}
 {% else %}
   <p>
-    {% trans "Your search did not give any results" %}
+    {% trans "Your search did not give any results in a 30 km radius." %}
   </p>
-{% endif %}
-{% if page_obj.has_other_pages %}
-  {% include "pagination.html" with page_obj=page_obj getvars="&"|add:getvars %}
 {% endif %}
 {% endblock %}

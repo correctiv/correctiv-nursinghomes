@@ -3,8 +3,7 @@ import json
 
 from django.views.generic import TemplateView, ListView
 from django.views.generic.detail import DetailView
-from django.http import HttpResponse, QueryDict
-from django.shortcuts import redirect
+from django.http import QueryDict
 from django.utils.translation import ugettext_lazy as _
 
 from .models import NursingHome
@@ -39,8 +38,8 @@ class SearchView(ListView):
             center = geocode(self.form.cleaned_data['q'])
             if center is not None:
                 self.center = center
-                return NursingHome.objects.get_by_distance_to_point(self.center,
-                                                             limit=20)
+                return NursingHome.objects.get_by_distance_to_point(
+                        self.center, limit=None, distance=30000)
         return NursingHome.objects.all()
 
     def get_context_data(self, **kwargs):

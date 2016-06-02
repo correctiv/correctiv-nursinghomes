@@ -13,6 +13,8 @@ from django.contrib.gis.db.models.functions import Distance
 from django.contrib.postgres.fields import JSONField
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
+from django.contrib.gis.measure import D
+
 
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField, FullTextLookup, startswith
@@ -97,11 +99,14 @@ class NursingHomeManager(SearchManager):
             qs = qs.search(' & '.join(query), raw=True)
         return qs
 
-    def get_by_distance(self, home, limit=10):
-        return self.get_by_distance_to_point(home.geo, limit=limit)
+    def get_by_distance(self, home, limit=10, distance=None):
+        return self.get_by_distance_to_point(home.geo, limit=limit, distance=distance)
 
-    def get_by_distance_to_point(self, point, limit=10):
-        qs = self.get_queryset().annotate(distance=Distance('geo', point)).order_by('distance')
+    def get_by_distance_to_point(self, point, limit=10, distance=None):
+        qs = self.get_queryset()
+        if distance is not None:
+            qs = qs.filter(geo__distance_lte=(point, D(m=distance)))
+        qs = qs.annotate(distance=Distance('geo', point)).order_by('distance')
         if limit:
             qs = qs[:limit]
         return qs
