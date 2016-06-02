@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-02 15:53+0200\n"
-"PO-Revision-Date: 2016-06-02 15:58+0200\n"
+"POT-Creation-Date: 2016-06-02 16:30+0200\n"
+"PO-Revision-Date: 2016-06-02 16:39+0200\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -30,6 +30,16 @@ msgstr "Suche"
 #: correctiv_nursinghomes/forms.py:15
 msgid "Enter a location or postcode"
 msgstr "Gib einen Ort oder eine Postleitzahl ein"
+
+#: correctiv_nursinghomes/geocode.py:48
+#, python-format
+msgid "Postcode %d"
+msgstr "Postleitzahl %d"
+
+#: correctiv_nursinghomes/geocode.py:65
+#, python-format
+msgid "Near nursing home %s"
+msgstr "In der Nähe des Pflegeheims %s"
 
 #: correctiv_nursinghomes/models.py:68
 msgid "Supervision Authority"
@@ -231,21 +241,21 @@ msgstr ""
 msgid "Unfortunately, we don’t have any examples of reports from this home."
 msgstr "Leider liegen uns keine Prüfberichte dieses Heimes vor."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:49
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:48
 msgid "The supervision authority makes their reports available here"
 msgstr "Die Heimaufsicht macht ihre Berichte hier verfügbar."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:51
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:49
 msgid "If you can't find it, ask below."
 msgstr ""
 "Falls kein Prüfbericht verfügbar ist, könnt Ihr unten nach einem Prüfbericht "
 "fragen."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:58
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:56
 msgid "Request your report with FragDenStaat.de"
 msgstr "Frag nach den Prüfberichten mit FragDenStaat.de"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:60
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:58
 msgid "Click here to request reports from your local Heimaufsicht"
 msgstr ""
 "Klick hier, um Prüfberichte bei der zuständigen Heimaufsicht anzufragen"
@@ -472,6 +482,10 @@ msgstr ""
 msgid "Examples:"
 msgstr "Beispiele:"
 
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_search.html:27
+msgid "or postcode"
+msgstr "oder eine Postleitzahl "
+
 #: correctiv_nursinghomes/templates/correctiv_nursinghomes/base.html:6
 msgid "Database „Watch out for care!”"
 msgstr "Datenbank: Correctiv Pflegewegweiser"
@@ -521,19 +535,29 @@ msgstr "Der Correctiv-Pflegewegweiser."
 msgid "Search results"
 msgstr "Suchergebnisse"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:52
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:38
 #, python-format
 msgid ""
 "\n"
-"      These are homes 30 km around your query \"%(query)s\".\n"
-"    "
+"          We found %(count)s search results near %(label)s.\n"
+"        "
 msgstr ""
 "\n"
-"      Dies sind die Pflegeheime im Radius von 30 km um die Suchanfrage "
-"\"%(query)s\".\n"
+"          %(count)s Suchergebnisse in der Nähe von %(label)s.\n"
+"        "
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:59
+#, python-format
+msgid ""
+"\n"
+"          These are homes 30 km around your query <em>%(query)s</em>.\n"
+"        "
+msgstr ""
+"\n"
+"      Pflegeheime im Umkreis von 30 km um die Suchanfrage \"%(query)s\".\n"
 "    "
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:61
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:69
 msgid "Your search did not give any results in a 30 km radius."
 msgstr ""
 "Für Deine Suche haben wir im Radius von 30 km leider keine Ergebnisse "
@@ -568,12 +592,12 @@ msgstr "^suche/json/$"
 msgid "^nursinghome/(?P<slug>[\\w-]+)/$"
 msgstr "^pflegeheim/(?P<slug>[\\w-]+)/$"
 
-#: correctiv_nursinghomes/views.py:62
+#: correctiv_nursinghomes/views.py:67
 #, python-format
 msgid "Nursing home %(name)s"
 msgstr "Pflegeheim %(name)s"
 
-#: correctiv_nursinghomes/views.py:63
+#: correctiv_nursinghomes/views.py:68
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
