@@ -23,46 +23,54 @@
 {% block content %}
 
 {% if object_list %}
-  {% if center_label %}
-  <p>
-    {% blocktrans with label=center_label count=page_obj.paginator.count %}
-      We found {{ count }} search results near {{ label }}.
-    {% endblocktrans %}
-  </p>
-  {% endif %}
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>{% trans "Name" %}</th>
-          <th>{% trans "Address" %}</th>
-        </tr>
-      </thead>
-    {% for object in object_list %}
-      <tr>
-        <td>
-          <a href="{{ object.get_absolute_url }}">
-            {{ object.name }}
-          </a>
-        </td>
-        <td>
-          {{ object.address }}, {{ object.postcode }} {{ object.location }}
-        </td>
-      </tr>
-    {% endfor %}
-    </table>
+
+  <div class="page__row">
+    <div class="page__section -full">
+
+      <header class="page__section-header ">
+        <h3 class="page__section-headline">
+          {% trans "Search results" %}
+        </h3>
+      </header>
+
+      {% if center_label %}
+      <p>
+        {% blocktrans with label=center_label count=page_obj.paginator.count %}
+          We found {{ count }} search results near {{ label }}.
+        {% endblocktrans %}
+      </p>
+      {% endif %}
+
+      <ul class="nursinghomes__search-results">
+        {% for object in object_list %}
+          <li>
+            <a class="nursinghomes__search-results__link" href="{{ object.get_absolute_url }}">
+              <h4 class="nursinghomes__search-results__title">
+                {{ object.name }}
+              </h4>
+              <p class="nursinghomes__search-results__address">
+                {{ object.address }}, {{ object.postcode }} {{ object.location }}
+              </p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <p>
+        {% blocktrans with query=query %}
+          These are homes 30 km around your query <em>{{ query}}</em>.
+        {% endblocktrans %}
+      </p>
+      {% if page_obj.has_other_pages %}
+        {% include "pagination.html" with page_obj=page_obj getvars="&"|add:getvars %}
+      {% endif %}
+
+    {% else %}
+      <p>
+        {% trans "Your search did not give any results in a 30 km radius." %}
+      </p>
+    {% endif %}
+    {% endblock %}
+
+    </div>
   </div>
-  <p>
-    {% blocktrans with query=query %}
-      These are homes 30 km around your query "{{ query}}".
-    {% endblocktrans %}
-  </p>
-  {% if page_obj.has_other_pages %}
-    {% include "pagination.html" with page_obj=page_obj getvars="&"|add:getvars %}
-  {% endif %}
-{% else %}
-  <p>
-    {% trans "Your search did not give any results in a 30 km radius." %}
-  </p>
-{% endif %}
-{% endblock %}
+
