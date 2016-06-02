@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-02 12:56+0200\n"
+"POT-Creation-Date: 2016-06-02 14:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,126 +29,126 @@ msgstr ""
 msgid "Enter a location or postcode"
 msgstr ""
 
-#: models.py:66
+#: models.py:68
 msgid "Supervision Authority"
 msgstr ""
 
-#: models.py:67
+#: models.py:69
 msgid "Supervision Authorities"
 msgstr ""
 
-#: models.py:127
+#: models.py:132
 msgid "charitable"
 msgstr ""
 
-#: models.py:128
+#: models.py:133
 msgid "private"
 msgstr ""
 
-#: models.py:129
+#: models.py:134
 msgid "public"
 msgstr ""
 
-#: models.py:130
+#: models.py:135
 msgid "unknown"
 msgstr ""
 
-#: models.py:288
+#: models.py:293
 msgid "Geographic location"
 msgstr ""
 
-#: models.py:317
+#: models.py:322
 msgid "nursing home"
 msgstr ""
 
-#: models.py:318
+#: models.py:323
 msgid "nursing homes"
 msgstr ""
 
-#: models.py:383
+#: models.py:389
 msgid "very small"
 msgstr ""
 
-#: models.py:384
+#: models.py:390
 msgid "small"
 msgstr ""
 
-#: models.py:385
+#: models.py:391
 msgid "normal-sized"
 msgstr ""
 
-#: models.py:386
+#: models.py:392
 msgid "big"
 msgstr ""
 
-#: models.py:387
+#: models.py:393
 msgid "very big"
 msgstr ""
 
-#: models.py:399
+#: models.py:405
 msgid "very young"
 msgstr ""
 
-#: models.py:400
+#: models.py:406
 msgid "young"
 msgstr ""
 
-#: models.py:401
+#: models.py:407
 msgid "a normal age"
 msgstr ""
 
-#: models.py:402
+#: models.py:408
 msgid "old"
 msgstr ""
 
-#: models.py:403
+#: models.py:409
 msgid "very old"
 msgstr ""
 
-#: models.py:412
+#: models.py:418
 msgid "very cheap"
 msgstr ""
 
-#: models.py:413
+#: models.py:419
 msgid "cheap"
 msgstr ""
 
-#: models.py:414
+#: models.py:420
 msgid "moderately priced"
 msgstr ""
 
-#: models.py:415
+#: models.py:421
 msgid "expensive"
 msgstr ""
 
-#: models.py:416
+#: models.py:422
 msgid "very expensive"
 msgstr ""
 
-#: models.py:426
+#: models.py:432
 #, python-format
 msgid "%d%% less"
 msgstr ""
 
-#: models.py:427
+#: models.py:433
 #, python-format
 msgid "%d%% more"
 msgstr ""
 
-#: models.py:462
+#: models.py:468
 #, python-format
 msgid "Nursing home report of “%s”"
 msgstr ""
 
-#: models.py:499
+#: models.py:505
 msgid "Supervision Report"
 msgstr ""
 
-#: models.py:500
+#: models.py:506
 msgid "Supervision Reports"
 msgstr ""
 
-#: models.py:503
+#: models.py:509
 #, python-format
 msgid "Report on %(date)s by %(auth)s"
 msgstr ""
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Download the transparency report here"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_map.html:11
+#: templates/correctiv_nursinghomes/_map.html:12
 #: templates/correctiv_nursinghomes/_search.html:17
 msgid "Nursing Home Guide"
 msgstr ""
@@ -417,29 +417,29 @@ msgstr ""
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:33
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:34
 msgid "Phone no.:"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:39
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:40
 msgid "Website"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:51
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:52
 msgid "From the transparency report"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:64
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:65
 msgid "Compare prices"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:71
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:72
 msgid ""
 "We’ve compared ten nursing homes in your area. Important tip: If you’re "
 "looking for a good home, do not only compare prices."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:86
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:87
 msgid "How you can get more information"
 msgstr ""
 
@@ -460,8 +460,16 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_list.html:50
-msgid "Your search did not give any results"
+#: templates/correctiv_nursinghomes/nursinghome_list.html:49
+#, python-format
+msgid ""
+"\n"
+"      These are homes 30 km around your query \"%(query)s\".\n"
+"    "
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_list.html:58
+msgid "Your search did not give any results in a 30 km radius."
 msgstr ""
 
 #: templates/correctiv_nursinghomes/request_email.txt:1
@@ -488,12 +496,12 @@ msgstr ""
 msgid "^nursinghome/(?P<slug>[\\w-]+)/$"
 msgstr ""
 
-#: views.py:63
+#: views.py:62
 #, python-format
 msgid "Nursing home %(name)s"
 msgstr ""
 
-#: views.py:64
+#: views.py:63
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr ""
