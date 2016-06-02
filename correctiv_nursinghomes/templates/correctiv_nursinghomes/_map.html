@@ -65,8 +65,12 @@
         // Additional map config:
         map.zoomControl.setPosition('topright')
         map.scrollWheelZoom.disable()
-        map.setView(currentItem.latlng.coordinates, 12)
-
+        map.options.maxZoom = 16
+        map.options.minZoom = 12
+        map.setView(currentItem.latlng.coordinates, 14)
+        map.setMaxBounds(items.map(function(item) {
+          return item.latlng.coordinates
+        }))
 
         // Offset the map to make space for the title:
         if (document.documentElement.clientWidth < 768) {
