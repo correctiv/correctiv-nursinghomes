@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import os
+import json
 try:
     from urllib.parse import urlencode
 except ImportError:
@@ -112,7 +113,7 @@ class NursingHomeManager(SearchManager):
                 'name': home.name,
                 'location': home.location,
                 'url': home.get_absolute_url(),
-                'latlng': home.geo.geojson,
+                'latlng': json.loads(home.geo.geojson),
                 'prices': home.prices,
                 'current': home == obj
             }
