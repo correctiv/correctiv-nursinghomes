@@ -3,14 +3,6 @@
 <div class="nursinghomes__hero">
   <div class="page__container">
 
-    {% if not is_index %}
-      <div class="pull-right">
-        <a href="{% url 'nursinghomes:nursinghomes-index' %}">
-          {% trans "back to the index" %}
-        </a>
-      </div>
-    {% endif %}
-
     <form class="nursinghomes__hero__form" action="{% url 'nursinghomes:nursinghomes-search' %}" method="get">
 
       <h1 class="nursinghomes__hero__title">
