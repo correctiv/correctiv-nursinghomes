@@ -45,9 +45,7 @@
 
   {% if object.supervision_authority.report_url %}
     <p>
-      <a href="{{ object.supervision_authority.report_url }}">
-        {% trans "The supervision authority makes their reports available here" %}
-      </a>
+      <a href="{{ object.supervision_authority.report_url }}">{% trans "The supervision authority makes their reports available here" %}</a>
       {% trans "If you can't find it, ask below." %}
     </p>
   {% endif %}
