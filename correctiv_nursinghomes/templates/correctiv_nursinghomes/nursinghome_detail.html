@@ -24,23 +24,16 @@
     </div>
 
     <div class="page__sidebar">
-      <p>
-        {{ object.name }}<br/>
-        {{ object.address }}<br/>
-        {{ object.postcode }} {{ object.location }}
-      </p>
-      {% if object.data.Telefon %}
-        <p>
-          {% trans "Phone no.:" %} {{ object.data.Telefon }}
-        </p>
-      {% endif %}
-      {% if object.web %}
-        <p>
-          <a href="{{ object.web }}">
-            {% trans "Website" %}
-          </a>
-        </p>
-      {% endif %}
+      <ul class="nursinghomes__contact">
+        <li>{{ object.address }}, {{ object.postcode }} {{ object.location }}<br/>
+        {% if object.data.Telefon %}
+          <li>{{ object.data.Telefon }}</li>
+        {% endif %}
+        {% if object.web %}
+          <li><a href="{{ object.web }}">{{ object.web }}</a></li>
+        {% endif %}
+      </ul>
+
     </div>
   </div>
 
