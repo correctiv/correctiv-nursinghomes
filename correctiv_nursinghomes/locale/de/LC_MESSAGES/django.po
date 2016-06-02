@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-02 14:59+0200\n"
-"PO-Revision-Date: 2016-06-02 15:00+0100\n"
+"POT-Creation-Date: 2016-06-02 15:13+0200\n"
+"PO-Revision-Date: 2016-06-02 15:13+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -96,7 +96,7 @@ msgstr "jung"
 
 #: models.py:407
 msgid "a normal age"
-msgstr "normal alt"
+msgstr "normales"
 
 #: models.py:408
 msgid "old"
@@ -327,13 +327,13 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    In Germany a month of level 3 care costs %(national_average)s € on "
+"    In Germany a month of level 3 care costs %(national_average)s Euro on "
 "average as a private co-payment.\n"
 "  "
 msgstr ""
 "\n"
 "   In Deutschland kostet ein Monat Pflege in der Pflegestufe 3 im Schnitt "
-"%(national_average)s € private Zuzahlung.\n"
+"%(national_average)s Euro private Zuzahlung.\n"
 "  "
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:33
@@ -348,7 +348,7 @@ msgstr ""
 "\n"
 "  %(name)s ist ein %(size_comp)ses Pflegeheim mit %(size)s belegten Betten "
 "und ist %(age_years)s Jahre alt. Verglichen mit anderen Heimen in "
-"Deutschland ist das ein %(age_comp)ses Alter.\n"
+"Deutschland ist das ein %(age_comp)ses Heim.\n"
 "  "
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:37
@@ -400,8 +400,8 @@ msgid ""
 "The Medizinische Dienst der Krankenkassen inspects a sample of patients in "
 "each nursing home."
 msgstr ""
-"The Medizinische Dienst der Krankenkassen inspects a sample of patients in "
-"each nursing home."
+"Der Medizinische Dienst der Krankenkassen untersucht in jedem Pflegeheim "
+"eine kleine Stichprobe der Bewohner."
 
 #: templates/correctiv_nursinghomes/_red_flags.html:10
 msgid "This home didn’t get all points in the category malnutrition."
