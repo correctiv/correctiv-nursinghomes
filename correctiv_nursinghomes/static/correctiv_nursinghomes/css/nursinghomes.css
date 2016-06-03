@@ -153,11 +153,32 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-bottom: 30px;
 }
 
-.nursinghomes__contact > li{
+.nursinghomes__contact > li {
   margin: 0;
   padding: 0;
   font-size: 15px;
-  line-height: 32px;
+  line-height: 30px;
+}
+
+.nursinghomes__price-comparison {
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.nursinghomes__price-comparison__select {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .nursinghomes__price-comparison__select {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: auto;
+  }
 }

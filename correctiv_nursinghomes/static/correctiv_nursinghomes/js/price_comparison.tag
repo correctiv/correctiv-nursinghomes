@@ -1,6 +1,8 @@
-<price-comparison>
+<price-comparison class="nursinghomes__price-comparison">
 
-  <select onchange={ onSelectChange }>
+  <yield />
+
+  <select class="nursinghomes__price-comparison__select" onchange={ onSelectChange }>
     <option
       each={ id, name in opts.options }
       selected={ selectedSet == id}

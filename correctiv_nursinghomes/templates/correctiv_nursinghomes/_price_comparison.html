@@ -1,6 +1,18 @@
 {% load i18n static sekizai_tags %}
 
-<price-comparison></price-comparison>
+<price-comparison>
+
+  <header class="page__section-header ">
+    <h3 class="page__section-headline">
+      {% trans "Compare prices" %}
+    </h3>
+  </header>
+
+  <div class="well">
+    <p>{% trans "We’ve compared ten nursing homes in your area. Important tip: If you’re looking for a good home, do not only compare prices." %}</p>
+  </div>
+
+</price-comparison>
 
 {% addtoblock "css" %}
   <link rel="stylesheet" href="{% static "correctiv_nursinghomes/css/bar-chart.css" %}" media="screen" charset="utf-8">

@@ -37,11 +37,11 @@
       <div class="well">
         <p>
           {% trans "This data was provided by the federal organization of the insurance company AOK. We know that there are errors in the data. We want you to help us to correct theses errors." %}
+        </p>
 
           <a href="mailto:AOK-Bundesverband@bv.aok.de?subject={{ object.name|urlencode }}">
             {% trans "You can get in touch with AOK here." %}
           </a>
-        </p>
       </div>
 
     </div>
@@ -62,19 +62,7 @@
     </div>
 
     <div class="page__sidebar">
-
-      <header class="page__section-header ">
-        <h3 class="page__section-headline">
-          {% trans "Compare prices" %}
-        </h3>
-      </header>
-
       {% include "correctiv_nursinghomes/_price_comparison.html" %}
-
-      <div class="well">
-        <p>{% trans "We’ve compared ten nursing homes in your area. Important tip: If you’re looking for a good home, do not only compare prices." %}</p>
-      </div>
-
     </div>
   </div>
 
