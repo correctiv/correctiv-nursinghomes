@@ -34,6 +34,16 @@
         {% endif %}
       </ul>
 
+      <div class="well">
+        <p>
+          {% trans "This data was provided by the federal organization of the insurance company AOK. We know that there are errors in the data. We want you to help us to correct theses errors." %}
+
+          <a href="mailto:AOK-Bundesverband@bv.aok.de?subject={{ object.name|urlencode }}">
+            {% trans "You can get in touch with AOK here." %}
+          </a>
+        </p>
+      </div>
+
     </div>
   </div>
 
