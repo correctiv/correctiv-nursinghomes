@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-03 13:09+0200\n"
-"PO-Revision-Date: 2016-06-03 12:18+0200\n"
+"POT-Creation-Date: 2016-06-03 17:52+0200\n"
+"PO-Revision-Date: 2016-06-03 17:59+0200\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -28,10 +28,8 @@ msgid "Search"
 msgstr "Suche"
 
 #: correctiv_nursinghomes/forms.py:15
-#, fuzzy
-#| msgid "Enter a location or postcode"
 msgid "address, location, or postcode"
-msgstr "Gib einen Ort oder eine Postleitzahl ein"
+msgstr "Adresse, Ort oder PLZ"
 
 #: correctiv_nursinghomes/geocode.py:48
 #, python-format
@@ -261,6 +259,26 @@ msgstr "Berichte anfragen mit FragDenStaat.de"
 msgid "Click here to request reports from the local Heimaufsicht"
 msgstr "Klicke hier, um Prüfberichte bei der Heimaufsicht anzufragen"
 
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:71
+msgid "Guidebook"
+msgstr "Ratgeber"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:76
+msgid ""
+"What questions should you ask? Where should you go to find help? Our "
+"reporters have a lot of tips and contacts to aid you in your search for a "
+"good nursing home, including a checklist with the ten most important points "
+"you should consider."
+msgstr ""
+"Welche Fragen solltet Ihr stellen? Wo bekommt Ihr Hilfe? Unsere Reporter "
+"haben zahlreiche Tipps und Kontakte für die Suche nach einem guten "
+"Pflegeheim recherchiert. Inklusive Checkliste mit den zehn wichtigsten "
+"Punkten."
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_more_info.html:80
+msgid "Your guide to choosing a nursing home"
+msgstr "Wie finde ich das richtige Heim?"
+
 #: correctiv_nursinghomes/templates/correctiv_nursinghomes/_nursinghome_intro.html:5
 msgid ""
 "For the past few months, Correctiv has looked through the inspection reports "
@@ -396,19 +414,32 @@ msgstr ""
 "Euch an die %(authority)s oder den %(mdk)s wenden.\n"
 "  "
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:22
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:7
+msgid "Compare prices"
+msgstr "Preisvergleich"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:12
+msgid ""
+"We’ve compared ten nursing homes in your area. Important tip: If you’re "
+"looking for a good home, do not only compare prices."
+msgstr ""
+"Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Der angegebene "
+"Betrag ist der Eigenanteil für einen Monat vollstationäre Pflege. Wichtig: "
+"Wer ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:34
 msgid "Care level 1"
 msgstr "Pflegestufe 1"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:23
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:35
 msgid "Care level 2"
 msgstr "Pflegestufe 2"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:24
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:36
 msgid "Care level 3"
 msgstr "Pflegestufe 3"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:29
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_price_comparison.html:41
 msgid "n/a"
 msgstr "k.A."
 
@@ -506,25 +537,49 @@ msgstr ""
 msgid "You can get in touch with AOK here."
 msgstr "Bitte senden Sie hier der AOK ihre Verbesserungsvorschläge."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:55
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:59
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:68
-msgid "Compare prices"
-msgstr "Preisvergleich"
-
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:75
-msgid ""
-"We’ve compared ten nursing homes in your area. Important tip: If you’re "
-"looking for a good home, do not only compare prices."
-msgstr ""
-"Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Wichtig: Wer "
-"ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
-
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:90
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:78
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:88
+msgid "About this investigation"
+msgstr "Über diese Website"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:90
+msgid ""
+"We investigated issues with the infrastructure of the nursing homes since "
+"the beginning of 2015. We talked to hundreds of people and analyzed data "
+"from all transparency reports in Germany."
+msgstr ""
+"Wir recherchieren seit Anfang 2015 zu den Problemen der Pflege, haben mit "
+"Hunderten Menschen gesprochen und Daten zu allen Pflegeheimen Deutschlands "
+"ausgewertet. "
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:93
+msgid "You can find our full research here"
+msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:98
+msgid "Independent journalism needs independet funding"
+msgstr "Unabhängiger Journalismus braucht unabhängige Finanzierung"
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:100
+msgid ""
+"Anyone can write nice features. We want to reveal injustice. As an "
+"independent non-profit organization, we need your help. Become a member and "
+"help us continue our investigations. "
+msgstr ""
+"Nette Geschichten schreiben können andere. Wir wollen aufklären. Wir sind "
+"unabhängig, werbefrei und nicht-gewinnorientiert. Mit einer "
+"Fördermitgliedschaft sicherst Du dauerhaft unsere Arbeit."
+
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:103
+msgid "Support CORRECTIV"
+msgstr "CORRECTIV unterstützen"
 
 #: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_list.html:8
 #, python-format
