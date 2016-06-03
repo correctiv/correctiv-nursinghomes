@@ -82,7 +82,28 @@
       {% include "correctiv_nursinghomes/_more_info.html" %}
 
     </div>
-    <div class="page__sidebar">
+    <div class="page__sidebar -no-header">
+
+      <div class="well">
+        <h3>{% trans "About this investigation" %}</h3>
+
+        <p>{% trans "We investigated issues with the infrastructure of the nursing homes since the beginning of 2015. We talked to hundreds of people and analyzed data from all transparency reports in Germany." %}</p>
+
+        <a href="https://correctiv.org/pflege/">
+          {% trans "You can find our full research here" %}
+        </a>
+      </div>
+
+      <div class="well">
+        <h3>{% trans "Independent journalism needs independet funding" %}</h3>
+
+        <p>{% trans "Anyone can write nice features. We want to reveal injustice. As an independent non-profit organization, we need your help. Become a member and help us continue our investigations. " %}</p>
+
+        <a class="well__cta" href="https://correctiv.org/pflege/">
+          {% trans "Support CORRECTIV" %}
+        </a>
+      </div>
+
       {% static_placeholder "nursinghomes-detailsidebar" %}
     </div>
   </div>
