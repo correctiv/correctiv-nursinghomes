@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-02 19:11+0200\n"
-"PO-Revision-Date: 2016-06-02 19:19+0200\n"
+"POT-Creation-Date: 2016-06-03 12:16+0200\n"
+"PO-Revision-Date: 2016-06-03 12:18+0200\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -481,10 +481,6 @@ msgstr ""
 msgid "Examples:"
 msgstr "Beispiele:"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/_search.html:27
-msgid "or postcode"
-msgstr "oder eine Postleitzahl "
-
 #: correctiv_nursinghomes/templates/correctiv_nursinghomes/base.html:6
 msgid "Database „Watch out for care!”"
 msgstr "Datenbank: Correctiv Pflegewegweiser"
@@ -493,23 +489,30 @@ msgstr "Datenbank: Correctiv Pflegewegweiser"
 msgid "The database about which drugs where pushed by pharma companies."
 msgstr "Der Correctiv-Pflegewegweiser"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:34
-msgid "Phone no.:"
-msgstr "Telefonnummer"
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:39
+msgid ""
+"This data was provided by the federal organization of the insurance company "
+"AOK. We know that there are errors in the data. We want you to help us to "
+"correct theses errors."
+msgstr ""
+"Diese Daten hat uns der Bundesverband der AOK zur Verfügung gestellt. Wir "
+"wissen, dass in diesen Datensätzen auch einige Fehler sind. Wir freuen uns, "
+"wenn Sie helfen, die Daten zu verbessern. Dies geht nur über die AOK. Wir "
+"können die Quelldaten nicht verbessern. "
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:40
-msgid "Website"
-msgstr "Webseite"
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:42
+msgid "You can get in touch with AOK here."
+msgstr "Bitte senden Sie hier der AOK ihre Verbesserungsvorschläge."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:52
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:55
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:65
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:68
 msgid "Compare prices"
 msgstr "Preisvergleich"
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:72
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:75
 msgid ""
 "We’ve compared ten nursing homes in your area. Important tip: If you’re "
 "looking for a good home, do not only compare prices."
@@ -517,7 +520,7 @@ msgstr ""
 "Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Wichtig: Wer "
 "ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:87
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:90
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
@@ -600,6 +603,15 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
+
+#~ msgid "or postcode"
+#~ msgstr "oder eine Postleitzahl "
+
+#~ msgid "Phone no.:"
+#~ msgstr "Telefonnummer"
+
+#~ msgid "Website"
+#~ msgstr "Webseite"
 
 #~ msgid "Home"
 #~ msgstr "Heim"
