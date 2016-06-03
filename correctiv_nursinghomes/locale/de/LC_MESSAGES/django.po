@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-03 12:16+0200\n"
+"POT-Creation-Date: 2016-06-03 13:09+0200\n"
 "PO-Revision-Date: 2016-06-03 12:18+0200\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
@@ -28,7 +28,9 @@ msgid "Search"
 msgstr "Suche"
 
 #: correctiv_nursinghomes/forms.py:15
-msgid "Enter a location or postcode"
+#, fuzzy
+#| msgid "Enter a location or postcode"
+msgid "address, location, or postcode"
 msgstr "Gib einen Ort oder eine Postleitzahl ein"
 
 #: correctiv_nursinghomes/geocode.py:48
@@ -500,7 +502,7 @@ msgstr ""
 "wenn Sie helfen, die Daten zu verbessern. Dies geht nur über die AOK. Wir "
 "können die Quelldaten nicht verbessern. "
 
-#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:42
+#: correctiv_nursinghomes/templates/correctiv_nursinghomes/nursinghome_detail.html:43
 msgid "You can get in touch with AOK here."
 msgstr "Bitte senden Sie hier der AOK ihre Verbesserungsvorschläge."
 

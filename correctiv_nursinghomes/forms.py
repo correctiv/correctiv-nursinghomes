@@ -12,7 +12,7 @@ class SearchForm(forms.Form):
             attrs={
                 'type': 'search',
                 'class': 'form-control',
-                'placeholder': _('Enter a location or postcode')
+                'placeholder': _('address, location, or postcode')
             }))
 
     # def search(self, queryset, autocomplete=False):
