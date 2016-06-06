@@ -410,6 +410,9 @@ class NursingHome(models.Model):
             )
         )
 
+    def comp_price(self):
+        return self.data[self.COMP_PRICE]
+
     def price_range(self):
         return self._quantile(
             self.data[self.COMP_PRICE],
