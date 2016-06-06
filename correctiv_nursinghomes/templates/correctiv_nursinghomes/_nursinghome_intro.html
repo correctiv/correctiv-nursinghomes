@@ -2,12 +2,12 @@
 {% load humanize %}
 
 <p>
-  {% trans "For the past few months, Correctiv has looked through the inspection reports of every nursing home in Germany." %}
+  {% trans "For the past few months, Correctiv has looked through the inspection reports conducted by the Medizinische Dienst der Krankenkassen (MDK) of every nursing home in Germany. The data was provided by AOK." %}
 {% if object.any_red_flag %}
   {% blocktrans with name=object.name redflag=object.red_flag_count|apnumber count count=object.red_flag_count %}
-    Our analysis of the AOK data shows that the nursing home {{ name }} doesn’t get all points in one important category.
+    Our analysis of the data shows that the nursing home {{ name }} doesn’t get all points in one important category.
   {% plural %}
-    Our analysis of the AOK data shows that the nursing home {{ name }} doesn’t get all points in {{ redflag }} important categories.
+    Our analysis of the data shows that the nursing home {{ name }} doesn’t get all points in {{ redflag }} important categories.
   {% endblocktrans %}
 {% else %}
   {% trans "We’ve analyzed five criteria in the AOK data and this nursing home’s report shows it doesn’t have problems in any of these areas. However, this doesn’t necessarily indicate that it is a good nursing home." %}
@@ -48,5 +48,8 @@
 <p>
   {% blocktrans with insurance=object.data.insurance authority=object.get_supervision_authority_link mdk=object.get_mdk_region %}
     If you want to inquire about this home you reach out to the {{ authority }} or the {{ mdk }}.
+  {% endblocktrans %}
+  {% blocktrans %}
+    If you know this nursing home and you found a mistake in the AOK data, please <a href="mailto:aok-bundesverband@bv.aok.de">send an email directly to the AOK</a>. We can't change the original data by ourselves, but you can help to make nursing homes more transparent for everybody.
   {% endblocktrans %}
 </p>

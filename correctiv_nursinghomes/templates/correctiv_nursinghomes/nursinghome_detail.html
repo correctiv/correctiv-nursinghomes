@@ -36,7 +36,9 @@
 
       <div class="well">
         <p>
-          {% trans "This data was provided by the federal organization of the insurance company AOK. We know that there are errors in the data. We want you to help us to correct theses errors." %}
+          {% blocktrans %}
+            This data is based on reports by the MDK that were provided to us by the federal association of the AOK. The data can contain mistakes. If you know the nursing home and found a mistake, please <a href="mailto:aok-bundesverband@bv.aok.de">send an email directly to the AOK</a>. We cannot change the original data by ourselves, but you can help to make nursing homes more transparent for everybody.
+          {% endblocktrans %}
         </p>
 
           <a href="mailto:AOK-Bundesverband@bv.aok.de?subject={{ object.name|urlencode }}">
