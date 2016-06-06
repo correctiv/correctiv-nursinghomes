@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 12:44+0200\n"
-"PO-Revision-Date: 2016-06-06 12:45+0100\n"
+"POT-Creation-Date: 2016-06-06 22:37+0200\n"
+"PO-Revision-Date: 2016-06-06 22:41+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -281,33 +281,35 @@ msgstr "Wie finde ich das richtige Heim?"
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:5
 msgid ""
 "For the past few months, Correctiv has looked through the inspection reports "
-"of every nursing home in Germany."
+"conducted by the Medizinische Dienst der Krankenkassen (MDK) of every "
+"nursing home in Germany. The data was provided by AOK."
 msgstr ""
-"Correctiv hat in den vergangenen Monaten die Prüfberichte aller deutschen "
-"Pflegeheime ausgewertet."
+"Correctiv.org hat die Prüfberichte des Medizinischen Diensts der "
+"Krankenkassen (MDK) aus allen deutschen Pflegeheime ausgewertet. Diese Daten "
+"hat uns die AOK zur Verfügung gestellt."
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:7
 #, python-format
 msgid ""
 "\n"
-"    Our analysis of the AOK data shows that the nursing home %(name)s "
-"doesn’t get all points in one important category.\n"
+"    Our analysis of the data shows that the nursing home %(name)s doesn’t "
+"get all points in one important category.\n"
 "  "
 msgid_plural ""
 "\n"
-"    Our analysis of the AOK data shows that the nursing home %(name)s "
-"doesn’t get all points in %(redflag)s important categories.\n"
+"    Our analysis of the data shows that the nursing home %(name)s doesn’t "
+"get all points in %(redflag)s important categories.\n"
 "  "
 msgstr[0] ""
 "\n"
-"\tUnsere Analyse der AOK-Daten zu den Pflegeheimen zeigt, dass das "
-"Pflegeheim %(name)s in einer wichtigen Kategorie nicht die volle Punktzahl "
-"erhalten hat.  "
+"\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
+"%(name)s in einer wichtigen Kategorie nicht die volle Punktzahl erhalten "
+"hat.  "
 msgstr[1] ""
 "\n"
-"\tUnsere Analyse der AOK-Daten zu den Pflegeheimen zeigt, dass das "
-"Pflegeheim %(name)s in %(redflag)s wichtigen Kategorien nicht die volle "
-"Punktzahl erhalten hat.  "
+"\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
+"%(name)s in %(redflag)s wichtigen Kategorien nicht die volle Punktzahl "
+"erhalten hat.  "
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:13
 msgid ""
@@ -412,32 +414,54 @@ msgstr ""
 "Euch an die %(authority)s oder den %(mdk)s wenden.\n"
 "  "
 
+#: templates/correctiv_nursinghomes/_nursinghome_intro.html:52
+msgid ""
+"\n"
+"    If you know this nursing home and you found a mistake in the AOK data, "
+"please <a href=\"mailto:aok-bundesverband@bv.aok.de\">send an email directly "
+"to the AOK</a>. We can't change the original data by ourselves, but you can "
+"help to make nursing homes more transparent for everybody.\n"
+"  "
+msgstr ""
+"\n"
+"\tDiese Daten beruhen auf Prüfungen des Medizinischen Dienstes der "
+"Krankenkassen (MDK), die uns der AOK-Bundesverband zur Verfügung gestellt "
+"hat. In diesen Daten können Fehler enthalten sein. Wenn Ihr dasHeim kennt "
+"und einen Fehler gefunden habt, wendet Euch über <a href=\"mailto:aok-"
+"bundesverband@bv.aok.de\">diese Emailadresse direkt an die AOK</a>. Wir "
+"selbst können die Originaldaten nicht verändern. Ihr könnt auf diese Weise "
+"mithelfen, dass die Pflegeheime für alle transparenter werden.\n"
+"  "
+
 #: templates/correctiv_nursinghomes/_price_comparison.html:7
 msgid "Compare prices"
 msgstr "Preisvergleich"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:12
+#: templates/correctiv_nursinghomes/_price_comparison.html:13
 msgid ""
-"We’ve compared ten nursing homes in your area. Important tip: If you’re "
-"looking for a good home, do not only compare prices."
+"We’ve compared ten nursing homes in your area. This is the amount you will "
+"have to pay yourself. Additionally, you will have to pay investment costs "
+"that are different between nursing homes. Important tip: If you’re looking "
+"for a good home, do not only compare prices."
 msgstr ""
-"Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Der angegebene "
-"Betrag ist der Eigenanteil für einen Monat vollstationäre Pflege. Wichtig: "
-"Wer ein gutes Heim sucht, sollte nicht nur den Preis vergleichen."
+"Wir vergleichen die zehn Heime in der unmittelbaren Umgebung. Dies ist der "
+"Eigenanteil für einen Monat vollstationäre Pflege. Hinzu kommen jeweils "
+"Investitionskosten, die von Heim zu Heim variabel sind. Wichtig: Wer ein "
+"gutes Heim sucht, sollte nicht nur den Preis vergleichen."
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:34
+#: templates/correctiv_nursinghomes/_price_comparison.html:36
 msgid "Care level 1"
 msgstr "Pflegestufe 1"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:35
+#: templates/correctiv_nursinghomes/_price_comparison.html:37
 msgid "Care level 2"
 msgstr "Pflegestufe 2"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:36
+#: templates/correctiv_nursinghomes/_price_comparison.html:38
 msgid "Care level 3"
 msgstr "Pflegestufe 3"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:41
+#: templates/correctiv_nursinghomes/_price_comparison.html:43
 msgid "n/a"
 msgstr "k.A."
 
@@ -538,32 +562,40 @@ msgstr "Der Correctiv-Pflegewegweiser"
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:39
 msgid ""
-"This data was provided by the federal organization of the insurance company "
-"AOK. We know that there are errors in the data. We want you to help us to "
-"correct theses errors."
+"\n"
+"            This data is based on reports by the MDK that were provided to "
+"us by the federal association of the AOK. The data can contain mistakes. If "
+"you know the nursing home and found a mistake, please <a href=\"mailto:aok-"
+"bundesverband@bv.aok.de\">send an email directly to the AOK</a>. We cannot "
+"change the original data by ourselves, but you can help to make nursing "
+"homes more transparent for everybody.\n"
+"          "
 msgstr ""
-"Diese Daten hat uns der Bundesverband der AOK zur Verfügung gestellt. Wir "
-"wissen, dass in den Datensätzen der AOK auch einige Fehler sein können. Wir "
-"freuen uns, wenn Sie helfen, die Daten zu verbessern. Dies geht nur über die "
-"AOK. Wir können die Quelldaten nicht verbessern."
+"\n"
+"            Wenn Ihr das Heim kennt und einen Fehler in den AOK-Daten "
+"gefunden habt, wendet Euch über <a href=\"mailto:aok-bundesverband@bv.aok.de"
+"\">diese Emailadresse direkt an die AOK</a>. Wir selbst können die "
+"Originaldaten nicht verändern. Ihr könnt auf diese Weise mithelfen, dass die "
+"Pflegeheime für alle transparenter werden.\n"
+"          "
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:43
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:45
 msgid "You can get in touch with AOK here."
 msgstr "Bitte senden Sie hier der AOK ihre Verbesserungsvorschläge."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:59
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:61
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:80
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:88
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:90
 msgid "About this investigation"
 msgstr "Über diese Website"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:90
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:92
 msgid ""
 "We investigated issues with the infrastructure of the nursing homes since "
 "the beginning of 2015. We talked to hundreds of people and analyzed data "
@@ -573,15 +605,15 @@ msgstr ""
 "Hunderten Menschen gesprochen und Daten zu allen Pflegeheimen Deutschlands "
 "ausgewertet. "
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:93
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:95
 msgid "You can find our full research here"
 msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:98
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:100
 msgid "Independent journalism needs independet funding"
 msgstr "Unabhängiger Journalismus braucht unabhängige Finanzierung"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:100
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:102
 msgid ""
 "Anyone can write nice features. We want to reveal injustice. As an "
 "independent non-profit organization, we need your help. Become a member and "
@@ -591,7 +623,7 @@ msgstr ""
 "unabhängig, werbefrei und nicht-gewinnorientiert. Mit einer "
 "Fördermitgliedschaft sicherst Du dauerhaft unsere Arbeit."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:103
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:105
 msgid "Support CORRECTIV"
 msgstr "CORRECTIV unterstützen"
 
@@ -674,6 +706,16 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Detail for the nursing home %(name)s."
 msgstr "Details für das Pflegeheim %(name)s."
+
+#~ msgid ""
+#~ "This data was provided by the federal organization of the insurance "
+#~ "company AOK. We know that there are errors in the data. We want you to "
+#~ "help us to correct theses errors."
+#~ msgstr ""
+#~ "Diese Daten hat uns der Bundesverband der AOK zur Verfügung gestellt. Wir "
+#~ "wissen, dass in den Datensätzen der AOK auch einige Fehler sein können. "
+#~ "Wir freuen uns, wenn Sie helfen, die Daten zu verbessern. Dies geht nur "
+#~ "über die AOK. Wir können die Quelldaten nicht verbessern."
 
 #~ msgid ""
 #~ "\n"
