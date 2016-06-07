@@ -14,12 +14,14 @@
 {% endif %}
 </p>
 
+{% if object.grade_care and not object.grade_care.is_nan %}
 <p>
   {% blocktrans with name=object.name location=object.location medical_grade=object.grade_care|floatformat:1 grade_comp=object.compare_care_grade_state|yesno:_("better,worse,equal") state=object.state.name %}
     The nursing home {{ name }} in {{ location }} has a {{ medical_grade }} for their medical care, which is {{ grade_comp }} compared to other nursing homes in {{ state }}.
   {% endblocktrans %}
   {% trans "Keep in mind that almost all nursing homes get very good grades, so this shouldn’t be a key indicator for you." %}
 </p>
+{% endif %}
 
 <p>
   {% if object.comp_price %}
@@ -32,13 +34,17 @@
     {% endblocktrans %}
   {% endif %}
 
+{% if object.bedsize %}
   {% blocktrans with name=object.name size_comp=object.bedsize_comp size=object.bedsize age_years=object.age_years age_comp=object.age_comp %}
     The nursing home {{ name }} is a {{ size_comp }} home with {{ size }} occupied beds in fully inpatient care.
   {% endblocktrans %}
+{% endif %}
 
+{% if object.provider_type %}
   {% blocktrans with provider_type=object.get_provider_type_display %}
     The home belongs to a {{ provider_type }} company.
   {% endblocktrans %}
+{% endif %}
 
 {% if object.provider_type == "privat" %}
   {% trans "Therefore it could be that the staff doesn’t get paid unionized wages." %}

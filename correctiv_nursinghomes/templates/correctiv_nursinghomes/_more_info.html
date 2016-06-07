@@ -39,7 +39,7 @@
     </ul>
   {% else %}
     {% with example_report=object.get_example_report %}
-      {% if example_report %}
+      {% if example_report and example_report.report %}
         <p>
           {% blocktrans with url=example_report.report.url %}
             We don't have report for this nursing home, but <a href="{{ url }}" target="_blank">here is an example of how it looks like in your state</a>.

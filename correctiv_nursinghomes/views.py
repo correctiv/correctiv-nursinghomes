@@ -65,7 +65,7 @@ class NursingHomeDetailView(SearchMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(NursingHomeDetailView, self).get_context_data(**kwargs)
         context['title'] = _('Nursing home %(name)s') % {'name': self.object.name}
-        context['description'] = _('Detail for the nursing home %(name)s.') % {'name': self.object.name}
+        context['description'] = _('Details about the nursing home %(name)s.') % {'name': self.object.name}
 
         closest = NursingHome.objects.get_json_for_page(self.object)
 
