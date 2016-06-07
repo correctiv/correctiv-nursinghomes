@@ -24,7 +24,8 @@ import unicodecsv
 
 from geogermany.models import State, District, Municipality, Borough
 
-from ...models import NursingHome, SupervisionAuthority, SupervisionReport
+from ...models import (NursingHome, SupervisionAuthority, SupervisionReport,
+                       report_file_path)
 
 
 def convert_timestamp(ts):
@@ -561,3 +562,16 @@ class Command(BaseCommand):
                     report_by=home.supervision_authority,
                     fds_url=obj['site_url'],
             )
+
+    def resave_reports(self, *args, **options):
+        reports = SupervisionReport.objects.all()
+        for report in reports:
+            if not report.report:
+                continue
+            old_path = report.report.path
+            future_name = report_file_path(instance=report)
+            if future_name == report.report.name:
+                continue
+            report.report.save('empty', report.report.file)
+            if report.report.path != old_path:
+                os.unlink(old_path)

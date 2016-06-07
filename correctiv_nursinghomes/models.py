@@ -467,10 +467,15 @@ class NursingHome(models.Model):
 
 
 def report_file_path(instance=None, filename=None):
-    path = str(instance.pk).zfill(4)
+    path = str(instance.nursing_home.pk).zfill(6)
     path_1 = path[:2]
     path_2 = path[2:4]
-    temp_path = ['investigations', 'nursinghomes', path_1, path_2, '%s.pdf' % instance.pk]
+    path_3 = path[4:6]
+    if instance.date:
+        name = instance.date.strftime('%Y-%m-%d')
+    else:
+        name = 'heimaufsichtsbericht'
+    temp_path = ['investigations', 'nursinghomes', path_1, path_2, path_3, '%s.pdf' % name]
     return os.path.join(*temp_path)
 
 
