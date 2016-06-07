@@ -33,7 +33,7 @@
   {% endif %}
 
   {% blocktrans with name=object.name size_comp=object.bedsize_comp size=object.bedsize age_years=object.age_years age_comp=object.age_comp %}
-  The nursing home {{ name }} is a {{ size_comp }} home with {{ size }} beds.
+    The nursing home {{ name }} is a {{ size_comp }} home with {{ size }} occupied beds in fully inpatient care.
   {% endblocktrans %}
 
   {% blocktrans with provider_type=object.get_provider_type_display %}
