@@ -6,8 +6,6 @@ import os
 import json
 from datetime import date
 
-import requests
-
 from django.core.management.base import BaseCommand
 from django.utils import translation
 from django.conf import settings
@@ -16,7 +14,11 @@ from django.contrib.gis.geos import GEOSGeometry
 from django.db.models import Q
 from django.core.files import File
 from django.template.defaultfilters import slugify
+from django.utils.timezone import get_current_timezone
 
+
+import requests
+from dateutil.parser import parse as parse_date
 import pandas as pd
 import unicodecsv
 
@@ -533,7 +535,7 @@ class Command(BaseCommand):
         response = requests.get(url % reference_prefix)
         results = response.json()
         for obj in results['objects']:
-            obj_id = obj.reference.split('@', 1)[1]
+            obj_id = obj['reference'].split('@', 1)[1]
             try:
                 obj_id = int(obj_id)
             except ValueError:
@@ -543,4 +545,19 @@ class Command(BaseCommand):
             except NursingHome.DoesNotexist:
                 continue
 
-            SupervisionReport.objects.filter(nursing_home=home, fds_url=obj['site_url'])
+            reports = SupervisionReport.objects.filter(nursing_home=home,
+                                                       fds_url=obj['site_url'])
+            if reports:
+                continue
+
+            tz = get_current_timezone()
+
+            date_obj = parse_date(obj['first_message'])
+            date_obj = tz.localize(date_obj)
+            SupervisionReport.objects.create(
+                    nursing_home=home,
+                    report_type='Anfrage auf FragDenStaat.de',
+                    date=date_obj.date(),
+                    report_by=home.supervision_authority,
+                    fds_url=obj['site_url'],
+            )

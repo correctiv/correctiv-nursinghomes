@@ -17,12 +17,23 @@
     <ul>
     {% for report in reports %}
       <li>
-        <a href="{{ report.report.url }}" target="_blank">
+        {% if report.report %}
+          <a href="{{ report.report.url }}" target="_blank">
+            {{ report.date }}
+            {% if report.report_type %}
+              ({{ report.report_type }})
+            {% endif %}
+          </a>
+        {% elif report.fds_url %}
+          <a href="{{ report.fds_url }}" target="_blank">
+            {{ report.report_type }} ({{ report.date }})
+          </a>
+        {% else %}
           {{ report.date }}
           {% if report.report_type %}
             ({{ report.report_type }})
           {% endif %}
-        </a>
+        {% endif %}
       </li>
     {% endfor %}
     </ul>
