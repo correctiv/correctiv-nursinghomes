@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-07 18:06+0200\n"
-"PO-Revision-Date: 2016-06-07 18:07+0100\n"
+"POT-Creation-Date: 2016-06-08 17:36+0200\n"
+"PO-Revision-Date: 2016-06-08 17:38+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -187,11 +187,11 @@ msgstr ""
 "ist ein Heim nicht automatisch gut, nur weil es hier nicht mit Hinweisen auf "
 "Mängel auffällt. Am Wichtigsten ist immer der persönliche Eindruck vor Ort."
 
-#: templates/correctiv_nursinghomes/_disclaimer.html:11
+#: templates/correctiv_nursinghomes/_disclaimer.html:12
 msgid "What does this data really reveal?"
 msgstr "Wie viel oder wenig sagen diese Daten aus?"
 
-#: templates/correctiv_nursinghomes/_disclaimer.html:16
+#: templates/correctiv_nursinghomes/_disclaimer.html:19
 msgid "Download the transparency report here"
 msgstr "Transparenzbericht herunterladen"
 
@@ -242,7 +242,7 @@ msgid "Unfortunately, we don’t have any examples of reports from this home."
 msgstr "Leider liegen uns keine Prüfberichte dieses Heimes vor."
 
 #: templates/correctiv_nursinghomes/_more_info.html:59
-msgid "The supervision authority makes their reports available here"
+msgid "The supervision authority makes their reports available here."
 msgstr "Die Heimaufsicht macht ihre Berichte hier verfügbar."
 
 #: templates/correctiv_nursinghomes/_more_info.html:60
@@ -268,7 +268,7 @@ msgid ""
 "What questions should you ask? Where should you go to find help? Our "
 "reporters have a lot of tips and contacts to aid you in your search for a "
 "good nursing home, including a checklist with the ten most important points "
-"you should consider."
+"you should consider. This text is available in German."
 msgstr ""
 "Welche Fragen solltet Ihr stellen? Wo bekommt Ihr Hilfe? Unsere Reporter "
 "haben zahlreiche Tipps und Kontakte für die Suche nach einem guten "
@@ -332,8 +332,8 @@ msgstr "besser,schlechter,gleich"
 msgid ""
 "\n"
 "    The nursing home %(name)s in %(location)s has a %(medical_grade)s for "
-"their medical care, which is %(grade_comp)s compared to other nursing homes "
-"in %(state)s.\n"
+"their medical care, which is %(grade_comp)s in comparison to other nursing "
+"homes in %(state)s.\n"
 "  "
 msgstr ""
 "\n"
@@ -354,8 +354,8 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    The home is %(price_range)s and you have to pay %(price_increase)s "
-"compared to other nursing homes in %(state)s.\n"
+"    The home is %(price_range)s and you have to pay %(price_increase)s in "
+"comparison to other nursing homes in %(state)s.\n"
 "    "
 msgstr ""
 "\n"
@@ -605,14 +605,18 @@ msgstr ""
 "ausgewertet. "
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:95
-msgid "You can find our full research here"
-msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen"
+msgid "You can find our full research in German here."
+msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:100
-msgid "Independent journalism needs independet funding"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:99
+msgid "You can find some of our research in English here."
+msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:105
+msgid "Independent journalism needs independent funding"
 msgstr "Unabhängiger Journalismus braucht unabhängige Finanzierung"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:102
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:107
 msgid ""
 "Anyone can write nice features. We want to reveal injustice. As an "
 "independent non-profit organization, we need your help. Become a member and "
@@ -622,7 +626,7 @@ msgstr ""
 "unabhängig, werbefrei und nicht-gewinnorientiert. Mit einer "
 "Fördermitgliedschaft sicherst Du dauerhaft unsere Arbeit."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:105
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:110
 msgid "Support CORRECTIV"
 msgstr "CORRECTIV unterstützen"
 

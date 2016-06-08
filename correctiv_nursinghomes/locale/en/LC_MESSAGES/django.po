@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-07 18:06+0200\n"
+"POT-Creation-Date: 2016-06-08 17:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,11 +179,11 @@ msgid ""
 "person and see firsthand if you see signs of issues."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_disclaimer.html:11
+#: templates/correctiv_nursinghomes/_disclaimer.html:12
 msgid "What does this data really reveal?"
 msgstr ""
 
-#: templates/correctiv_nursinghomes/_disclaimer.html:16
+#: templates/correctiv_nursinghomes/_disclaimer.html:19
 msgid "Download the transparency report here"
 msgstr ""
 
@@ -223,7 +223,7 @@ msgid "Unfortunately, we don’t have any examples of reports from this home."
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_more_info.html:59
-msgid "The supervision authority makes their reports available here"
+msgid "The supervision authority makes their reports available here."
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_more_info.html:60
@@ -247,7 +247,7 @@ msgid ""
 "What questions should you ask? Where should you go to find help? Our "
 "reporters have a lot of tips and contacts to aid you in your search for a "
 "good nursing home, including a checklist with the ten most important points "
-"you should consider."
+"you should consider. This text is available in German."
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_more_info.html:91
@@ -292,8 +292,8 @@ msgstr ""
 msgid ""
 "\n"
 "    The nursing home %(name)s in %(location)s has a %(medical_grade)s for "
-"their medical care, which is %(grade_comp)s compared to other nursing homes "
-"in %(state)s.\n"
+"their medical care, which is %(grade_comp)s in comparison to other nursing "
+"homes in %(state)s.\n"
 "  "
 msgstr ""
 
@@ -307,8 +307,8 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"    The home is %(price_range)s and you have to pay %(price_increase)s "
-"compared to other nursing homes in %(state)s.\n"
+"    The home is %(price_range)s and you have to pay %(price_increase)s in "
+"comparison to other nursing homes in %(state)s.\n"
 "    "
 msgstr ""
 
@@ -498,21 +498,25 @@ msgid ""
 msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:95
-msgid "You can find our full research here"
+msgid "You can find our full research in German here."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:100
-msgid "Independent journalism needs independet funding"
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:99
+msgid "You can find some of our research in English here."
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:102
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:105
+msgid "Independent journalism needs independent funding"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:107
 msgid ""
 "Anyone can write nice features. We want to reveal injustice. As an "
 "independent non-profit organization, we need your help. Become a member and "
 "help us continue our investigations. "
 msgstr ""
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:105
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:110
 msgid "Support CORRECTIV"
 msgstr ""
 
