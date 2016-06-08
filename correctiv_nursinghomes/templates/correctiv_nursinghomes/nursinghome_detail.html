@@ -92,12 +92,17 @@
         <p>{% trans "We investigated issues with the infrastructure of the nursing homes since the beginning of 2015. We talked to hundreds of people and analyzed data from all transparency reports in Germany." %}</p>
 
         <a href="https://correctiv.org/pflege/">
-          {% trans "You can find our full research here" %}
+          {% trans "You can find our full research in German here." %}
         </a>
+        {% if LANGUAGE_CODE == "en" %}
+        <a href="https://correctiv.org/en/investigations/nursing-homes/">
+          {% trans "You can find some of our research in English here." %}
+        </a>
+        {% endif %}
       </div>
 
       <div class="well">
-        <h3>{% trans "Independent journalism needs independet funding" %}</h3>
+        <h3>{% trans "Independent journalism needs independent funding" %}</h3>
 
         <p>{% trans "Anyone can write nice features. We want to reveal injustice. As an independent non-profit organization, we need your help. Become a member and help us continue our investigations. " %}</p>
 

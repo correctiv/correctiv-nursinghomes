@@ -17,7 +17,7 @@
 {% if object.grade_care and not object.grade_care.is_nan %}
 <p>
   {% blocktrans with name=object.name location=object.location medical_grade=object.grade_care|floatformat:1 grade_comp=object.compare_care_grade_state|yesno:_("better,worse,equal") state=object.state.name %}
-    The nursing home {{ name }} in {{ location }} has a {{ medical_grade }} for their medical care, which is {{ grade_comp }} compared to other nursing homes in {{ state }}.
+    The nursing home {{ name }} in {{ location }} has a {{ medical_grade }} for their medical care, which is {{ grade_comp }} in comparison to other nursing homes in {{ state }}.
   {% endblocktrans %}
   {% trans "Keep in mind that almost all nursing homes get very good grades, so this shouldn’t be a key indicator for you." %}
 </p>
@@ -26,7 +26,7 @@
 <p>
   {% if object.comp_price %}
     {% blocktrans with price_range=object.price_range price_increase=object.price_increase state=object.state.name %}
-    The home is {{ price_range }} and you have to pay {{ price_increase }} compared to other nursing homes in {{ state }}.
+    The home is {{ price_range }} and you have to pay {{ price_increase }} in comparison to other nursing homes in {{ state }}.
     {% endblocktrans %}
 
     {% blocktrans with national_average=object.national_average_price %}
