@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 17:36+0200\n"
+"POT-Creation-Date: 2016-06-09 15:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:7 cms_app.py:7
+#: apps.py:7 cms_app.py:7 cms_plugins.py:9
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:8
 msgid "Nursing Homes"
 msgstr ""
 
+#: cms_plugins.py:10
+msgid "Nursing Homes Search Tile"
+msgstr ""
+
 #: forms.py:10 templates/correctiv_nursinghomes/_search.html:19
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:21
 msgid "Search"
 msgstr ""
 
@@ -551,6 +557,14 @@ msgstr ""
 
 #: templates/correctiv_nursinghomes/nursinghome_list.html:69
 msgid "Your search did not give any results in a 30 km radius."
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:14
+msgid "How do the nursing homes in your area compare?"
+msgstr ""
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:18
+msgid "Location"
 msgstr ""
 
 #: templates/correctiv_nursinghomes/request_email.txt:1

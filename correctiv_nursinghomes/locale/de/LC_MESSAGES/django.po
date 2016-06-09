@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 17:36+0200\n"
-"PO-Revision-Date: 2016-06-08 17:38+0100\n"
+"POT-Creation-Date: 2016-06-09 15:45+0200\n"
+"PO-Revision-Date: 2016-06-09 15:46+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -18,11 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.5\n"
 
-#: apps.py:7 cms_app.py:7
+#: apps.py:7 cms_app.py:7 cms_plugins.py:9
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:8
 msgid "Nursing Homes"
 msgstr "Pflegeheime"
 
+#: cms_plugins.py:10
+msgid "Nursing Homes Search Tile"
+msgstr "Pflegeheime Such-Kachel"
+
 #: forms.py:10 templates/correctiv_nursinghomes/_search.html:19
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:21
 msgid "Search"
 msgstr "Suche"
 
@@ -670,6 +676,14 @@ msgid "Your search did not give any results in a 30 km radius."
 msgstr ""
 "Für Deine Suche haben wir im Radius von 30 km leider keine Ergebnisse "
 "gefunden."
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:14
+msgid "How do the nursing homes in your area compare?"
+msgstr "Wie steht es mit den Heimen in deiner Umgebung?"
+
+#: templates/correctiv_nursinghomes/plugins/search_tile.html:18
+msgid "Location"
+msgstr "Ort"
 
 #: templates/correctiv_nursinghomes/request_email.txt:1
 #, python-format
