@@ -1,0 +1,34 @@
+{% load i18n static sekizai_tags %}
+
+<li class="entry-list-item -featured">
+  <div class="nursinghomes-search-tile">
+
+      <a href="{% url 'nursinghomes:nursinghomes-index' %}">
+        <h2 class="nursinghomes-search-tile__logo">
+          {% trans "Nursing Homes" %}
+        </h2>
+      </a>
+
+      <form method="get" class="search-tile__form" action="{% url 'nursinghomes:nursinghomes-search' %}">
+        <p class="nursinghomes-search-tile__claim">
+          {% trans "How do the nursing homes in your area compare?" %}
+        </p>
+
+        <div class="input-group">
+          <input id="nursinghomes-q" name="q" type="text" class="form-control" placeholder="{% trans "Location" %}">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">
+              {% trans "Search" %}
+            </button>
+          </span>
+        </div>
+
+      </form>
+
+  </div>
+</li>
+
+
+{% addtoblock "css" %}
+  <link rel="stylesheet" href="{% static 'correctiv_nursinghomes/css/search_tile.css' %}" type="text/css" />
+{% endaddtoblock %}

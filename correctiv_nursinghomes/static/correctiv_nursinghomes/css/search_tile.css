@@ -1,0 +1,32 @@
+.nursinghomes-search-tile {
+  color: black;
+  background-color: #cfcfcf;
+  position: relative;
+  padding: 0;
+}
+
+.nursinghomes-search-tile__logo {
+  color: #ff6166;
+  padding: 22px 22px 0px;
+}
+
+.nursinghomes-search-tile__form {
+  padding: 22px;
+}
+
+.nursinghomes-search-tile__help {
+  display: block;
+  margin: 0;
+  padding: 10px 0 0 0;
+  font-style: italic;
+}
+
+.nursinghomes-search-tile__link {
+  text-decoration: underline;
+}
+
+@media (min-width: 1200px) {
+  .nursinghomes-search-tile {
+    min-height: 380px;
+  }
+}
