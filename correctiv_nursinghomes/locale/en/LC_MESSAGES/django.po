@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-09 15:45+0200\n"
+"POT-Creation-Date: 2016-06-22 13:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -345,7 +345,9 @@ msgid ""
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:50
-msgid "Therefore it could be that the staff doesn’t get paid unionized wages."
+msgid ""
+"Private companies often don't pay their employees unionized wages. Only the "
+"nursing home itself knows if this is the case here."
 msgstr ""
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:55

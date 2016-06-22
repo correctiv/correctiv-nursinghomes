@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-09 15:45+0200\n"
-"PO-Revision-Date: 2016-06-09 15:46+0100\n"
+"POT-Creation-Date: 2016-06-22 13:08+0200\n"
+"PO-Revision-Date: 2016-06-22 13:09+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -407,8 +407,12 @@ msgstr ""
 "  "
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:50
-msgid "Therefore it could be that the staff doesn’t get paid unionized wages."
-msgstr "Es könnte sein, dass die Pfleger hier nicht nach Tarif bezahlt werden."
+msgid ""
+"Private companies often don't pay their employees unionized wages. Only the "
+"nursing home itself knows if this is the case here."
+msgstr ""
+"Private Betreiber bezahlen ihre Pfleger häufig nicht nach Tarif. Ob das hier "
+"der Fall ist, kann Euch nur der Betreiber beantworten."
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:55
 #, python-format
@@ -723,6 +727,11 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Details about the nursing home %(name)s."
 msgstr "Details zum Pflegeheim %(name)s."
+
+#~ msgid ""
+#~ "Therefore it could be that the staff doesn’t get paid unionized wages."
+#~ msgstr ""
+#~ "Es könnte sein, dass die Pfleger hier nicht nach Tarif bezahlt werden."
 
 #~ msgid "Database „Watch out for care!”"
 #~ msgstr "Datenbank: Correctiv Pflegewegweiser"
