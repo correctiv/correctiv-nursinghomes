@@ -268,6 +268,8 @@ class NursingHome(models.Model):
 
     data = JSONField(blank=True)
 
+    notes = models.TextField(blank=True)
+
     state = models.ForeignKey(State, null=True, blank=True)
     district = models.ForeignKey(District, null=True, blank=True)
 
