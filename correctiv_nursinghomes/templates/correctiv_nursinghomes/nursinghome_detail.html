@@ -46,6 +46,15 @@
           </a>
       </div>
 
+      {% if object.notes %}
+        <div class="well">
+          <h3>{% trans "Notes by this nursing home" %}</h3>
+          <p>
+            {{ object.notes|linebreaksbr }}
+          </p>
+        </div>
+      {% endif %}
+
     </div>
   </div>
 
