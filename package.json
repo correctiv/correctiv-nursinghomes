@@ -1,0 +1,37 @@
+{
+  "name": "correctiv-nursinghomes",
+  "version": "0.0.1",
+  "description": "Django / Django CMS App powering the [“Wegweiser Pflege” news app](https://correctiv.org/recherchen/pflege/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/correctiv/correctiv-nursinghomes.git"
+  },
+  "author": "sjockers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/correctiv/correctiv-nursinghomes/issues"
+  },
+  "homepage": "https://github.com/correctiv/correctiv-nursinghomes#readme",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-if": "^2.0.1",
+    "gulp-less": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
+    "yargs": "^5.0.0"
+  }
+}

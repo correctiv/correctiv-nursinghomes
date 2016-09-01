@@ -1,0 +1,206 @@
+.bar-chart {
+  margin-bottom: 30px;
+}
+.bar-chart__item {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.bar-chart__label {
+  color: black;
+  display: block;
+  width: 60%;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  float: left;
+}
+.bar-chart__data {
+  width: 40%;
+  display: block;
+  float: right;
+  position: relative;
+}
+.bar-chart__bar {
+  display: block;
+  height: 20px;
+  background: #dbdbdb;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bar-chart__value {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 22px;
+  color: black;
+}
+.bar-chart__item.-hilight .bar-chart__bar {
+  background: #ff6166;
+}
+.bar-chart__item.-hilight .bar-chart__value {
+  color: #fff;
+}
+.nursinghomes__hero {
+  background-image: #b7b7b7;
+  background-image: url('../img/index-background.jpg');
+  background-position: left center;
+  background-size: cover;
+}
+.nursinghomes__hero__title {
+  color: #ff6166;
+  font-size: 48px;
+  text-shadow: 0  0 50px #ffffff;
+}
+.nursinghomes__hero__lead {
+  color: #000000;
+  font-size: 19px;
+  text-shadow: 0  0 30px #ffffff;
+  margin-bottom: 15px;
+}
+.nursinghomes__hero__form {
+  padding: 30px 0;
+}
+.nursinghomes__hero__form button,
+.nursinghomes__hero__form input {
+  font-size: 19px;
+  line-height: 24px;
+  height: 50px;
+  border-radius: 0;
+  border: 0;
+  padding: 0 30px;
+}
+.nursinghomes__hero__form button {
+  color: #ffffff;
+  background: #ff6166;
+}
+.nursinghomes__hero__form button:hover,
+.nursinghomes__hero__form button:focus,
+.nursinghomes__hero__form button:active {
+  color: #ffffff;
+  background: #c81455;
+}
+.nursinghomes__hero__examples {
+  color: #000000;
+  text-shadow: 0  0 30px #ffffff;
+  margin-top: 15px;
+}
+.nursinghomes__hero__examples > a {
+  text-decoration: underline;
+}
+@media (min-width: 992px) {
+  .nursinghomes__hero {
+    min-height: 630px;
+  }
+  .nursinghomes__hero__form {
+    width: 62%;
+    padding: 150px 0;
+  }
+  .nursinghomes__hero__form button,
+  .nursinghomes__hero__form input {
+    font-size: 24px;
+    line-height: 36px;
+    height: 75px;
+    padding: 0 30px;
+  }
+  .nursinghomes__hero__form button {
+    padding: 0 60px;
+  }
+}
+.nursinghomes__red-flag {
+  background-size: 80px;
+  background-repeat: no-repeat;
+  padding-left: 100px;
+  min-height: 80px;
+  background-position: 0 5px;
+}
+.nursinghomes__red-flag.-food {
+  background-image: url('../img/red-flag--food.svg');
+}
+.nursinghomes__red-flag.-decubitus {
+  background-image: url('../img/red-flag--decubitus.svg');
+}
+.nursinghomes__red-flag.-pain {
+  background-image: url('../img/red-flag--pain.svg');
+}
+.nursinghomes__red-flag.-medicine {
+  background-image: url('../img/red-flag--medicine.svg');
+}
+.nursinghomes__red-flag.-incontinence {
+  background-image: url('../img/red-flag--incontinence.svg');
+}
+.nursinghomes__search-results {
+  margin: 0;
+  padding: 0 0 30px 0;
+  list-style: none;
+}
+.nursinghomes__search-results > li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #dadada;
+}
+.nursinghomes__search-results__address {
+  color: #777777;
+}
+.nursinghomes__fds-banner {
+  display: block;
+  color: #ffffff;
+  padding: 25px 20px 20px 110px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: #5f6b82 url('../img/fds-logo.svg') no-repeat;
+  background-size: 110px;
+  transition: background 300ms;
+}
+.nursinghomes__fds-banner:hover,
+.nursinghomes__fds-banner:focus,
+.nursinghomes__fds-banner:active {
+  background-color: #4d576a;
+  text-decoration: none;
+}
+.nursinghomes__fds-banner__title {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+.nursinghomes__fds-banner__subtitle {
+  padding: 0;
+  margin: 0;
+  color: #dadada;
+}
+.nursinghomes__contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 30px;
+}
+.nursinghomes__contact > li {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 30px;
+}
+.nursinghomes__price-comparison {
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+}
+.nursinghomes__price-comparison__select {
+  margin-bottom: 15px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .nursinghomes__price-comparison__select {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: auto;
+  }
+}
