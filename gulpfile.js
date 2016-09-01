@@ -125,11 +125,11 @@ var cssTask = function () {
         var start = Date.now();
         console.log('Building CSS bundle');
         return gulp.src(options.css.src)
-          .pipe(gulpif(options.development, livereload()))
           .pipe(concat('index.less'))
           .pipe(less(lessOpts))
           .pipe(rename('bundle.css'))
           .pipe(gulp.dest(options.css.dest))
+          .pipe(gulpif(options.development, livereload({reloadPage: options.css.dest})))
           .pipe(notify(function () {
             console.log('CSS bundle built in ' + (Date.now() - start) + 'ms');
           }));
