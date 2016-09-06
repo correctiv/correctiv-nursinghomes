@@ -19,17 +19,17 @@
     max={ maxValue } />
 
   <script>
-    this.selectedSet = opts.initialOption;
+    this.selectedSet = opts.initialOption
 
-    onSelectChange(event) {
+    this.onSelectChange = event => {
       this.selectedSet = event.target.value
       this.update()
     }
 
-    this.on('update', function() {
+    this.on('update', () => {
       var selected = this.selectedSet;
 
-      this.items = opts.items.map(function(item) {
+      this.items = opts.items.map( item => {
         return {
           name: item.name,
           url: item.url,
@@ -38,11 +38,11 @@
         }
       })
 
-      this.items = this.items.sort(function(a, b) {
+      this.items = this.items.sort((a, b) => {
         return a.value < b.value
       })
 
-      this.maxValue = this.items.reduce(function(a, b) {
+      this.maxValue = this.items.reduce((a, b) => {
         return Math.max(a, b.value)
       }, 0)
     })
@@ -61,12 +61,13 @@
   </bar-chart-item>
 
   <script>
-    percentage(value) {
+
+    this.percentage = (value) => {
       return 100 / opts.max * value
     }
 
-    currency(value) {
-      var formattedValue = Intl.NumberFormat(opts.locale, {
+    this.currency = (value) => {
+      const formattedValue = Intl.NumberFormat(opts.locale, {
         style: 'currency',
         currency: opts.currency
       }).format(value)

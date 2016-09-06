@@ -21,37 +21,22 @@
     </header>
   </div>
 
-  {% leaflet_map "nursinghomes" %}
-
-  {% addtoblock "css" %}
-    {% leaflet_css %}
-  {% endaddtoblock %}
+  <map></map>
 
   {% addtoblock "js" %}
-    {% leaflet_js %}
-  {% endaddtoblock %}
-
-  {% addtoblock "js" %}
-    <script src="{% static 'correctiv_nursinghomes/js/map.js' %}"></script>
+    <script src="{% static 'correctiv_nursinghomes/js/bundle.js' %}"></script>
   {% endaddtoblock %}
 
   {% addtoblock "js" %}
     <script>
-      window.addEventListener("map:init", function(event) {
-        initMap({
-          map: event.detail.map,
-          items: {{ closest_nursinghomes|safe }},
-          icons: {
-            default: "{% static 'correctiv_nursinghomes/img/map-marker.svg' %}",
-            hilight: "{% static 'correctiv_nursinghomes/img/map-marker--hilight.svg' %}"
-          }
-        })
+      correctiv.mount("map", {
+        items: {{ closest_nursinghomes|safe }},
+        icons: {
+          default: "{% static 'correctiv_nursinghomes/img/map-marker.svg' %}",
+          hilight: "{% static 'correctiv_nursinghomes/img/map-marker--hilight.svg' %}"
+        }
       })
     </script>
-  {% endaddtoblock %}
-
-  {% addtoblock "js" %}
-    <script src="{% static 'correctiv_nursinghomes/js/index.js' %}"></script>
   {% endaddtoblock %}
 
 </header>

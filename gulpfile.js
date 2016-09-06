@@ -3,6 +3,7 @@ var source = require('vinyl-source-stream'); // Used to stream bundle for furthe
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babelify = require('babelify');
+var riotify = require('riotify');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var streamify = require('gulp-streamify');
@@ -56,8 +57,9 @@ var browserifyTask = function () {
   // Our app bundler
   var appBundler = browserify({
     entries: [options.src], // Only need initial file, browserify finds the rest
-    transform: [babelify], // We want to convert JSX to normal javascript
+    transform: [babelify, [riotify, {'type': 'babel'}]],
     debug: options.development, // Gives us sourcemapping
+    standalone: 'correctiv', // Exports the package as window.correctiv
     cache: {}, packageCache: {}, fullPaths: options.development // Requirement of watchify
   });
 
@@ -71,15 +73,15 @@ var browserifyTask = function () {
     var start = Date.now();
     console.log('Building APP bundle');
     return appBundler.bundle()
-        .on('error', gutil.log)
-        .pipe(source('index.js'))
-        .pipe(gulpif(!options.development, streamify(uglify())))
-        .pipe(rename('bundle.js'))
-        .pipe(gulp.dest(options.dest))
-        .pipe(gulpif(options.development, livereload()))
-        .pipe(notify(function () {
-          console.log('APP bundle built in ' + (Date.now() - start) + 'ms');
-        }));
+      .on('error', gutil.log)
+      .pipe(source('index.js'))
+      .pipe(gulpif(!options.development, streamify(uglify())))
+      .pipe(rename('bundle.js'))
+      .pipe(gulp.dest(options.dest))
+      .pipe(gulpif(options.development, livereload()))
+      .pipe(notify(function () {
+        console.log('APP bundle built in ' + (Date.now() - start) + 'ms');
+      }));
   };
 
   // Fire up Watchify when developing

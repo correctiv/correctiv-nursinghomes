@@ -1,43 +1,10 @@
-function initMap(opts) {
-  var items = opts.items
-  var map = opts.map
 
-  var currentItem = items.filter(function(item) {
-    return item.current
-  })[0]
+riot.tag2('map', '<div id="map"></div>', '', 'class="nursinghomes__map"', function(opts) {
+'use strict';
 
-  var Icon = L.Icon.extend({
-    options: {
-      iconSize: [18, 30],
-      iconAnchor: [9, 26]
-    }
-  })
+var _baz = require('./baz');
 
-  var defaultIcon = new Icon({ iconUrl: opts.icons.default })
-  var hilightIcon = new Icon({ iconUrl: opts.icons.hilight })
+var _baz2 = _interopRequireDefault(_baz);
 
-  // Apply custom marker icons:
-  items.forEach(function(item) {
-    var coordinates = item.latlng.coordinates.reverse()
-    var icon = item.current ? hilightIcon : defaultIcon
-    var marker = L.marker(coordinates, {icon: icon})
-    marker.addTo(map)
-  })
-
-  // Additional map config:
-  map.zoomControl.setPosition('topright')
-  map.scrollWheelZoom.disable()
-  map.options.maxZoom = 16
-  map.options.minZoom = 12
-  map.setView(currentItem.latlng.coordinates, 14)
-  map.setMaxBounds(items.map(function(item) {
-    return item.latlng.coordinates
-  }))
-
-  // Offset the map to make space for the title:
-  if (document.documentElement.clientWidth < 768) {
-    map.panBy(new L.Point(0, 60), {animate: false})
-  } else {
-    map.panBy(new L.Point(-250, 0), {animate: false})
-  }
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+});

@@ -2,7 +2,7 @@
 
 <price-comparison>
 
-  <header class="page__section-header ">
+  <header class="page__section-header">
     <h3 class="page__section-headline">
       {% trans "Compare prices" %}
     </h3>
@@ -17,16 +17,8 @@
 </price-comparison>
 
 {% addtoblock "js" %}
-  <script type="riot/tag" src="{% static 'correctiv_nursinghomes/js/price_comparison.tag' %}"></script>
-{% endaddtoblock %}
-
-{% addtoblock "js" %}
-  <script src="{% static 'vendor/riotjs/riot+compiler.min.js' %}"></script>
-{% endaddtoblock %}
-
-{% addtoblock "js" %}
   <script>
-    riot.mount("price-comparison", {
+    correctiv.mount("price-comparison", {
       items: {{ closest_nursinghomes|safe }},
       options: {
         carelevel_1: "{% trans 'Care level 1' %}",
