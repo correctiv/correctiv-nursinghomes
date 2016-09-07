@@ -18,16 +18,17 @@ const argv = require('yargs').argv;
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
-const dependencies = [];
+const dependencies = ['leaflet', 'riot'];
 
 const options = {
-  src: './correctiv_nursinghomes/static/correctiv_nursinghomes/js/index.js',
-  dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/js/',
-
+  js: {
+    src: './correctiv_nursinghomes/javascripts/index.js',
+    dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/dist/',
+  },
   css: {
-    src: './correctiv_nursinghomes/static/correctiv_nursinghomes/less/index.less',
-    watch: './correctiv_nursinghomes/static/correctiv_nursinghomes/less/**/*.less',
-    dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/css/'
+    src: './correctiv_nursinghomes/styles/index.less',
+    watch: './correctiv_nursinghomes/styles/**/*.less',
+    dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/dist/'
   },
   development: false
 };
@@ -53,7 +54,7 @@ if (options.development) {
 gulp.task('javascript', () => {
 
   const appBundler = browserify({
-    entries: [options.src], // Only need initial file, browserify finds the rest
+    entries: [options.js.src], // Only need initial file, browserify finds the rest
     transform: [babelify, [riotify, {'type': 'babel'}]],
     debug: options.development, // Gives us sourcemapping
     standalone: 'correctiv', // Exports the package as window.correctiv
@@ -74,7 +75,7 @@ gulp.task('javascript', () => {
       .pipe(source('index.js'))
       .pipe(gulpif(!options.development, streamify(uglify())))
       .pipe(rename('bundle.js'))
-      .pipe(gulp.dest(options.dest))
+      .pipe(gulp.dest(options.js.dest))
       .pipe(gulpif(options.development, livereload()))
       .pipe(notify(() => {
         console.log(`APP bundle built in ${Date.now() - start}ms`);
@@ -100,14 +101,14 @@ gulp.task('javascript', () => {
 
     // Run the vendor bundle
     const start = new Date();
-    console.log('Building VENDORS bundle');
+    console.log('Building VENDOR bundle');
     vendorsBundler.bundle()
       .on('error', gutil.log)
-      .pipe(source('vendors.js'))
+      .pipe(source('vendor.js'))
       .pipe(gulpif(!options.development, streamify(uglify())))
-      .pipe(gulp.dest(options.dest))
+      .pipe(gulp.dest(options.js.dest))
       .pipe(notify(() => {
-        console.log(`VENDORS bundle built in ${Date.now() - start}ms`);
+        console.log(`VENDOR bundle built in ${Date.now() - start}ms`);
       }));
   }
 

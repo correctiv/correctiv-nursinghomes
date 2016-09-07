@@ -1,4 +1,3 @@
-
 <map class="nursinghomes__map">
 
   <div id="map"></div>

@@ -24,10 +24,6 @@
   <map></map>
 
   {% addtoblock "js" %}
-    <script src="{% static 'correctiv_nursinghomes/js/bundle.js' %}"></script>
-  {% endaddtoblock %}
-
-  {% addtoblock "js" %}
     <script>
       correctiv.mount("map", {
         items: {{ closest_nursinghomes|safe }},
