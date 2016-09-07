@@ -1,28 +1,26 @@
-var gulp = require('gulp');
-var source = require('vinyl-source-stream'); // Used to stream bundle for further handling
-var browserify = require('browserify');
-var watchify = require('watchify');
-var babelify = require('babelify');
-var riotify = require('riotify');
-var gulpif = require('gulp-if');
-var uglify = require('gulp-uglify');
-var streamify = require('gulp-streamify');
-var notify = require('gulp-notify');
-var concat = require('gulp-concat');
-var cssmin = require('gulp-cssmin');
-var gutil = require('gulp-util');
-var rename = require('gulp-rename');
-var less = require('gulp-less');
-var livereload = require('gulp-livereload');
-
-var argv = require('yargs').argv;
+const gulp = require('gulp');
+const source = require('vinyl-source-stream');
+const browserify = require('browserify');
+const watchify = require('watchify');
+const babelify = require('babelify');
+const riotify = require('riotify');
+const gulpif = require('gulp-if');
+const uglify = require('gulp-uglify');
+const streamify = require('gulp-streamify');
+const notify = require('gulp-notify');
+const concat = require('gulp-concat');
+const cssmin = require('gulp-cssmin');
+const gutil = require('gulp-util');
+const rename = require('gulp-rename');
+const less = require('gulp-less');
+const livereload = require('gulp-livereload');
+const argv = require('yargs').argv;
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
-var dependencies = [
-];
+const dependencies = [];
 
-var options = {
+const options = {
   src: './correctiv_nursinghomes/static/correctiv_nursinghomes/js/index.js',
   dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/js/',
 
@@ -32,7 +30,7 @@ var options = {
     dest: './correctiv_nursinghomes/static/correctiv_nursinghomes/css/'
   },
   development: false
-}
+};
 
 if (argv._ && argv._[0] === 'deploy') {
   options.development = false
@@ -44,7 +42,7 @@ if (options.development) {
   console.log("Building for development")
   delete process.env['NODE_ENV'];
   // Be more verbose for developers
-  gulp.onAll(function (e) {
+  gulp.onAll(e => {
     console.log(e);
   })
 } else {
@@ -52,10 +50,9 @@ if (options.development) {
   process.env['NODE_ENV'] = 'production';
 }
 
-var browserifyTask = function () {
+gulp.task('javascript', () => {
 
-  // Our app bundler
-  var appBundler = browserify({
+  const appBundler = browserify({
     entries: [options.src], // Only need initial file, browserify finds the rest
     transform: [babelify, [riotify, {'type': 'babel'}]],
     debug: options.development, // Gives us sourcemapping
@@ -64,13 +61,13 @@ var browserifyTask = function () {
   });
 
   // We set our dependencies as externals on our app bundler when developing
-  (options.development ? dependencies : []).forEach(function (dep) {
+  (options.development ? dependencies : []).forEach(dep => {
     appBundler.external(dep);
   });
 
   // The rebundle process
-  var rebundle = function () {
-    var start = Date.now();
+  const rebundle = () => {
+    const start = Date.now();
     console.log('Building APP bundle');
     return appBundler.bundle()
       .on('error', gutil.log)
@@ -79,14 +76,14 @@ var browserifyTask = function () {
       .pipe(rename('bundle.js'))
       .pipe(gulp.dest(options.dest))
       .pipe(gulpif(options.development, livereload()))
-      .pipe(notify(function () {
-        console.log('APP bundle built in ' + (Date.now() - start) + 'ms');
+      .pipe(notify(() => {
+        console.log(`APP bundle built in ${Date.now() - start}ms`);
       }));
   };
 
   // Fire up Watchify when developing
   if (options.development) {
-    var watcher = watchify(appBundler);
+    const watcher = watchify(appBundler);
     watcher.on('update', rebundle);
   }
 
@@ -96,64 +93,66 @@ var browserifyTask = function () {
   // in the application bundle
   if (options.development) {
 
-    var vendorsBundler = browserify({
+    const vendorsBundler = browserify({
       debug: true,
       require: dependencies
     });
 
     // Run the vendor bundle
-    var start = new Date();
+    const start = new Date();
     console.log('Building VENDORS bundle');
     vendorsBundler.bundle()
       .on('error', gutil.log)
       .pipe(source('vendors.js'))
       .pipe(gulpif(!options.development, streamify(uglify())))
       .pipe(gulp.dest(options.dest))
-      .pipe(notify(function () {
-        console.log('VENDORS bundle built in ' + (Date.now() - start) + 'ms');
+      .pipe(notify(() => {
+        console.log(`VENDORS bundle built in ${Date.now() - start}ms`);
       }));
   }
 
   return rebundle();
-};
-gulp.task('browserify', browserifyTask);
+});
 
-var cssTask = function () {
-    var lessOpts = {
-      relativeUrls: true,
-    };
-    if (options.development) {
-      var run = function () {
-        var start = Date.now();
-        console.log('Building CSS bundle');
-        return gulp.src(options.css.src)
-          .pipe(concat('index.less'))
-          .pipe(less(lessOpts))
-          .pipe(rename('bundle.css'))
-          .pipe(gulp.dest(options.css.dest))
-          .pipe(gulpif(options.development, livereload({reloadPage: options.css.dest})))
-          .pipe(notify(function () {
-            console.log('CSS bundle built in ' + (Date.now() - start) + 'ms');
-          }));
-      };
-      gulp.watch(options.css.watch, run);
-      return run();
-    } else {
+gulp.task('css', () => {
+
+  const lessOpts = {
+    relativeUrls: true,
+  };
+
+  if (options.development) {
+    const run = () => {
+      const start = Date.now();
+      console.log('Building CSS bundle');
       return gulp.src(options.css.src)
         .pipe(concat('index.less'))
         .pipe(less(lessOpts))
         .pipe(rename('bundle.css'))
-        .pipe(cssmin())
-        .pipe(gulp.dest(options.css.dest));
-    }
-};
-gulp.task('css', cssTask);
+        .pipe(gulp.dest(options.css.dest))
+        .pipe(gulpif(options.development, livereload({reloadPage: options.css.dest})))
+        .pipe(notify(() => {
+          console.log(`CSS bundle built in ${Date.now() - start}ms`);
+        }));
+    };
 
-gulp.task('rebuild', ['css', 'browserify'])
+    gulp.watch(options.css.watch, run);
+    return run();
+  } else {
+    return gulp.src(options.css.src)
+      .pipe(concat('index.less'))
+      .pipe(less(lessOpts))
+      .pipe(rename('bundle.css'))
+      .pipe(cssmin())
+      .pipe(gulp.dest(options.css.dest));
+  }
+});
+
+gulp.task('rebuild', ['css', 'javascript'])
 
 gulp.task('deploy', ['rebuild']);
 
-gulp.task('default', ['rebuild'], function (done) {
+gulp.task('default', ['rebuild'], done => {
   livereload.listen();
   done();
 });
+
