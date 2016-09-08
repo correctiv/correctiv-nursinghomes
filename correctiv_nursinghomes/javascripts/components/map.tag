@@ -4,6 +4,7 @@
 
   <script>
     import L from 'leaflet'
+    import riot from 'riot'
     import 'core-js/fn/array/find'
 
     this.on('mount', () => {
@@ -27,7 +28,7 @@
       return map
     }
 
-    function renderItems (map, { items, icons, iconOptions }) {
+    function renderItems (map, { items, icons, iconOptions, popupOffset }) {
       const Icon = L.Icon.extend({ options: iconOptions })
       const defaultIcon = new Icon({ iconUrl: icons.default })
       const hilightIcon = new Icon({ iconUrl: icons.hilight })
@@ -35,8 +36,14 @@
       items.forEach( item => {
         const coordinates = item.latlng.coordinates
         const icon = item.current ? hilightIcon : defaultIcon
-        const marker = L.marker(coordinates, {icon: icon})
+        const marker = L.marker(coordinates, { icon, item })
+
         marker.addTo(map)
+        marker.bindPopup(initializePopup.bind(item), {
+          offset: popupOffset,
+          closeButton: false,
+          maxWidth: 200
+        })
       })
     }
 
@@ -47,6 +54,16 @@
       // Offset the map to make space for the title:
       map.panBy(offset, {animate: false})
     }
+
+    function initializePopup (marker) {
+      const tagName = 'map-popup'
+      const mapPopup = document.createElement(tagName)
+
+      riot.mount(mapPopup, tagName, marker.options.item)
+
+      return mapPopup
+    }
   </script>
 
 </map>
+

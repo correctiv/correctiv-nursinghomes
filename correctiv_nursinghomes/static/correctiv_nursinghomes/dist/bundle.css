@@ -834,6 +834,30 @@ a.nursinghomes__map__app-title:active {
   background: transparent;
   padding: 5px 15px;
 }
+.nursinghomes__map .leaflet-container .leaflet-popup-content-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: none;
+  color: white;
+  border-radius: 3px;
+}
+.nursinghomes__map .leaflet-container .leaflet-popup-content {
+  margin: 10px 15px;
+}
+.nursinghomes__map .leaflet-container .leaflet-popup-tip {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: none;
+}
+.nursinghomes__map-popup {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
+}
+.nursinghomes__map-popup > a {
+  color: white;
+}
+.nursinghomes__map-popup:after {
+  content: '→';
+  padding-left: .3em;
+}
 .nursinghomes__hero {
   background-image: #b7b7b7;
   background-image: url('../img/index-background.jpg');
