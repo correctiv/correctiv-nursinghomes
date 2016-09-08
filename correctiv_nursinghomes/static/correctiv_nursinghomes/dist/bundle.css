@@ -1,3 +1,25 @@
+.numbers {
+  font-family: 'Neuzeit', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-feature-settings: 'tnum';
+  -moz-font-feature-settings: 'tnum';
+  -ms-font-feature-settings: 'tnum';
+  text-align: right;
+}
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  /* This will be overridden in the client */
+  margin-bottom: 1em;
+}
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
 .bar-chart {
   margin-bottom: 30px;
 }
@@ -694,6 +716,123 @@
 	border-right-color: #fff;
 	}
 
+.nursinghomes__map {
+  height: 360px;
+  position: relative;
+  margin-bottom: 60px;
+}
+.nursinghomes__map__container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .nursinghomes__map__container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .nursinghomes__map__container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .nursinghomes__map__container {
+    width: 1170px;
+  }
+}
+.nursinghomes__map__header {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  pointer-events: none;
+}
+.nursinghomes__map__app-title {
+  display: inline-block;
+  padding: 0 6px;
+  line-height: 1.5em;
+  margin: 0 2px 2px 0;
+  background: black;
+  color: white;
+  font-family: 'Neuzeit-Condensed', 'Arial Narrow', 'Franklin Gothic Medium', 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 16px;
+  pointer-events: initial;
+  opacity: .8;
+}
+.nursinghomes__map__app-title:hover,
+.nursinghomes__map__app-title:focus,
+.nursinghomes__map__app-title:active,
+a.nursinghomes__map__app-title:hover,
+a.nursinghomes__map__app-title:focus,
+a.nursinghomes__map__app-title:active {
+  text-decoration: none;
+  background: black;
+  color: white;
+}
+.nursinghomes__map__title {
+  color: #ff6166;
+  font-size: 36px;
+  margin: 20px 0 5px 0;
+  padding: 0;
+  pointer-events: none;
+  text-shadow: 0 0 5px #ebebeb;
+}
+@media (min-width: 992px) {
+  .nursinghomes__map__title {
+    width: 60%;
+  }
+}
+.nursinghomes__map__subtitle {
+  text-shadow: 0 0 5px #ebebeb;
+}
+.nursinghomes__map .leaflet-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: #ebebeb;
+}
+.nursinghomes__map .leaflet-container .leaflet-control-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .nursinghomes__map .leaflet-container .leaflet-control-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .nursinghomes__map .leaflet-container .leaflet-control-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .nursinghomes__map .leaflet-container .leaflet-control-container {
+    width: 1170px;
+  }
+}
+.nursinghomes__map .leaflet-container .leaflet-control-attribution {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  background: transparent;
+  padding: 5px 15px;
+}
 .nursinghomes__hero {
   background-image: #b7b7b7;
   background-image: url('../img/index-background.jpg');

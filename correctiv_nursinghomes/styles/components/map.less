@@ -1,1 +1,73 @@
 @import (inline) '@{node_modules}/leaflet/dist/leaflet.css';
+
+@background: #ebebeb;
+
+.nursinghomes__map {
+  height: 360px;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.nursinghomes__map__container {
+  .container();
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.nursinghomes__map__header {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  pointer-events: none;
+}
+
+.nursinghomes__map__app-title {
+  .category-tag(black, white);
+  font-size: 16px;
+  pointer-events: initial;
+  opacity: .8;
+}
+
+.nursinghomes__map__title {
+  color: @purple;
+  font-size: 36px;
+  margin: 20px 0 5px 0;
+  padding: 0;
+  pointer-events: none;
+  text-shadow: 0  0 5px @background;
+
+  @media (min-width: @screen-md) {
+    width: 60%;
+  }
+}
+
+.nursinghomes__map__subtitle {
+  text-shadow: 0  0 5px @background;
+}
+
+.nursinghomes__map .leaflet-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: @background;
+
+  .leaflet-control-container {
+    .container();
+    position: relative;
+    height: 100%;
+  }
+
+  .leaflet-control-attribution {
+    font-family: @body-font;
+    background: transparent;
+    padding: 5px @grid-gutter-width/2;
+  }
+}

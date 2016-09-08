@@ -1,0 +1,126 @@
+.category-tag(@background: @black, @color: @white) {
+  display: inline-block;
+  padding: 0 6px;
+  line-height: 1.5em;
+  margin: 0 2px 2px 0;
+  background: @background;
+  color: @color;
+  .heading-font-secondary();
+
+  &:hover, &:focus, &:active,
+  a&:hover, a&:focus, a&:active {
+    text-decoration: none;
+    background: @background;
+    color: @color;
+  }
+}
+
+.tinted-visual() {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0) 100%);
+    opacity: .95;
+    z-index: 1;
+
+    @media (min-width: @screen-sm-min) {
+      height: 180px;
+    }
+  }
+}
+
+.call-to-action-arrow(@background, @color, @hover-background, @hover-color) {
+  display: inline-block;
+  background: @background;
+  color: @color;
+  padding: 0 .5em;
+  position: relative;
+
+  // Add a triangle to the right-hand side of the element
+  &:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: fade(@background, 0); // smoothens rendering in FF
+    border-left-color: @background;
+    border-width: .75em;
+    margin-top: -.75em;
+  }
+
+  &:hover {
+    background: @hover-background;
+    color: @hover-color;
+
+    &:after {
+      border-left-color: @hover-background;
+    }
+  }
+}
+
+.header-image() {
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    bottom: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+  }
+}
+
+// Simple helper for creating iframes that keep their aspect ratio in a responsive layouts
+// does not use () so that it can be used directly as a classname
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%; /* This will be overridden in the client */
+  margin-bottom: 1em;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+  }
+}
+
+// Simple helper for making columns that use the width of bootstrap columns,
+// without the floating-magic, etc.
+.make-column(@columns) {
+  width: percentage((@columns / @grid-columns));
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+// Simple helper for applying the width of a paragraph in the article body to a component
+.paragraph-width() {
+  @media (min-width: @screen-sm-min) {
+    margin-left: 25%;
+    .make-column(9);
+  }
+
+  @media (min-width: @screen-md-min) {
+    .make-column(7);
+  }
+
+  @media (min-width: @screen-lg-min) {
+    .make-column(6);
+  }
+}

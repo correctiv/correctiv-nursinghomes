@@ -1,0 +1,73 @@
+// --- COLORS ---
+@black: #1a1a1a;
+@white: #ffffff;
+
+@beige: darken(#cfd3bb, 5%);
+@beige-lighter: lighten(@beige, 10%);
+@beige-light: lighten(@beige, 5%);
+@beige-dark: darken(@beige, 10%);
+@beige-darker: darken(@beige, 40%);
+
+@blue: #6594be;
+@blue-lighter: lighten(@blue, 30%);
+@blue-light: lighten(@blue, 10%);
+@blue-dark: darken(@blue, 10%);
+@blue-darker: darken(@blue, 30%);
+
+@purple: #ff6166;
+@purple-lighter: lighten(@purple-light, 15%);;
+@purple-light: #ff7a7f;
+@purple-dark: #c81455;
+@purple-darker: darken(@purple-dark, 15%);;
+
+@gray-lighter: #f5f5f5;
+@gray-light: #dadada;
+@gray: #9c9c9c;
+@gray-dark: #555555;
+@gray-darker: #4d4d4d;
+
+@input-color-placeholder: @gray;
+@input-color: @black;
+
+// --- FONTS ---
+@body-font: Georgia, Times, "Times New Roman", serif;
+
+@font-size-sm: 15px;
+@font-size-md: 19px;
+@font-size-lg: 24px;
+
+@line-height-sm: 22px;
+@line-height-md: 26px;
+@line-height-lg: 32px;
+
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);

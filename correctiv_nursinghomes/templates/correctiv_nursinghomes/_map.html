@@ -3,19 +3,19 @@
 {% load sekizai_tags %}
 {% load leaflet_tags %}
 
-<header class="custom-leaflet-map">
+<section class="nursinghomes__map">
 
-  <div class="custom-leaflet-map__container">
-    <header class="custom-leaflet-map__header">
+  <div class="nursinghomes__map__container">
+    <header class="nursinghomes__map__header">
       <a href="{% url 'nursinghomes:nursinghomes-index' %}">
-        <h1 class="custom-leaflet-map__app-title">
+        <h1 class="nursinghomes__map__app-title">
           {% trans "Nursing Home Guide" %}
         </h1>
       </a>
-      <h2 class="custom-leaflet-map__title">
+      <h2 class="nursinghomes__map__title">
         {{ object.name }}
       </h2>
-      <p class="custom-leaflet-map__subtitle">
+      <p class="nursinghomes__map__subtitle">
         {{ object.location }}
       </p>
     </header>
@@ -23,19 +23,8 @@
 
   <map></map>
 
-  {% addtoblock "js" %}
-    <script>
-      correctiv.mount("map", {
-        items: {{ closest_nursinghomes|safe }},
-        icons: {
-          default: "{% static 'correctiv_nursinghomes/img/map-marker.svg' %}",
-          hilight: "{% static 'correctiv_nursinghomes/img/map-marker--hilight.svg' %}"
-        }
-      })
-    </script>
-  {% endaddtoblock %}
+</section>
 
-</header>
 {% addtoblock "js" %}
   <script>
     correctiv.mount("map", {
