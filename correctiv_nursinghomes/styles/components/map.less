@@ -1,11 +1,10 @@
 @import (inline) '@{node_modules}/leaflet/dist/leaflet.css';
 
-@background: #ebebeb;
-
 .nursinghomes__map {
   height: 360px;
   position: relative;
   margin-bottom: 60px;
+  background: @gray-lighter;
 }
 
 .nursinghomes__map__container {
@@ -39,7 +38,7 @@
   margin: 20px 0 5px 0;
   padding: 0;
   pointer-events: none;
-  text-shadow: 0  0 5px @background;
+  text-shadow: 0  0 5px @gray-lighter;
 
   @media (min-width: @screen-md) {
     width: 60%;
@@ -47,7 +46,7 @@
 }
 
 .nursinghomes__map__subtitle {
-  text-shadow: 0  0 5px @background;
+  text-shadow: 0  0 5px @gray-lighter;
 }
 
 .nursinghomes__map .leaflet-container {
@@ -57,7 +56,7 @@
   bottom: 0;
   left: 0;
   z-index: 0;
-  background: @background;
+  background: @gray-lighter;
 
   .leaflet-control-container {
     .container();

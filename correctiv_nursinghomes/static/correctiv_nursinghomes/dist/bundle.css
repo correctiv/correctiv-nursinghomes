@@ -720,6 +720,7 @@
   height: 360px;
   position: relative;
   margin-bottom: 60px;
+  background: #eeeeee;
 }
 .nursinghomes__map__container {
   margin-right: auto;
@@ -786,7 +787,7 @@ a.nursinghomes__map__app-title:active {
   margin: 20px 0 5px 0;
   padding: 0;
   pointer-events: none;
-  text-shadow: 0 0 5px #ebebeb;
+  text-shadow: 0 0 5px #eeeeee;
 }
 @media (min-width: 992px) {
   .nursinghomes__map__title {
@@ -794,7 +795,7 @@ a.nursinghomes__map__app-title:active {
   }
 }
 .nursinghomes__map__subtitle {
-  text-shadow: 0 0 5px #ebebeb;
+  text-shadow: 0 0 5px #eeeeee;
 }
 .nursinghomes__map .leaflet-container {
   position: absolute;
@@ -803,7 +804,7 @@ a.nursinghomes__map__app-title:active {
   bottom: 0;
   left: 0;
   z-index: 0;
-  background: #ebebeb;
+  background: #eeeeee;
 }
 .nursinghomes__map .leaflet-container .leaflet-control-container {
   margin-right: auto;
