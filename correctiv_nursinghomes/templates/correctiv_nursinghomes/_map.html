@@ -36,3 +36,29 @@
   {% endaddtoblock %}
 
 </header>
+{% addtoblock "js" %}
+  <script>
+    correctiv.mount("map", {
+      items: {{ closest_nursinghomes|safe }},
+      zoom: 15,
+      minZoom: 12,
+      maxZoom: 17,
+      icons: {
+        default: "{% static 'correctiv_nursinghomes/img/map-marker.svg' %}",
+        hilight: "{% static 'correctiv_nursinghomes/img/map-marker--hilight.svg' %}"
+      },
+      iconOptions: {
+        iconSize: [20, 30],
+        iconAnchor: [10, 30]
+      },
+      viewportOffset: {
+        smallScreen: [0, 60],
+        bigScreen: [-250, 0],
+        breakpoint: 768
+      },
+      tiles: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+      attribution: '<a href="http://www.openstreetmap.org/copyright">© OpenStreetMap</a> contributors <a href="https://cartodb.com/attributions">© CartoDB</a>, CartoDB <a href="https://cartodb.com/attributions">attribution</a>'
+
+    })
+  </script>
+{% endaddtoblock %}
