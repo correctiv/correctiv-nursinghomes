@@ -18,7 +18,7 @@ const argv = require('yargs').argv
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
-const dependencies = ['leaflet', 'riot']
+const dependencies = []
 
 const options = {
   js: {
