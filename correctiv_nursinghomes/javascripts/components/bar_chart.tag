@@ -14,7 +14,7 @@
     }
 
     this.currency = (value) => {
-      const formattedValue = Intl.numberFormat(opts.locale, {
+      const formattedValue = Intl.NumberFormat(opts.locale, {
         style: 'currency',
         currency: opts.currency
       }).format(value)
