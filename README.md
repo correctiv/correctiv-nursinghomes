@@ -28,3 +28,17 @@ environment.
 Load in data and don't forget to run:
 
     ./manage.py update_search_field correctiv_nursinghomes
+
+## Client-side code
+
+Use NPM to install client-side dependencies:
+
+    npm install
+
+During development, use Gulp for transpiling CSS and JavaScript, and running a [livereload server](https://www.npmjs.com/package/gulp-livereload):
+
+    gulp
+
+Use the `deploy` task to create minified CSS and JavaScript bundles:
+
+    gulp deploy
