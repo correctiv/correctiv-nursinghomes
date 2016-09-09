@@ -18,7 +18,7 @@
     items={ items }
     max={ maxValue } />
 
-  <script>
+  <script type="babel">
     this.selectedSet = opts.initialOption
 
     this.onSelectChange = event => {
@@ -27,9 +27,9 @@
     }
 
     this.on('update', () => {
-      var selected = this.selectedSet;
+      const selected = this.selectedSet
 
-      this.items = opts.items.map( item => {
+      this.items = opts.items.map(item => {
         return {
           name: item.name,
           url: item.url,

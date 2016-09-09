@@ -2,7 +2,7 @@
 
   <div id='map'></div>
 
-  <script>
+  <script type="babel">
     import L from 'leaflet'
     import riot from 'riot'
     import 'core-js/fn/array/find'
@@ -33,7 +33,7 @@
       const defaultIcon = new Icon({ iconUrl: icons.default })
       const hilightIcon = new Icon({ iconUrl: icons.hilight })
 
-      items.forEach( item => {
+      items.forEach(item => {
         const coordinates = item.latlng.coordinates
         const icon = item.current ? hilightIcon : defaultIcon
         const marker = L.marker(coordinates, { icon, item })

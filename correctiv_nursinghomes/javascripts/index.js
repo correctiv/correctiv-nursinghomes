@@ -5,4 +5,4 @@ import './components/bar_chart.tag'
 import './components/map.tag'
 import './components/map-popup.tag'
 
-export { mount };
+export { mount }

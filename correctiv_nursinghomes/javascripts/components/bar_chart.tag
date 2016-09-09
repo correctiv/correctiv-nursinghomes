@@ -8,21 +8,19 @@
     </div>
   </bar-chart-item>
 
-  <script>
-
+  <script type="babel">
     this.percentage = (value) => {
-      return 100 / opts.max * value
+      return (100 / opts.max) * value
     }
 
     this.currency = (value) => {
-      const formattedValue = Intl.NumberFormat(opts.locale, {
+      const formattedValue = Intl.numberFormat(opts.locale, {
         style: 'currency',
         currency: opts.currency
       }).format(value)
 
       return value ? formattedValue : opts.na
     }
-
   </script>
 
 </bar-chart>
