@@ -19,7 +19,7 @@
 {% addtoblock "js" %}
   <script>
     correctiv.mount("price-comparison", {
-      items: {{ closest_nursinghomes|safe }},
+      items: {{ price_comparison_json|safe }},
       options: {
         carelevel_1: "{% trans 'Care level 1' %}",
         carelevel_2: "{% trans 'Care level 2' %}",

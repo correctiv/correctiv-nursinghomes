@@ -28,7 +28,7 @@
 {% addtoblock "js" %}
   <script>
     correctiv.mount("map", {
-      items: {{ closest_nursinghomes|safe }},
+      items: {{ map_json|safe }},
       zoom: 15,
       minZoom: 12,
       maxZoom: 17,
@@ -48,7 +48,6 @@
       popupOffset: [0, -30],
       tiles: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
       attribution: '<a href="http://www.openstreetmap.org/copyright">© OpenStreetMap</a> contributors <a href="https://cartodb.com/attributions">© CartoDB</a>, CartoDB <a href="https://cartodb.com/attributions">attribution</a>'
-
     })
   </script>
 {% endaddtoblock %}

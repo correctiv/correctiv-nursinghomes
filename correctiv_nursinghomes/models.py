@@ -111,15 +111,26 @@ class NursingHomeManager(SearchManager):
             qs = qs[:limit]
         return qs
 
-    def get_json_for_page(self, obj):
-        homes = self.get_by_distance(obj)
+    def get_price_comparison_data(self, obj):
+        homes = self.get_by_distance(obj, limit=10)
+        return [
+            {
+                'name': home.name,
+                'url': home.get_absolute_url(),
+                'prices': home.prices,
+                'current': home == obj
+            }
+            for home in homes
+        ]
+
+    def get_map_data(self, obj):
+        homes = self.get_by_distance(obj, limit=150)
         return [
             {
                 'name': home.name,
                 'location': home.location,
                 'url': home.get_absolute_url(),
                 'latlng': json.loads(home.geo.geojson),
-                'prices': home.prices,
                 'current': home == obj
             }
             for home in homes

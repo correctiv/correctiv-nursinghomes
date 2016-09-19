@@ -64,11 +64,12 @@ class NursingHomeDetailView(SearchMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(NursingHomeDetailView, self).get_context_data(**kwargs)
+        map_data = NursingHome.objects.get_map_data(self.object)
+        price_comparison_data = NursingHome.objects.get_price_comparison_data(self.object)
+
+        context['map_json'] = json.dumps(map_data)
+        context['price_comparison_json'] = json.dumps(price_comparison_data)
         context['title'] = _('Nursing home %(name)s') % {'name': self.object.name}
         context['description'] = _('Details about the nursing home %(name)s.') % {'name': self.object.name}
-
-        closest = NursingHome.objects.get_json_for_page(self.object)
-
-        context['closest_nursinghomes'] = json.dumps(closest)
 
         return context
