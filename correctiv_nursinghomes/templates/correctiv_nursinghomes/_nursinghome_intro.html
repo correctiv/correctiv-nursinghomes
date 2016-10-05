@@ -14,6 +14,8 @@
 {% endif %}
 </p>
 
+<h3>{% trans "The facts" %}</h3>
+
 {% if object.grade_care and not object.grade_care.is_nan %}
 <p>
   {% blocktrans with name=object.name location=object.location medical_grade=object.grade_care|floatformat:1 grade_comp=object.compare_care_grade_state|yesno:_("better,worse,equal") state=object.state.name %}
@@ -51,10 +53,15 @@
 {% endif %}
 </p>
 
+<h3>{% trans "Questions and complaints" %}</h3>
+
 <p>
   {% blocktrans with insurance=object.data.insurance authority=object.get_supervision_authority_link mdk=object.get_mdk_region %}
     If you want to inquire about this home you reach out to the {{ authority }} or the {{ mdk }}.
   {% endblocktrans %}
+</p>
+
+<p>
   {% blocktrans %}
     If you know this nursing home and you found a mistake in the AOK data, please <a href="mailto:aok-bundesverband@bv.aok.de">send an email directly to the AOK</a>. We can't change the original data by ourselves, but you can help to make nursing homes more transparent for everybody.
   {% endblocktrans %}
