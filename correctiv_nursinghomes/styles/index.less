@@ -8,6 +8,7 @@
 @import 'components/search-tile';
 @import 'components/map';
 @import 'components/map-popup';
+@import 'components/contact';
 
 .nursinghomes__hero {
   background-image: #b7b7b7;
@@ -166,23 +167,9 @@
   color: #dadada;
 }
 
-.nursinghomes__contact {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-bottom: 30px;
-}
-
-.nursinghomes__contact > li {
-  margin: 0;
-  padding: 0;
-  font-size: 15px;
-  line-height: 30px;
-}
-
 .nursinghomes__price-comparison {
   display: block;
-  margin-bottom: 30px;
+  margin: -35px 0 20px;
   position: relative;
 }
 
@@ -199,4 +186,9 @@
     right: 0;
     width: auto;
   }
+}
+
+.nursinghomes__price-comparison__disclaimer {
+  font-size: @font-size-sm;
+  color: @gray-light;
 }

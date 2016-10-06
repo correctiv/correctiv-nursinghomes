@@ -1,0 +1,48 @@
+.nursinghomes__contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 60px;
+}
+
+.nursinghomes__contact > li {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 30px;
+  color: @gray-light;
+}
+
+// Icons, borrowed from the correctiv.org project:
+
+.icon() {
+  &:before {
+    font-family: entypo;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    padding-right: .4em;
+  }
+}
+
+.nursinghomes__contact__link {
+  .icon;
+  &:before {
+    content: "🔗"; /* '\1f517' */
+  }
+}
+
+.nursinghomes__contact__address {
+  .icon;
+  &:before {
+    content: "\2302"; /* '\2302' */
+  }
+}
+
+.nursinghomes__contact__phone {
+  .icon;
+  &:before {
+    content: "📞"; /* '\1f4de' */
+  }
+}
