@@ -48,10 +48,18 @@
   color: black;
 }
 
-.bar-chart__item.-hilight .bar-chart__bar {
-  background: @purple;
+.bar-chart__item--highlight {
+
+  .bar-chart__label {
+    font-weight: bold;
+  }
+
+  .bar-chart__bar {
+    background: @purple;
+  }
+
+  .bar-chart__value {
+    color: #fff;
+  }
 }
 
-.bar-chart__item.-hilight .bar-chart__value {
-  color: #fff;
-}
