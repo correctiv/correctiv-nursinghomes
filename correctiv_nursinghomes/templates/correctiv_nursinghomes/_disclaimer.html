@@ -1,25 +1,21 @@
 {% load i18n %}
 
-<div class="well">
+<p>{% trans "This information was published in the annual transparency report of the Medizinischer Dienst der Krankenkassen, which is a part of the public insurance companies in Germany. The data was last updated on April 7, 2016." %}</p>
 
-  <p>{% trans "This information was published in the annual transparency report of the Medizinischer Dienst der Krankenkassen, which is a part of the public insurance companies in Germany. The data was last updated on April 7, 2016." %}</p>
+<p>{% trans "If a home has negative results in any category, you should ask why these issues exist and don’t assume that the whole nursing home is bad. On the other hand, you should also do some checks even if a home doesn’t have any indications of issues. The most important thing to visit the nursing home in person and see firsthand if you see signs of issues." %}</p>
 
-  <p>{% trans "If a home has negative results in any category, you should ask why these issues exist and don’t assume that the whole nursing home is bad. On the other hand, you should also do some checks even if a home doesn’t have any indications of issues. The most important thing to visit the nursing home in person and see firsthand if you see signs of issues." %}</p>
-
-  <ul>
-    {% if LANGUAGE_CODE == "de" %}
-      <li>
-        <a href="https://correctiv.org/recherchen/pflege/artikel/2016/06/02/was-wir-wissen-was-wir-nicht-wissen/">{% trans "What does this data really reveal?" %}</a>
-      </li>
-    {% endif %}
-
-    {% if object.data.aok_report_id %}
+<ul>
+  {% if LANGUAGE_CODE == "de" %}
     <li>
-      <a href="http://www.aok-pflegeheimnavigator.de/index.php?id={{ object.data.aok_report_id|floatformat:0 }}&amp;action=popup&amp;popuptitle=showDetailPflegekarte&amp;layout=detailpflegekarte" target="_blank">
-        {% trans "Download the transparency report here" %}
-      </a>
+      <a href="https://correctiv.org/recherchen/pflege/artikel/2016/06/02/was-wir-wissen-was-wir-nicht-wissen/">{% trans "What does this data really reveal?" %}</a>
     </li>
-    {% endif %}
-  </ul>
+  {% endif %}
 
-</div>
+  {% if object.data.aok_report_id %}
+  <li>
+    <a href="http://www.aok-pflegeheimnavigator.de/index.php?id={{ object.data.aok_report_id|floatformat:0 }}&amp;action=popup&amp;popuptitle=showDetailPflegekarte&amp;layout=detailpflegekarte" target="_blank">
+      {% trans "Download the transparency report here" %}
+    </a>
+  </li>
+  {% endif %}
+</ul>

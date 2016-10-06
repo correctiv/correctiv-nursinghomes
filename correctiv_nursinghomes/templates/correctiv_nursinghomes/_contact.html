@@ -1,0 +1,17 @@
+<ul class="nursinghomes__contact">
+
+  <li class="nursinghomes__contact__address">
+    {{ object.address }}, {{ object.postcode }} {{ object.location }}
+  </li>
+
+  {% if object.data.Telefon %}
+    <li class="nursinghomes__contact__phone">
+      {{ object.data.Telefon }}
+    </li>
+  {% endif %}
+  {% if object.web %}
+    <li class="nursinghomes__contact__link">
+      <a href="{{ object.web }}">{{ object.web }}</a>
+    </li>
+  {% endif %}
+</ul>
