@@ -2,7 +2,7 @@
 {% load humanize %}
 
 <p>
-  {% trans "For the past few months, Correctiv has looked through the inspection reports conducted by the Medizinische Dienst der Krankenkassen (MDK) of every nursing home in Germany. The data was provided by AOK." %}
+  {% trans "For the past few months, Correctiv has looked through the inspection reports conducted by the Medizinische Dienst der Krankenversicherung (MDK) of every nursing home in Germany. The data was provided by AOK." %}
 {% if object.any_red_flag %}
   {% blocktrans with name=object.name redflag=object.red_flag_count|apnumber count count=object.red_flag_count %}
     Our analysis of the data shows that the nursing home {{ name }} doesn’t get all points in one important category.
