@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 14:43+0200\n"
-"PO-Revision-Date: 2016-10-06 14:48+0200\n"
+"POT-Creation-Date: 2016-10-13 14:14+0200\n"
+"PO-Revision-Date: 2016-10-13 14:15+0200\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -266,10 +266,6 @@ msgid "Click here to request reports from the local Heimaufsicht"
 msgstr "Klicke hier, um Prüfberichte bei der Heimaufsicht anzufragen"
 
 #: templates/correctiv_nursinghomes/_more_info.html:82
-msgid "Guidebook"
-msgstr "Ratgeber"
-
-#: templates/correctiv_nursinghomes/_more_info.html:87
 msgid ""
 "What questions should you ask? Where should you go to find help? Our "
 "reporters have a lot of tips and contacts to aid you in your search for a "
@@ -281,9 +277,134 @@ msgstr ""
 "Pflegeheim recherchiert. Inklusive Checkliste mit den zehn wichtigsten "
 "Punkten."
 
-#: templates/correctiv_nursinghomes/_more_info.html:91
+#: templates/correctiv_nursinghomes/_more_info.html:86
 msgid "Your guide to choosing a nursing home"
 msgstr "Wie finde ich das richtige Heim?"
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:4
+msgid "The facts"
+msgstr "Die wichtigsten Fakten"
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:8
+msgid "better,worse,equal"
+msgstr "besser,schlechter,gleich"
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:8
+#, python-format
+msgid ""
+"\n"
+"    The nursing home %(name)s in %(location)s has a %(medical_grade)s for "
+"their medical care, which is %(grade_comp)s in comparison to other nursing "
+"homes in %(state)s.\n"
+"  "
+msgstr ""
+"\n"
+"\tDas Heim %(name)s in %(location)s hat für seine pflegerische und "
+"medizinische Versorgung die Schulnote %(medical_grade)s erhalten. Das ist "
+"%(grade_comp)s als der Durchschnitt aller Heime in %(state)s.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:11
+msgid ""
+"Keep in mind that almost all nursing homes get very good grades, so this "
+"shouldn’t be a key indicator for you."
+msgstr ""
+"Wichtig: Fast alle Pflegeheime bekommen eine sehr gute Note. Diese Note "
+"allein sollte also nicht Grundlage Eurer Entscheidung sein."
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:17
+#, python-format
+msgid ""
+"\n"
+"    The home is %(price_range)s and you have to pay %(price_increase)s in "
+"comparison to other nursing homes in %(state)s.\n"
+"    "
+msgstr ""
+"\n"
+"  Dieses Pflegeheim ist %(price_range)s und ihr müsst im Vergleich mit "
+"anderen Heimen in %(state)s %(price_increase)s bezahlen.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:21
+#, python-format
+msgid ""
+"\n"
+"      In Germany a month of level 3 care costs %(national_average)s Euro on "
+"average as a private co-payment.\n"
+"    "
+msgstr ""
+"\n"
+"   In Deutschland kostet ein Monat Pflege in der Pflegestufe 3 im Schnitt "
+"%(national_average)s Euro private Zuzahlung.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:27
+#, python-format
+msgid ""
+"\n"
+"    The nursing home %(name)s is a %(size_comp)s home with %(size)s occupied "
+"beds in fully inpatient care.\n"
+"  "
+msgstr ""
+"\n"
+"  %(name)s ist ein %(size_comp)ses Pflegeheim mit %(size)s belegten Betten "
+"in der vollstationären Pflege.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:33
+#, python-format
+msgid ""
+"\n"
+"    The home belongs to a %(provider_type)s company.\n"
+"  "
+msgstr ""
+"\n"
+"  Das Heim wird von einem %(provider_type)sen Betreiber geführt.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:39
+msgid ""
+"Private companies often don't pay their employees unionized wages. Only the "
+"nursing home itself knows if this is the case here."
+msgstr ""
+"Private Betreiber bezahlen ihre Pfleger häufig nicht nach Tarif. Ob das hier "
+"der Fall ist, kann Euch nur der Betreiber beantworten."
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:43
+msgid "Questions and complaints"
+msgstr "Nachfragen und Beschwerden"
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:46
+#, python-format
+msgid ""
+"\n"
+"    If you want to inquire about this home you reach out to the "
+"%(authority)s or the %(mdk)s.\n"
+"  "
+msgstr ""
+"\n"
+"  Falls Ihr Nachfragen oder Beschwerden zu diesem Pflegeheim habt, könnt Ihr "
+"Euch an die %(authority)s oder den %(mdk)s wenden.\n"
+"  "
+
+#: templates/correctiv_nursinghomes/_nursinghome_facts.html:52
+msgid ""
+"\n"
+"    If you know this nursing home and you found a mistake in the AOK data, "
+"please <a href=\"mailto:aok-bundesverband@bv.aok.de\">send an email directly "
+"to the AOK</a>. We can't change the original data by ourselves, but you can "
+"help to make nursing homes more transparent for everybody.\n"
+"  "
+msgstr ""
+"\n"
+"\tDiese Daten beruhen auf Prüfungen des Medizinischen Dienstes der "
+"Krankenversicherung (MDK), die uns der AOK-Bundesverband zur Verfügung "
+"gestellt hat. In diesen Daten können Fehler enthalten sein. Wenn Ihr das "
+"Heim kennt und einen Fehler gefunden habt, wendet Euch über <a href=\"mailto:"
+"aok-bundesverband@bv.aok.de\">diese Emailadresse direkt an die AOK</a>. Wir "
+"selbst können die Originaldaten nicht verändern. Ihr könnt auf diese Weise "
+"mithelfen, dass die Pflegeheime für alle transparenter werden.\n"
+"  "
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:6
 msgid ""
@@ -329,131 +450,6 @@ msgstr ""
 "Auffälligkeiten. Dies heißt allerdings nicht automatisch, dass dies ein "
 "hervorragendes Pflegeheim ist."
 
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:18
-msgid "The facts"
-msgstr "Die wichtigsten Fakten"
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:22
-msgid "better,worse,equal"
-msgstr "besser,schlechter,gleich"
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:22
-#, python-format
-msgid ""
-"\n"
-"      The nursing home %(name)s in %(location)s has a %(medical_grade)s for "
-"their medical care, which is %(grade_comp)s in comparison to other nursing "
-"homes in %(state)s.\n"
-"    "
-msgstr ""
-"\n"
-"\tDas Heim %(name)s in %(location)s hat für seine pflegerische und "
-"medizinische Versorgung die Schulnote %(medical_grade)s erhalten. Das ist "
-"%(grade_comp)s als der Durchschnitt aller Heime in %(state)s.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:25
-msgid ""
-"Keep in mind that almost all nursing homes get very good grades, so this "
-"shouldn’t be a key indicator for you."
-msgstr ""
-"Wichtig: Fast alle Pflegeheime bekommen eine sehr gute Note. Diese Note "
-"allein sollte also nicht Grundlage Eurer Entscheidung sein."
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:31
-#, python-format
-msgid ""
-"\n"
-"      The home is %(price_range)s and you have to pay %(price_increase)s in "
-"comparison to other nursing homes in %(state)s.\n"
-"      "
-msgstr ""
-"\n"
-"  Dieses Pflegeheim ist %(price_range)s und ihr müsst im Vergleich mit "
-"anderen Heimen in %(state)s %(price_increase)s bezahlen.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:35
-#, python-format
-msgid ""
-"\n"
-"        In Germany a month of level 3 care costs %(national_average)s Euro "
-"on average as a private co-payment.\n"
-"      "
-msgstr ""
-"\n"
-"   In Deutschland kostet ein Monat Pflege in der Pflegestufe 3 im Schnitt "
-"%(national_average)s Euro private Zuzahlung.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:41
-#, python-format
-msgid ""
-"\n"
-"      The nursing home %(name)s is a %(size_comp)s home with %(size)s "
-"occupied beds in fully inpatient care.\n"
-"    "
-msgstr ""
-"\n"
-"  %(name)s ist ein %(size_comp)ses Pflegeheim mit %(size)s belegten Betten "
-"in der vollstationären Pflege.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:47
-#, python-format
-msgid ""
-"\n"
-"      The home belongs to a %(provider_type)s company.\n"
-"    "
-msgstr ""
-"\n"
-"  Das Heim wird von einem %(provider_type)sen Betreiber geführt.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:53
-msgid ""
-"Private companies often don't pay their employees unionized wages. Only the "
-"nursing home itself knows if this is the case here."
-msgstr ""
-"Private Betreiber bezahlen ihre Pfleger häufig nicht nach Tarif. Ob das hier "
-"der Fall ist, kann Euch nur der Betreiber beantworten."
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:57
-msgid "Questions and complaints"
-msgstr "Nachfragen und Beschwerden"
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:60
-#, python-format
-msgid ""
-"\n"
-"      If you want to inquire about this home you reach out to the "
-"%(authority)s or the %(mdk)s.\n"
-"    "
-msgstr ""
-"\n"
-"  Falls Ihr Nachfragen oder Beschwerden zu diesem Pflegeheim habt, könnt Ihr "
-"Euch an die %(authority)s oder den %(mdk)s wenden.\n"
-"  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:66
-msgid ""
-"\n"
-"      If you know this nursing home and you found a mistake in the AOK data, "
-"please <a href=\"mailto:aok-bundesverband@bv.aok.de\">send an email directly "
-"to the AOK</a>. We can't change the original data by ourselves, but you can "
-"help to make nursing homes more transparent for everybody.\n"
-"    "
-msgstr ""
-"\n"
-"\tDiese Daten beruhen auf Prüfungen des Medizinischen Dienstes der "
-"Krankenversicherung (MDK), die uns der AOK-Bundesverband zur Verfügung "
-"gestellt hat. In diesen Daten können Fehler enthalten sein. Wenn Ihr das "
-"Heim kennt und einen Fehler gefunden habt, wendet Euch über <a href=\"mailto:"
-"aok-bundesverband@bv.aok.de\">diese Emailadresse direkt an die AOK</a>. Wir "
-"selbst können die Originaldaten nicht verändern. Ihr könnt auf diese Weise "
-"mithelfen, dass die Pflegeheime für alle transparenter werden.\n"
-"  "
-
 #: templates/correctiv_nursinghomes/_price_comparison.html:7
 msgid "Compare prices"
 msgstr "Preisvergleich"
@@ -470,19 +466,19 @@ msgstr ""
 "Investitionskosten, die von Heim zu Heim variabel sind. Wichtig: Wer ein "
 "gutes Heim sucht, sollte nicht nur den Preis vergleichen."
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:25
+#: templates/correctiv_nursinghomes/_price_comparison.html:24
 msgid "Care level 1"
 msgstr "Pflegestufe 1"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:26
+#: templates/correctiv_nursinghomes/_price_comparison.html:25
 msgid "Care level 2"
 msgstr "Pflegestufe 2"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:27
+#: templates/correctiv_nursinghomes/_price_comparison.html:26
 msgid "Care level 3"
 msgstr "Pflegestufe 3"
 
-#: templates/correctiv_nursinghomes/_price_comparison.html:32
+#: templates/correctiv_nursinghomes/_price_comparison.html:31
 msgid "n/a"
 msgstr "k.A."
 
@@ -561,19 +557,19 @@ msgstr "Beispiele:"
 msgid "The guide to German nursing homes."
 msgstr "Wie finde ich das richtige Heim?"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:31
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:41
 msgid "Notes by this nursing home"
 msgstr "Anmerkungen des Betreibers"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:59
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:60
 msgid "From the transparency report"
 msgstr "Aus dem Transparenzbericht"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:72
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:73
 msgid "About this investigation"
 msgstr "Über diese Website"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:77
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
 msgid ""
 "We investigated issues with the infrastructure of the nursing homes since "
 "the beginning of 2015. We talked to hundreds of people and analyzed data "
@@ -583,7 +579,7 @@ msgstr ""
 "Hunderten Menschen gesprochen und Daten zu allen Pflegeheimen Deutschlands "
 "ausgewertet. "
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:81
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:82
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:87
 msgid "You can find our full research in German here."
 msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
@@ -592,15 +588,20 @@ msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
 msgid "You can find some of our research in English here."
 msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:107
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:106
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
 #: templates/correctiv_nursinghomes/nursinghome_detail.html:117
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:127
+msgid "Support CORRECTIV"
+msgstr "CORRECTIV unterstützen"
+
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:122
 msgid "Independent journalism needs independent funding"
 msgstr "Unabhängiger Journalismus braucht unabhängige Finanzierung"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:119
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:124
 msgid ""
 "Anyone can write nice features. We want to reveal injustice. As an "
 "independent non-profit organization, we need your help. Become a member and "
@@ -609,10 +610,6 @@ msgstr ""
 "Nette Geschichten schreiben können andere. Wir wollen aufklären. Wir sind "
 "unabhängig, werbefrei und nicht-gewinnorientiert. Mit einer "
 "Fördermitgliedschaft sicherst Du dauerhaft unsere Arbeit."
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:122
-msgid "Support CORRECTIV"
-msgstr "CORRECTIV unterstützen"
 
 #: templates/correctiv_nursinghomes/nursinghome_list.html:8
 #, python-format
@@ -701,6 +698,9 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Details about the nursing home %(name)s."
 msgstr "Details zum Pflegeheim %(name)s."
+
+#~ msgid "Guidebook"
+#~ msgstr "Ratgeber"
 
 #~ msgid "Home"
 #~ msgstr "Heim"
