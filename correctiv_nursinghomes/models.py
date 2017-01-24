@@ -58,9 +58,12 @@ class SupervisionAuthority(models.Model):
     contact = models.TextField(blank=True)
     address = models.TextField(blank=True)
 
-    state = models.ForeignKey(State, null=True, blank=True)
-    district = models.ForeignKey(District, null=True, blank=True)
-    borough = models.ForeignKey(Borough, null=True, blank=True)
+    state = models.ForeignKey(State, null=True, blank=True,
+            related_name='supervisionauthorities_in_state')
+    district = models.ForeignKey(District, null=True, blank=True,
+            related_name='supervisionauthorities_in_district')
+    borough = models.ForeignKey(Borough, null=True, blank=True,
+            related_name='supervisionauthorities_in_borough')
 
     fds_url = models.CharField(max_length=512, blank=True)
 
@@ -281,8 +284,10 @@ class NursingHome(models.Model):
 
     notes = models.TextField(blank=True)
 
-    state = models.ForeignKey(State, null=True, blank=True)
-    district = models.ForeignKey(District, null=True, blank=True)
+    state = models.ForeignKey(State, null=True, blank=True,
+            related_name='nursinghomes_in_state')
+    district = models.ForeignKey(District, null=True, blank=True,
+            related_name='nursinghomes_in_district')
 
     geo = models.PointField(_('Geographic location'), geography=True)
 
