@@ -3,6 +3,7 @@ import json
 
 from django.views.generic import TemplateView, ListView
 from django.views.generic.detail import DetailView
+from django.shortcuts import render
 from django.http import QueryDict
 from django.utils.translation import ugettext_lazy as _
 
@@ -73,3 +74,17 @@ class NursingHomeDetailView(SearchMixin, DetailView):
         context['description'] = _('Details about the nursing home %(name)s.') % {'name': self.object.name}
 
         return context
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+
+        if not self.request.user.is_staff and not self.object.visible:
+            return self.show_451(request, context)
+
+        return self.render_to_response(context)
+
+    def show_451(self, request, context):
+        return render(request,
+                'correctiv_nursinghomes/nursinghome_detail_removed.html',
+                context, status=451)

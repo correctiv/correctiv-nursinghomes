@@ -1,0 +1,34 @@
+{% extends "correctiv_nursinghomes/nursinghome_detail.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="page__row">
+  <div class="page__section -narrow">
+    <h3>{% trans "This content was removed." %}</h3>
+  </div>
+</div>
+{% endblock %}
+
+{% block top_search %}
+{# Copied badly from _map.html #}
+<section class="nursinghomes__map">
+
+  <div class="nursinghomes__map__container">
+    <header class="nursinghomes__map__header">
+      <a href="{% url 'nursinghomes:nursinghomes-index' %}">
+        <h1 class="nursinghomes__map__app-title">
+          {% trans "Nursing Home Guide" %}
+        </h1>
+      </a>
+      <h2 class="nursinghomes__map__title">
+        {{ object.name }}
+      </h2>
+      <p class="nursinghomes__map__subtitle">
+        {{ object.location }}
+      </p>
+    </header>
+  </div>
+
+</section>
+{% endblock %}
