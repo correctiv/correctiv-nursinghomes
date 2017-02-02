@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-13 14:14+0200\n"
-"PO-Revision-Date: 2016-10-13 14:15+0200\n"
+"POT-Creation-Date: 2017-02-02 11:08+0100\n"
+"PO-Revision-Date: 2017-02-02 11:08+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: apps.py:7 cms_apps.py:7 cms_plugins.py:9
 #: templates/correctiv_nursinghomes/plugins/search_tile.html:8
@@ -46,126 +46,126 @@ msgstr "Postleitzahl %d"
 msgid "Near nursing home %s"
 msgstr "In der Nähe des Pflegeheims %s"
 
-#: models.py:68
+#: models.py:71
 msgid "Supervision Authority"
 msgstr "Zuständige Aufsichtsbehörde"
 
-#: models.py:69
+#: models.py:72
 msgid "Supervision Authorities"
 msgstr "Zuständige Aufsichtsbehörden"
 
-#: models.py:143
+#: models.py:147
 msgid "charitable"
 msgstr "freigemeinnützig"
 
-#: models.py:144
+#: models.py:148
 msgid "private"
 msgstr "privat"
 
-#: models.py:145
+#: models.py:149
 msgid "public"
 msgstr "öffentlich"
 
-#: models.py:146
+#: models.py:150
 msgid "unknown"
 msgstr "unbekannt"
 
-#: models.py:287
+#: models.py:295
 msgid "Geographic location"
 msgstr "Lage"
 
-#: models.py:316
+#: models.py:324
 msgid "nursing home"
 msgstr "Pflegeheim"
 
-#: models.py:317
+#: models.py:325
 msgid "nursing homes"
 msgstr "Pflegeheime"
 
-#: models.py:387
+#: models.py:395
 msgid "very small"
 msgstr "sehr klein"
 
-#: models.py:388
+#: models.py:396
 msgid "small"
 msgstr "klein"
 
-#: models.py:389
+#: models.py:397
 msgid "normal-sized"
 msgstr "normal groß"
 
-#: models.py:390
+#: models.py:398
 msgid "big"
 msgstr "groß"
 
-#: models.py:391
+#: models.py:399
 msgid "very big"
 msgstr "sehr groß"
 
-#: models.py:403
+#: models.py:411
 msgid "very young"
 msgstr "sehr jung"
 
-#: models.py:404
+#: models.py:412
 msgid "young"
 msgstr "jung"
 
-#: models.py:405
+#: models.py:413
 msgid "a normal age"
 msgstr "normal"
 
-#: models.py:406
+#: models.py:414
 msgid "old"
 msgstr "alt"
 
-#: models.py:407
+#: models.py:415
 msgid "very old"
 msgstr "sehr alt"
 
-#: models.py:419
+#: models.py:427
 msgid "very cheap"
 msgstr "sehr günstig"
 
-#: models.py:420
+#: models.py:428
 msgid "cheap"
 msgstr "günstig"
 
-#: models.py:421
+#: models.py:429
 msgid "moderately priced"
 msgstr "normal bepreist"
 
-#: models.py:422
+#: models.py:430
 msgid "expensive"
 msgstr "teuer"
 
-#: models.py:423
+#: models.py:431
 msgid "very expensive"
 msgstr "sehr teuer"
 
-#: models.py:433
+#: models.py:441
 #, python-format
 msgid "%d%% less"
 msgstr "%d%% weniger"
 
-#: models.py:434
+#: models.py:442
 #, python-format
 msgid "%d%% more"
 msgstr "%d%% mehr"
 
-#: models.py:469
+#: models.py:477
 #, python-format
 msgid "Nursing home report of “%s”"
 msgstr "Transparenzbericht von “%s“"
 
-#: models.py:511
+#: models.py:519
 msgid "Supervision Report"
 msgstr "Transparenzbericht"
 
-#: models.py:512
+#: models.py:520
 msgid "Supervision Reports"
 msgstr "Transparenzberichte"
 
-#: models.py:515
+#: models.py:523
 #, python-format
 msgid "Report on %(date)s by %(auth)s"
 msgstr "Transparenzbericht über %(date)s von %(auth)s"
@@ -204,6 +204,7 @@ msgstr "Transparenzbericht herunterladen"
 #: templates/correctiv_nursinghomes/_map.html:12
 #: templates/correctiv_nursinghomes/_search.html:9
 #: templates/correctiv_nursinghomes/base.html:6
+#: templates/correctiv_nursinghomes/nursinghome_detail_removed.html:21
 msgid "Nursing Home Guide"
 msgstr "Wegweiser Pflege"
 
@@ -553,6 +554,22 @@ msgstr ""
 msgid "Examples:"
 msgstr "Beispiele:"
 
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:17
+msgid "Home"
+msgstr "Heim"
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:20
+msgid "Replace all selected objects with this object"
+msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt"
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:28
+msgid "Replace all selected objects with this object:"
+msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt:"
+
+#: templates/correctiv_nursinghomes/admin/replace_objects.html:43
+msgid "Replace selected objects with this object"
+msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt"
+
 #: templates/correctiv_nursinghomes/base.html:9
 msgid "The guide to German nursing homes."
 msgstr "Wie finde ich das richtige Heim?"
@@ -610,6 +627,10 @@ msgstr ""
 "Nette Geschichten schreiben können andere. Wir wollen aufklären. Wir sind "
 "unabhängig, werbefrei und nicht-gewinnorientiert. Mit einer "
 "Fördermitgliedschaft sicherst Du dauerhaft unsere Arbeit."
+
+#: templates/correctiv_nursinghomes/nursinghome_detail_removed.html:8
+msgid "This content was removed."
+msgstr "Dieser Inhalt wurde entfernt."
 
 #: templates/correctiv_nursinghomes/nursinghome_list.html:8
 #, python-format
@@ -689,30 +710,18 @@ msgstr "^suche/json/$"
 msgid "^nursinghome/(?P<slug>[\\w-]+)/$"
 msgstr "^pflegeheim/(?P<slug>[\\w-]+)/$"
 
-#: views.py:72
+#: views.py:73
 #, python-format
 msgid "Nursing home %(name)s"
 msgstr "Pflegeheim %(name)s"
 
-#: views.py:73
+#: views.py:74
 #, python-format
 msgid "Details about the nursing home %(name)s."
 msgstr "Details zum Pflegeheim %(name)s."
 
 #~ msgid "Guidebook"
 #~ msgstr "Ratgeber"
-
-#~ msgid "Home"
-#~ msgstr "Heim"
-
-#~ msgid "Replace all selected objects with this object"
-#~ msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt"
-
-#~ msgid "Replace all selected objects with this object:"
-#~ msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt:"
-
-#~ msgid "Replace selected objects with this object"
-#~ msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt"
 
 #~ msgid ""
 #~ "\n"
