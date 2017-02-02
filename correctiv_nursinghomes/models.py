@@ -82,7 +82,8 @@ def _prepare_query(query):
 class NursingHomeManager(SearchManager):
 
     def get_queryset(self):
-        return super(NursingHomeManager, self).get_queryset().filter(care_full=True)
+        return super(NursingHomeManager, self).get_queryset().filter(
+            care_full=True, visible=True)
 
     def get_by_natural_key(self, slug):
         return self.get(slug=slug)
@@ -253,6 +254,8 @@ class NursingHome(models.Model):
 
     name = models.CharField(max_length=512)
     slug = models.SlugField(max_length=512)
+
+    visible = models.BooleanField(default=True)
 
     address = models.CharField(max_length=255, blank=True)
     location = models.CharField(max_length=255, blank=True)
