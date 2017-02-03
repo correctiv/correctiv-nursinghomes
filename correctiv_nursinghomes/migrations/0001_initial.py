@@ -6,7 +6,6 @@ import django.contrib.gis.db.models.fields
 import django.contrib.postgres.fields.jsonb
 from django.db import migrations, models
 import django.db.models.deletion
-import djorm_pgfulltext.fields
 
 
 class Migration(migrations.Migration):
@@ -32,7 +31,7 @@ class Migration(migrations.Migration):
                 ('web', models.CharField(blank=True, max_length=1024)),
                 ('data', django.contrib.postgres.fields.jsonb.JSONField(blank=True)),
                 ('geo', django.contrib.gis.db.models.fields.PointField(geography=True, srid=4326, verbose_name='Geographic location')),
-                ('search_index', djorm_pgfulltext.fields.VectorField()),
+                ('search_index', models.CharField(blank=True, max_length=10)),
             ],
             options={
                 'ordering': ('name',),

@@ -14,37 +14,10 @@ from django.contrib.postgres.fields import JSONField
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.contrib.gis.measure import D
-
-
-from djorm_pgfulltext.models import SearchManager
-from djorm_pgfulltext.fields import VectorField, FullTextLookup, startswith
+from django.contrib.postgres.search import (SearchVectorField, SearchVector,
+        SearchQuery)
 
 from geogermany.models import State, District, Borough
-
-
-class FullTextLookupCustom(FullTextLookup):
-    lookup_name = 'ft_search'
-
-    def as_sql(self, qn, connection):
-        lhs, lhs_params = qn.compile(self.lhs)
-        rhs, rhs_params = self.process_rhs(qn, connection)
-
-        catalog, rhs_params = rhs_params
-
-        cmd = "%s @@ plainto_tsquery('%s', %%s)" % (lhs, catalog)
-        rest = (" & ".join(self.transform.__call__(rhs_params)),)
-
-        return cmd, rest
-
-
-class FullTextLookupCustomStartsWith(FullTextLookupCustom):
-    lookup_name = 'ft_search_startswith'
-
-    def transform(self, *args):
-        return startswith(*args)
-
-VectorField.register_lookup(FullTextLookupCustom)
-VectorField.register_lookup(FullTextLookupCustomStartsWith)
 
 
 @python_2_unicode_compatible
@@ -75,11 +48,8 @@ class SupervisionAuthority(models.Model):
         return self.name
 
 
-def _prepare_query(query):
-    return [q.encode('utf-8') for q in query.split()]
-
-
-class NursingHomeManager(SearchManager):
+class NursingHomeManager(models.Manager):
+    SEARCH_LANG = 'german'
 
     def get_queryset(self):
         return super(NursingHomeManager, self).get_queryset().filter(
@@ -88,19 +58,16 @@ class NursingHomeManager(SearchManager):
     def get_by_natural_key(self, slug):
         return self.get(slug=slug)
 
+    def update_search_index(self):
+        search_vector = SearchVector('name', 'postcode', 'location',
+                                     config=self.SEARCH_LANG)
+        NursingHome.objects.update(search_vector=search_vector)
+
     def search(self, qs, query):
-        query = _prepare_query(query)
         if query:
             qs = qs.filter(
-                search_index__ft_search=(self.config, query)
+                search_vector=SearchQuery(query, config=self.SEARCH_LANG)
             )
-        return qs
-
-    def autocomplete(self, qs, query):
-        query = _prepare_query(query)
-        if query:
-            query = startswith(query)
-            qs = qs.search(' & '.join(query), raw=True)
         return qs
 
     def get_by_distance(self, home, limit=10, distance=None):
@@ -297,19 +264,10 @@ class NursingHome(models.Model):
     supervision_authority = models.ForeignKey(SupervisionAuthority,
                                               blank=True, null=True)
 
-    search_index = VectorField()
+    search_vector = SearchVectorField(null=True)
 
     default_manager = models.Manager()
-    objects = NursingHomeManager(
-        fields=[
-            ('name', 'A'),
-            ('postcode', 'A'),
-            ('location', 'A'),
-        ],
-        config='pg_catalog.german',
-        search_field='search_index',
-        auto_update_search_field=True
-    )
+    objects = NursingHomeManager()
 
     RED_FLAGS = [
         'red_flag_food',

@@ -91,6 +91,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         getattr(self, options['command'])(**options)
 
+    def reindex(self, *args, **options):
+        NursingHome.objects.update_search_index()
+
     def load(self, *args, **options):
         translation.activate(settings.LANGUAGE_CODE)
         filename = options['filename']
