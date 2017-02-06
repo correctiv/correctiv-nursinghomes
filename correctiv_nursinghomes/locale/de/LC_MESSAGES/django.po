@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Correctiv-Pflegewegweiser 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-02 11:08+0100\n"
-"PO-Revision-Date: 2017-02-02 11:08+0100\n"
+"POT-Creation-Date: 2017-02-06 15:13+0100\n"
+"PO-Revision-Date: 2017-02-06 15:13+0100\n"
 "Last-Translator: Stefan Wehrmeyer <stefan.wehrmeyer@okfn.org>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -27,12 +27,12 @@ msgstr "Pflegeheime"
 msgid "Nursing Homes Search Tile"
 msgstr "Pflegeheime Such-Kachel"
 
-#: forms.py:10 templates/correctiv_nursinghomes/_search.html:19
+#: forms.py:8 templates/correctiv_nursinghomes/_search.html:19
 #: templates/correctiv_nursinghomes/plugins/search_tile.html:21
 msgid "Search"
 msgstr "Suche"
 
-#: forms.py:15
+#: forms.py:13
 msgid "address, location, or postcode"
 msgstr "Adresse, Ort oder PLZ"
 
@@ -46,129 +46,152 @@ msgstr "Postleitzahl %d"
 msgid "Near nursing home %s"
 msgstr "In der Nähe des Pflegeheims %s"
 
-#: models.py:71
+#: models.py:44
 msgid "Supervision Authority"
 msgstr "Zuständige Aufsichtsbehörde"
 
-#: models.py:72
+#: models.py:45
 msgid "Supervision Authorities"
 msgstr "Zuständige Aufsichtsbehörden"
 
-#: models.py:147
+#: models.py:114
 msgid "charitable"
 msgstr "freigemeinnützig"
 
-#: models.py:148
+#: models.py:115
 msgid "private"
 msgstr "privat"
 
-#: models.py:149
+#: models.py:116
 msgid "public"
 msgstr "öffentlich"
 
-#: models.py:150
+#: models.py:117
 msgid "unknown"
 msgstr "unbekannt"
 
-#: models.py:295
+#: models.py:262
 msgid "Geographic location"
 msgstr "Lage"
 
-#: models.py:324
+#: models.py:282
 msgid "nursing home"
 msgstr "Pflegeheim"
 
-#: models.py:325
+#: models.py:283
 msgid "nursing homes"
 msgstr "Pflegeheime"
 
-#: models.py:395
+#: models.py:353
 msgid "very small"
 msgstr "sehr klein"
 
-#: models.py:396
+#: models.py:354
 msgid "small"
 msgstr "klein"
 
-#: models.py:397
+#: models.py:355
 msgid "normal-sized"
 msgstr "normal groß"
 
-#: models.py:398
+#: models.py:356
 msgid "big"
 msgstr "groß"
 
-#: models.py:399
+#: models.py:357
 msgid "very big"
 msgstr "sehr groß"
 
-#: models.py:411
+#: models.py:369
 msgid "very young"
 msgstr "sehr jung"
 
-#: models.py:412
+#: models.py:370
 msgid "young"
 msgstr "jung"
 
-#: models.py:413
+#: models.py:371
 msgid "a normal age"
 msgstr "normal"
 
-#: models.py:414
+#: models.py:372
 msgid "old"
 msgstr "alt"
 
-#: models.py:415
+#: models.py:373
 msgid "very old"
 msgstr "sehr alt"
 
-#: models.py:427
+#: models.py:385
 msgid "very cheap"
 msgstr "sehr günstig"
 
-#: models.py:428
+#: models.py:386
 msgid "cheap"
 msgstr "günstig"
 
-#: models.py:429
+#: models.py:387
 msgid "moderately priced"
 msgstr "normal bepreist"
 
-#: models.py:430
+#: models.py:388
 msgid "expensive"
 msgstr "teuer"
 
-#: models.py:431
+#: models.py:389
 msgid "very expensive"
 msgstr "sehr teuer"
 
-#: models.py:441
+#: models.py:399
 #, python-format
 msgid "%d%% less"
 msgstr "%d%% weniger"
 
-#: models.py:442
+#: models.py:400
 #, python-format
 msgid "%d%% more"
 msgstr "%d%% mehr"
 
-#: models.py:477
+#: models.py:435
 #, python-format
 msgid "Nursing home report of “%s”"
 msgstr "Transparenzbericht von “%s“"
 
-#: models.py:519
+#: models.py:477
 msgid "Supervision Report"
 msgstr "Transparenzbericht"
 
-#: models.py:520
+#: models.py:478
 msgid "Supervision Reports"
 msgstr "Transparenzberichte"
 
-#: models.py:523
+#: models.py:481
 #, python-format
 msgid "Report on %(date)s by %(auth)s"
 msgstr "Transparenzbericht über %(date)s von %(auth)s"
+
+#: templates/correctiv_nursinghomes/_about_website.html:5
+msgid "About this investigation"
+msgstr "Über diese Website"
+
+#: templates/correctiv_nursinghomes/_about_website.html:10
+msgid ""
+"We investigated issues with the infrastructure of the nursing homes since "
+"the beginning of 2015. We talked to hundreds of people and analyzed data "
+"from all transparency reports in Germany."
+msgstr ""
+"Wir recherchieren seit Anfang 2015 zu den Problemen der Pflege, haben mit "
+"Hunderten Menschen gesprochen und Daten zu allen Pflegeheimen Deutschlands "
+"ausgewertet. "
+
+#: templates/correctiv_nursinghomes/_about_website.html:14
+#: templates/correctiv_nursinghomes/_about_website.html:19
+msgid "You can find our full research in German here."
+msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
+
+#: templates/correctiv_nursinghomes/_about_website.html:24
+msgid "You can find some of our research in English here."
+msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
 
 #: templates/correctiv_nursinghomes/_disclaimer.html:3
 msgid ""
@@ -372,6 +395,7 @@ msgstr ""
 "der Fall ist, kann Euch nur der Betreiber beantworten."
 
 #: templates/correctiv_nursinghomes/_nursinghome_facts.html:43
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:39
 msgid "Questions and complaints"
 msgstr "Nachfragen und Beschwerden"
 
@@ -409,47 +433,17 @@ msgstr ""
 
 #: templates/correctiv_nursinghomes/_nursinghome_intro.html:6
 msgid ""
-"For the past few months, Correctiv has looked through the inspection reports "
-"conducted by the Medizinische Dienst der Krankenversicherung (MDK) of every "
-"nursing home in Germany. The data was provided by AOK."
+"A while ago you could find data about this nursingh home on this page. "
+"Unfortunately, at the moment the AOK-Bundesverband will not provide us with "
+"an up-to-date dataset. That's why we have decided to no longer publish the "
+"out-of-date information on this website. We are working on providing you an "
+"update soon."
 msgstr ""
-"CORRECTIV hat die Prüfberichte des Medizinischen Diensts der "
-"Krankenversicherung (MDK) aus allen deutschen Pflegeheime ausgewertet. Diese "
-"Daten hat uns die AOK zur Verfügung gestellt."
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:8
-#, python-format
-msgid ""
-"\n"
-"      Our analysis of the data shows that the nursing home <em>%(name)s</em> "
-"doesn’t get all points in one important category.\n"
-"    "
-msgid_plural ""
-"\n"
-"      Our analysis of the data shows that the nursing home <em>%(name)s</em> "
-"doesn’t get all points in %(redflag)s important categories.\n"
-"    "
-msgstr[0] ""
-"\n"
-"\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
-"<em>%(name)s</em> in einer wichtigen Kategorie nicht die volle Punktzahl "
-"erhalten hat.  "
-msgstr[1] ""
-"\n"
-"\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
-"<em>%(name)s</em> in %(redflag)s wichtigen Kategorien nicht die volle "
-"Punktzahl erhalten hat.  "
-
-#: templates/correctiv_nursinghomes/_nursinghome_intro.html:14
-msgid ""
-"We’ve analyzed five criteria in the AOK data and this nursing home’s report "
-"shows it doesn’t have problems in any of these areas. However, this doesn’t "
-"necessarily indicate that it is a good nursing home."
-msgstr ""
-"Wir haben fünf entscheidende Kriterien in den AOK-Daten analysiert und der "
-"Prüfbericht dieses Pflegeheims zeigt in diesen Kategorien keine "
-"Auffälligkeiten. Dies heißt allerdings nicht automatisch, dass dies ein "
-"hervorragendes Pflegeheim ist."
+"Hier konnten Sie ursprünglich Daten zu diesem Pflegeheim finden. Leider "
+"stellt uns der AOK-Bundesverband derzeit keine aktuellen Daten zu den "
+"Pflegeheimen in Deutschland zur Verfügung. Deshalb haben wir beschlossen, "
+"die mittlerweile veralteten Daten nicht mehr zu verbreiten. Wir arbeiten "
+"daran, diese Webseite zu aktualisieren."
 
 #: templates/correctiv_nursinghomes/_price_comparison.html:7
 msgid "Compare prices"
@@ -574,51 +568,33 @@ msgstr "Ersetze alle ausgewählten Objekte mit diesem Objekt"
 msgid "The guide to German nursing homes."
 msgstr "Wie finde ich das richtige Heim?"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:41
-msgid "Notes by this nursing home"
-msgstr "Anmerkungen des Betreibers"
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:60
-msgid "From the transparency report"
-msgstr "Aus dem Transparenzbericht"
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:73
-msgid "About this investigation"
-msgstr "Über diese Website"
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:78
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:42
+#, python-format
 msgid ""
-"We investigated issues with the infrastructure of the nursing homes since "
-"the beginning of 2015. We talked to hundreds of people and analyzed data "
-"from all transparency reports in Germany."
+"\n"
+"          If you want to inquire about this home you reach out to the "
+"%(authority)s or the %(mdk)s.\n"
+"        "
 msgstr ""
-"Wir recherchieren seit Anfang 2015 zu den Problemen der Pflege, haben mit "
-"Hunderten Menschen gesprochen und Daten zu allen Pflegeheimen Deutschlands "
-"ausgewertet. "
+"\n"
+"  Falls Ihr Nachfragen oder Beschwerden zu diesem Pflegeheim habt, könnt Ihr "
+"Euch an die %(authority)s oder den %(mdk)s wenden.\n"
+"  "
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:82
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:87
-msgid "You can find our full research in German here."
-msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:92
-msgid "You can find some of our research in English here."
-msgstr "Hier findet Ihr alle Ergebnisse unserer Recherchen."
-
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:106
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:108
 msgid "How you can get more information"
 msgstr "Wie Ihr Euch selbst informieren könnt"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:117
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:127
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:121
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:131
 msgid "Support CORRECTIV"
 msgstr "CORRECTIV unterstützen"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:122
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:126
 msgid "Independent journalism needs independent funding"
 msgstr "Unabhängiger Journalismus braucht unabhängige Finanzierung"
 
-#: templates/correctiv_nursinghomes/nursinghome_detail.html:124
+#: templates/correctiv_nursinghomes/nursinghome_detail.html:128
 msgid ""
 "Anyone can write nice features. We want to reveal injustice. As an "
 "independent non-profit organization, we need your help. Become a member and "
@@ -719,6 +695,52 @@ msgstr "Pflegeheim %(name)s"
 #, python-format
 msgid "Details about the nursing home %(name)s."
 msgstr "Details zum Pflegeheim %(name)s."
+
+#~ msgid ""
+#~ "For the past few months, Correctiv has looked through the inspection "
+#~ "reports conducted by the Medizinische Dienst der Krankenversicherung "
+#~ "(MDK) of every nursing home in Germany. The data was provided by AOK."
+#~ msgstr ""
+#~ "CORRECTIV hat die Prüfberichte des Medizinischen Diensts der "
+#~ "Krankenversicherung (MDK) aus allen deutschen Pflegeheime ausgewertet. "
+#~ "Diese Daten hat uns die AOK zur Verfügung gestellt."
+
+#~ msgid ""
+#~ "\n"
+#~ "      Our analysis of the data shows that the nursing home <em>%(name)s</"
+#~ "em> doesn’t get all points in one important category.\n"
+#~ "    "
+#~ msgid_plural ""
+#~ "\n"
+#~ "      Our analysis of the data shows that the nursing home <em>%(name)s</"
+#~ "em> doesn’t get all points in %(redflag)s important categories.\n"
+#~ "    "
+#~ msgstr[0] ""
+#~ "\n"
+#~ "\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
+#~ "<em>%(name)s</em> in einer wichtigen Kategorie nicht die volle Punktzahl "
+#~ "erhalten hat.  "
+#~ msgstr[1] ""
+#~ "\n"
+#~ "\tUnsere Analyse der Daten zu den Pflegeheimen zeigt, dass das Pflegeheim "
+#~ "<em>%(name)s</em> in %(redflag)s wichtigen Kategorien nicht die volle "
+#~ "Punktzahl erhalten hat.  "
+
+#~ msgid ""
+#~ "We’ve analyzed five criteria in the AOK data and this nursing home’s "
+#~ "report shows it doesn’t have problems in any of these areas. However, "
+#~ "this doesn’t necessarily indicate that it is a good nursing home."
+#~ msgstr ""
+#~ "Wir haben fünf entscheidende Kriterien in den AOK-Daten analysiert und "
+#~ "der Prüfbericht dieses Pflegeheims zeigt in diesen Kategorien keine "
+#~ "Auffälligkeiten. Dies heißt allerdings nicht automatisch, dass dies ein "
+#~ "hervorragendes Pflegeheim ist."
+
+#~ msgid "Notes by this nursing home"
+#~ msgstr "Anmerkungen des Betreibers"
+
+#~ msgid "From the transparency report"
+#~ msgstr "Aus dem Transparenzbericht"
 
 #~ msgid "Guidebook"
 #~ msgstr "Ratgeber"
