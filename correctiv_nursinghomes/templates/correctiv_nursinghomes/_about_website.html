@@ -1,0 +1,28 @@
+{% load i18n %}
+
+<header class="page__section-header ">
+  <h3 class="page__section-headline">
+    {% trans "About this investigation" %}
+  </h3>
+</header>
+
+<div class="well">
+  <p>{% trans "We investigated issues with the infrastructure of the nursing homes since the beginning of 2015. We talked to hundreds of people and analyzed data from all transparency reports in Germany." %}</p>
+
+  {% if LANGUAGE_CODE == "de" %}
+  <a href="https://correctiv.org/pflege/">
+    {% trans "You can find our full research in German here." %}
+  </a>
+  {% else %}
+  <p>
+    <a href="https://correctiv.org/pflege/">
+      {% trans "You can find our full research in German here." %}
+    </a>
+  </p>
+  <p>
+    <a href="https://correctiv.org/en/investigations/nursing-homes/">
+      {% trans "You can find some of our research in English here." %}
+    </a>
+  </p>
+  {% endif %}
+</div>

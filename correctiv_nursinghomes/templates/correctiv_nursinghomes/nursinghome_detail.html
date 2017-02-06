@@ -29,10 +29,30 @@
   </div>
 
   <div class="page__row">
+
     <div class="page__section -narrow">
-      {% include "correctiv_nursinghomes/_nursinghome_facts.html" with object=object %}
+      {% comment %}
+        {% include "correctiv_nursinghomes/_nursinghome_facts.html" with object=object %}
+      {% endcomment %}
+
+      <h3>{% trans "Questions and complaints" %}</h3>
+
+      <p>
+        {% blocktrans with insurance=object.data.insurance authority=object.get_supervision_authority_link mdk=object.get_mdk_region %}
+          If you want to inquire about this home you reach out to the {{ authority }} or the {{ mdk }}.
+        {% endblocktrans %}
+      </p>
+      {% comment %}
+      <p>
+        {% blocktrans %}
+          If you know this nursing home and you found a mistake in the AOK data, please <a href="mailto:aok-bundesverband@bv.aok.de">send an email directly to the AOK</a>. We can't change the original data by ourselves, but you can help to make nursing homes more transparent for everybody.
+        {% endblocktrans %}
+      </p>
+      {% endcomment %}
+
     </div>
 
+    {% comment %}
     <div class="page__sidebar">
       {% include "correctiv_nursinghomes/_price_comparison.html" %}
 
@@ -45,6 +65,7 @@
         </div>
       {% endif %}
     </div>
+    {% endcomment %}
   </div>
 
 
@@ -52,6 +73,7 @@
     {% static_placeholder "nursinghomes-detailbreak" %}
   </div>
 
+  {% comment %}
   <div class="page__row">
     <div class="page__section -narrow">
 
@@ -68,35 +90,11 @@
 
     <div class="page__sidebar">
 
-      <header class="page__section-header ">
-        <h3 class="page__section-headline">
-          {% trans "About this investigation" %}
-        </h3>
-      </header>
-
-      <div class="well">
-        <p>{% trans "We investigated issues with the infrastructure of the nursing homes since the beginning of 2015. We talked to hundreds of people and analyzed data from all transparency reports in Germany." %}</p>
-
-        {% if LANGUAGE_CODE == "de" %}
-        <a href="https://correctiv.org/pflege/">
-          {% trans "You can find our full research in German here." %}
-        </a>
-        {% else %}
-        <p>
-          <a href="https://correctiv.org/pflege/">
-            {% trans "You can find our full research in German here." %}
-          </a>
-        </p>
-        <p>
-          <a href="https://correctiv.org/en/investigations/nursing-homes/">
-            {% trans "You can find some of our research in English here." %}
-          </a>
-        </p>
-        {% endif %}
-      </div>
+      {% include "correctiv_nursinghomes/_about_website.html" %}
 
     </div>
   </div>
+  {% endcomment %}
 
   <div class="page__row">
     <div class="page__section -narrow">
@@ -111,6 +109,8 @@
 
     </div>
     <div class="page__sidebar">
+
+      {% include "correctiv_nursinghomes/_about_website.html" %}
 
       <header class="page__section-header ">
         <h3 class="page__section-headline">
